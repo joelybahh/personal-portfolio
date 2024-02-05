@@ -1,7 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "@vercel/edge": "^0.1.2",
-    "@vercel/speed-insights": "^1.0.9"
+    "@vercel/edge": "^0.1.2"
   }
 }
