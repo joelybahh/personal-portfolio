@@ -36,23 +36,29 @@
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-10">
       <div class="container mx-auto px-4 md:px-6">
-        <div class="flex items-center justify-between h-16"><a class="flex items-center gap-2" href="#" rel="ugc"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="h-6 w-6 dark:text-gray-300">
-              <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-            </svg><span class="text-lg font-semibold dark:text-gray-300">Joel Gabriel</span></a>
+        <div class="flex items-center justify-between h-16">
+          <div class="flex gap-4 items-center">
+            <!-- Small Circle profile.webp -->
+            <a href="#" rel="ugc">
+              <img class="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-gray-100" src="profile.webp"
+                alt="Joel Gabriel" />
+            </a>
+            <a class="flex flex-col gap-0.25" href="#" rel="ugc">
+              <span class="text-lg font-semibold dark:text-gray-300">Joel Gabriel</span>
+              <span class="text-sm dark:text-gray-300">Software Engineer Portfolio</span>
+            </a>
+          </div>
           <nav class="hidden md:flex gap-4"><a
-              class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50" href="#about"
+              class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300" href="#about"
               rel="ugc">
               About
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50" href="#projects"
-              rel="ugc">
+            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
+              href="#projects" rel="ugc">
               Projects
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
               href="#certifications" rel="ugc">
               Certifications
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50" href="#contact"
+            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300" href="#contact"
               rel="ugc">
               Contact
             </a></nav>
@@ -458,16 +464,66 @@
       </section>
       <!-- Certifications Section -->
       <section id="certifications" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div class="container px-4 md:px-6">
-          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2">
+        <div class="px-4 md:px-6">
+          <div class="space-y-4 gap-10 sm:px-10 md:gap-16 mb-24">
+            <div class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900 dark:text-gray-300">
+              Courses
+            </div>
+            <h2
+              class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+              Certifications, Honors & Awards
+            </h2>
+          </div>
+          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-3">
             <div class="space-y-4">
-              <div class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900 dark:text-gray-300">
-                Courses
+              <div class="grid gap-4">
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Advanced Diploma of Professional Games Development -
+                    Programming</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Graduated with the top award out of all students in the course (Outstanding Programmer Award)
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Certificate III in Information, Digital Media and
+                    Technology</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Placeholder
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Certificate II in Information, Digital Media and
+                    Technology</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Placeholder
+                  </p>
+                </div>
               </div>
-              <h2
-                class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                Certifications
-              </h2>
+            </div>
+            <div class="space-y-4">
+              <div class="grid gap-4">
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Certificate I in Information, Digital Media and
+                    Technology</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Placeholder
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Course 2</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Description of course 2
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-xl font-bold dark:text-gray-300">Course 3</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Description of course 3
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
               <div class="grid gap-4">
                 <div class="flex flex-col gap-2">
                   <h3 class="text-xl font-bold dark:text-gray-300">Course 1</h3>
@@ -482,9 +538,9 @@
                   </p>
                 </div>
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">Course 3</h3>
+                  <h3 class="text-xl font-bold dark:text-gray-300">High School Certificate</h3>
                   <p class="text-gray-500 dark:text-gray-400">
-                    Description of course 3
+                    Graduated Year-12 with an average ATAR, notably high in Computer Science, and Digital Media.
                   </p>
                 </div>
               </div>
@@ -515,26 +571,23 @@
       </section>
     </main>
     <!-- Footer -->
-    <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-      <a class="mr-6 hidden lg:flex" href="#" rel="ugc">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-          <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
-        </svg>
-        <span class="sr-only">Joel Gabriel</span>
+    <footer
+      class="flex flex-col justify-between gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 bg-white dark:bg-gray-900">
+      <a class="mr-6 hidden lg:flex gap-6" href="#" rel="ugc">
+        <!-- Copyright Joel Gabriel, also mention partly generated via v0.dev -->
+        <span class="text-xs dark:text-gray-200">© 2024 Joel Gabriel. All rights reserved</span>
       </a>
-      <nav class="sm:ml-auto flex gap-4 sm:gap-6"><a class="text-xs hover:underline underline-offset-4" href="#"
-          rel="ugc">
+      <nav class="flex gap-4 sm:gap-6"><a class="text-xs hover:underline underline-offset-4  dark:text-gray-200"
+          href="#about" rel="ugc">
           About
-        </a><a class="text-xs hover:underline underline-offset-4" href="#" rel="ugc">
-          Skills
-        </a><a class="text-xs hover:underline underline-offset-4" href="#" rel="ugc">
-          Work
-        </a><a class="text-xs hover:underline underline-offset-4" href="#" rel="ugc">
-          Courses
-        </a><a class="text-xs hover:underline underline-offset-4" href="#" rel="ugc">
+        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #projects" rel="ugc">
+          Projects
+        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #certifications" rel="ugc">
+          Certifications
+        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #contact" rel="ugc">
           Contact
         </a></nav>
+      <span class="text-xs dark:text-gray-200">Website layout generated using AI via <a href="v0.dev">v0.dev</a></span>
     </footer>
   </div>
 </body>
