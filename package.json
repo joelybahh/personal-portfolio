@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "tailwindcss -i ./styles/tailwind.css -o ./dist/tailwind.css --minify && html-minifier --input-dir ./ --output-dir ./dist --file-ext html"
+    "build": "tailwindcss -i ./styles/tailwind.css -o ./dist/tailwind.css --minify && html-minifier --input-dir ./ --output-dir ./dist --file-ext html && cp -R assets/ dist/assets && cp middleware.js dist/ && cp sitemap.xml dist/"
   },
   "dependencies": {
     "@vercel/edge": "^0.1.2"
