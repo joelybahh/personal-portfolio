@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="tailwind.css" rel="stylesheet">
+  <link href="dist/tailwind.css" rel="stylesheet">
 
 
   <!-- HTML Meta Tags -->
@@ -30,6 +30,15 @@
   <meta name="twitter:image" content="https://personal-portfolio-xi-rose.vercel.app/og-image.jpg">
 
   <link rel="canonical" href="https://www.joelybahh.github.io" />
+
+  <script src="theme-toggle.js" defer></script>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 
 <body>
@@ -84,17 +93,45 @@
                 Full-stack developer with over 5 years of experience.
               </p>
             </div>
-            <div class="space-x-4"><a
-                class="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="#" rel="ugc">
-                Get Started
-              </a><a
-                class="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-                href="#" rel="ugc">
-                Contact
-              </a></div>
+
+            <div class="flex items-center space-x-4">
+              <button id="theme-toggle" type="button"
+                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 bg-gray-900 hover:bg-gray-900/90">
+
+                <!-- Sun Icon for Light Mode -->
+                <svg id="theme-toggle-light-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="black"></path>
+                  <path
+                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                    stroke="black"></path>
+                </svg>
+                <p id="theme-toggle-light-text" class="hidden">Swap to Light Mode</p>
+                <!-- Moon Icon for Dark Mode -->
+                <svg id="theme-toggle-dark-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
+                  <path
+                    d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 01-2.72.718v2a7.47 7.47 0 003.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 019 9.5H7a7.5 7.5 0 007.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 007 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                    fill="white"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
+                    fill="white"></path>
+                </svg>
+                <p id="theme-toggle-dark-text" class="hidden">Swap to Dark Mode</p>
+              </button>
+              <a href="#contact"
+                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-800 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-800/90 dark:focus-visible:ring-gray-300 bg-gray-100 hover:bg-gray-200/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
+                  style="enable-background:new 0 0 24 24" xml:space="preserve" class="mr-2 text-gray-1000">
+                  <path
+                    d="M15.2 22.001c-.249 0-.501-.016-.753-.048-2.697-.341-5.284-1.733-7.69-4.14-2.406-2.405-3.798-4.992-4.14-7.69-.284-2.247.724-4.434 2.633-5.706l3.049-2.032 4.822 4.822-3.154 3.154c.134.411.55 1.312 1.74 2.503 1.19 1.19 2.091 1.605 2.522 1.747l3.135-3.161 4.822 4.822-2.033 3.049c-1.129 1.695-2.979 2.68-4.953 2.68zM8.044 4.959 6.359 6.081c-1.253.836-1.943 2.324-1.757 3.791.284 2.247 1.485 4.443 3.569 6.527 2.085 2.085 4.281 3.286 6.527 3.569 1.473.188 2.956-.503 3.791-1.757l1.123-1.686-2.248-2.248-1.74 1.739a1.979 1.979 0 0 1-2.02.494c-.732-.241-1.902-.824-3.312-2.233-1.408-1.407-1.991-2.577-2.232-3.31a1.977 1.977 0 0 1 .494-2.02l1.74-1.74-2.25-2.248z"
+                    fill="currentColor"></path>
+                </svg>
+                Contact me
+              </a>
+            </div>
           </div>
-        </div>
       </section>
       <!-- About Section -->
       <section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
