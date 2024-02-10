@@ -9,3 +9,6 @@ node_modules/
 
 # Ignore configuration files
 cb.config.js
+
+# Mac OS X Finder files
+.DS_Store
