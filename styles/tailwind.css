@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.chip {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium;
+.purple-chip {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800;
 }
 
-.purple-contrast {
-  @apply bg-purple-100 text-purple-800;
+.blue-chip {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800;
 }
 
-.blue-contrast {
-  @apply bg-blue-100 text-blue-800;
+.orange-chip {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800;
 }
 
-.orange-contrast {
-  @apply bg-orange-100 text-orange-800;
+.green-chip {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800;
 }
 
-.green-contrast {
-  @apply bg-green-100 text-green-800;
-}
-
-.yellow-contrast {
-  @apply bg-yellow-100 text-yellow-800;
+.yellow-chip {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800;
 }
