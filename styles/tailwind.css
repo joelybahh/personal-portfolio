@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.course-list-item-not-visible {
+  opacity: 0;
+  transform: translateX(50px); /* small right offset */
+  visibility: hidden;
+}
+
+.course-list-item {
+  opacity: 0;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.course-list-item-visible {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
 .purple-chip {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800;
 }
