@@ -12,3 +12,6 @@ cb.config.js
 
 # Mac OS X Finder files
 .DS_Store
+
+# `tailwind.css` in the root of the project
+tailwind.css
