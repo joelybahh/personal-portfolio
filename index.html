@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style='scroll-behavior: smooth'>
+<html lang="en" style='scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw;'>
 
 <head>
   <meta charset="UTF-8" />
@@ -32,6 +32,7 @@
 
   <link rel="canonical" href="https://www.joelybahh.github.io" />
 
+  <script src="animate-on-scroll.js"></script>
   <script src="theme-toggle.js" defer></script>
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -45,7 +46,7 @@
 <body class="bg-white dark:bg-gray-900">
   <div class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
     <!-- Header -->
-    <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-10">
+    <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-20">
       <div class="container mx-auto px-4 md:px-6">
         <div class="flex items-center justify-between h-16">
           <div class="flex gap-4 items-center">
@@ -198,12 +199,12 @@
                   class="lg:leading-tighter dark:text-gray-300 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
                   Experienced Full-stack Developer
                 </h2>
-                <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                   As a seasoned full-stack developer, I bring over six years of comprehensive experience in web
                   technologies, with a focus on NextJS, React, and TypeScript. My passion lies in crafting high-quality,
                   intuitive web applications.
                 </p>
-                <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                   Beginning my journey in game programming with C# and Unity, I transitioned through software
                   development using C# and C++, culminating in a unique expertise in 3D rendering on the web. This
                   evolution has equipped me with a niche, yet in-demand skill set that bridges traditional web
@@ -216,7 +217,7 @@
                 </a>
               </div>
             </div>
-            <div class="flex flex-col items-center space-y-4 md:items-start m-auto">
+            <div class="flex flex-col items-center space-y-4 md:items-start lg:m-auto">
               <!-- Specialized Skills Section -->
               <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
                 Specialized Skills
@@ -224,16 +225,13 @@
               <div class="flex flex-wrap gap-2">
                 <!-- Insert Specialized Skills here -->
                 <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                <span class="purple-chip">
                   3D Web Rendering
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                <span class="purple-chip">
                   BabylonJS
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                <span class="purple-chip">
                   Mapbox
                 </span>
               </div>
@@ -245,24 +243,19 @@
               <div class="flex flex-wrap gap-2">
                 <!-- Insert Language & Frameworks skills here -->
                 <!-- Example: JavaScript, TypeScript, React, Node.js, Next.js -->
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                <span class="blue-chip">
                   JavaScript
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                <span class="blue-chip">
                   TypeScript
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                <span class="blue-chip">
                   React
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                <span class="blue-chip">
                   Node.js
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                <span class="blue-chip">
                   Next.js
                 </span>
               </div>
@@ -274,20 +267,16 @@
               <div class="flex flex-wrap gap-2">
                 <!-- Insert Backend Technologies skills here -->
                 <!-- Example: Azure Functions, Amazon SES, Amazon S3 -->
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+                <span class="orange-chip">
                   Azure Functions
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+                <span class="orange-chip">
                   Azure Blob/CDN
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+                <span class="orange-chip">
                   Amazon SES
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-orange-100 text-orange-800">
+                <span class="orange-chip">
                   Amazon S3
                 </span>
               </div>
@@ -300,24 +289,19 @@
 
                 <!-- Insert Development Concepts skills here -->
                 <!-- Example: Monorepos, Microfrontends, DevOps, CMS Systems, Azure Blob -->
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                <span class="green-chip">
                   Monorepos
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                <span class="green-chip">
                   Microfrontends
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                <span class="green-chip">
                   CMS
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                <span class="green-chip">
                   DB Multi-tenancy
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                <span class="green-chip">
                   Serverless
                 </span>
               </div>
@@ -329,24 +313,19 @@
               <div class="flex flex-wrap gap-2">
                 <!-- Insert Specialized Skills here -->
                 <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                <span class="yellow-chip">
                   Leadership
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                <span class="yellow-chip">
                   Outgoing
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                <span class="yellow-chip">
                   Mentorship
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                <span class="yellow-chip">
                   Problem Solving
                 </span>
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                <span class="yellow-chip">
                   Communication
                 </span>
               </div>
@@ -373,20 +352,16 @@
                     assets and the market. Secure better leases and deals, by informing and inspiring every prospect.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       NextJS
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       Typescript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       Mapbox
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                    <span class="purple-chip">
                       BabylonJS
                     </span>
                   </div>
@@ -409,16 +384,13 @@
                     prospective tenants,
                     for your Industrial & Office listings. Or present a monthly listing report. </p>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       NextJS
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       Typescript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       React PDF
                     </span>
                   </div>
@@ -441,20 +413,16 @@
                     commercial real-estate data, allowing users to store, sync, and manage property & leasing
                     information and media in real-time</p>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       NextJS
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       Typescript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       PgSQL
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                    <span class="purple-chip">
                       Azure Func/Blob
                     </span>
                   </div>
@@ -477,20 +445,16 @@
                     centralized platform for creating beautiful online and offline presentations and experiences from
                     your data.</p>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       NextJS
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       Typescript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       PgSQL
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
+                    <span class="purple-chip">
                       Azure Func/Blob
                     </span>
                   </div>
@@ -513,16 +477,13 @@
                     automating commits, and more. Designed to streamline your development
                     process and make your life easier.</p>
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       CLI
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       Typescript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       OpenAI
                     </span>
                   </div>
@@ -545,16 +506,13 @@
                     3D stacks. Features the ability to spin up personalised links to track detailed analytics for the
                     use in embeds, proposals and more.
                   <div class="flex flex-wrap gap-2 mt-2">
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+                    <span class="blue-chip">
                       React
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <span class="green-chip">
                       JavaScript
                     </span>
-                    <span
-                      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800">
+                    <span class="yellow-chip">
                       Azure Cosmos DB (NoSQL)
                     </span>
                   </div>
@@ -573,8 +531,9 @@
       </section>
       <!-- Certifications Section -->
       <section id="certifications" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div class="px-4 md:px-6">
-          <div class="space-y-4 gap-10 sm:px-10 md:gap-16 mb-24">
+        <div class="px-4 md:px-6 lg:flex items-start">
+          <div
+            class="space-y-4 py-4 gap-10 sm:px-10 md:gap-16 mb-24 lg:sticky md:top-16 lg:w-1/2 w-100 z-10 bg-gray-100 dark:bg-gray-800">
             <div class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900 dark:text-gray-300">
               Courses
             </div>
@@ -583,63 +542,11 @@
               Certifications, Honors & Awards
             </h2>
           </div>
-          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-3">
+          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-1 lg:w-1/2">
             <div class="space-y-4">
-              <div class="grid gap-4">
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🎓 Advanced Diploma of Professional Games Development
-                    -
-                    Programming</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Graduated with the top award out of all students in the course (Outstanding Programmer Award)
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate III in Information, Digital Media and
-                    Technology</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Completed a holiday course building a 3D game with C# and Unity.
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate II in Information, Digital Media and
-                    Technology</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Completed a holiday course learning the basics of digital media and technology, by building a 2D
-                    game with C# and MonoGame.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <div class="grid gap-4">
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🏆 Outstanding Programmer Award</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    I was awarded the Outstanding Programmer Award for my work in the Advanced Diploma of Professional
-                    Games Development - Programming. This is the highest award given to a student in the course.
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🏅 Finalist - 2015 NSW Year 12 Industrial Technology
-                    Competition</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    As a part of my year 12 major multi media project, I was a finalist in the 2015 NSW Year 12
-                    Industrial Technology Competition. I built an Ice-Cream Tycoon in C# and MonoGame that I deployed to
-                    GameJolt and CD.
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 High School Certificate</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Graduated Year-12 with an average ATAR, notably high in Computer Science, and Digital Media.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <div class="grid gap-4">
-                <div class="flex flex-col gap-2">
+              <div class="grid gap-4 w-100">
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
                   <h3 class="text-xl font-bold dark:text-gray-300">📚 Microfrontends with React: A Complete Developer's
                     Guide (Udemy)</h3>
                   <p class="text-gray-500 dark:text-gray-400">
@@ -648,12 +555,64 @@
                     assessing microfrontends' project suitability.
                   </p>
                 </div>
-                <div class="flex flex-col gap-2">
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
                   <h3 class="text-xl font-bold dark:text-gray-300">📚 Mastering React 16 - Coding With Mosh</h3>
                   <p class="text-gray-500 dark:text-gray-400">
                     I gained proficiency in building fast, interactive React apps, mastering reusable components,
                     advanced data handling with pagination, sorting, and searching, and form validation. I learned
                     routing with React Router, making HTTP calls with Axios, and implementing robust authentication.
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🎓 Advanced Diploma of Professional Games Development
+                    -
+                    Programming</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Graduated with the top award out of all students in the course (Outstanding Programmer Award)
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate III in Information, Digital Media and
+                    Technology</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Completed a holiday course building a 3D game with C# and Unity.
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate II in Information, Digital Media and
+                    Technology</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Completed a holiday course learning the basics of digital media and technology, by building a 2D
+                    game with C# and MonoGame.
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🏆 Outstanding Programmer Award</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    I was awarded the Outstanding Programmer Award for my work in the Advanced Diploma of Professional
+                    Games Development - Programming. This is the highest award given to a student in the course.
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🏅 Finalist - 2015 NSW Year 12 Industrial Technology
+                    Competition</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    As a part of my year 12 major multi media project, I was a finalist in the 2015 NSW Year 12
+                    Industrial Technology Competition. I built an Ice-Cream Tycoon in C# and MonoGame that I deployed to
+                    GameJolt and CD.
+                  </p>
+                </div>
+                <div
+                  class="course-list-item-not-visible course-list-item flex flex-col gap-2 bg-gray-50 dark:bg-gray-900 p-2 shadow-md">
+                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 High School Certificate</h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    Graduated Year-12 with an average ATAR, notably high in Computer Science, and Digital Media.
                   </p>
                 </div>
               </div>
@@ -685,7 +644,7 @@
     </main>
     <!-- Footer -->
     <footer
-      class="flex flex-col justify-between gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 bg-white dark:bg-gray-900">
+      class="flex flex-col justify-between gap-2 sm:flex-row pt-6 w-full shrink-0 items-center px-4 md:px-6 bg-white dark:bg-gray-900">
       <a class="mr-6 hidden lg:flex gap-6" href="#" rel="ugc">
         <!-- Copyright Joel Gabriel, also mention partly generated via v0.dev -->
         <span class="text-xs dark:text-gray-200">© 2024 Joel Gabriel. All rights reserved</span>
@@ -700,7 +659,53 @@
         </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #contact" rel="ugc">
           Contact
         </a></nav>
-      <span class="text-xs dark:text-gray-200">Website layout generated using AI via <a href="v0.dev">v0.dev</a></span>
+      <div class="flex items-center space-x-4">
+        <!-- GitHub -->
+        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+          href="https://github.com/joelybahh" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+            </path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+          <span class="sr-only">GitHub</span>
+        </a>
+        <!-- LinkedIn -->
+        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+          href="https://www.linkedin.com/in/joelgabriel/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <!-- Twitter -->
+        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+          href="https://twitter.com/joelybahh" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 1200 1227" fill="none"
+            class="h-5 w-5" aria-hidden="true">
+            <path
+              d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+              fill="currentColor"></path>
+          </svg>
+          <span class="sr-only">Twitter</span>
+        </a>
+        <!-- Instagram -->
+        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+          href="https://www.instagram.com/joelybahh/" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+      </div>
     </footer>
   </div>
   <script>
