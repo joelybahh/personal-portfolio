@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         root: null,
-        threshold: 0.08,
+        threshold: 0,
       }
     );
 
