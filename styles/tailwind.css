@@ -58,7 +58,7 @@
 
 /* Project Styles */
 .title {
-  @apply text-5xl font-bold dark:text-gray-50;
+  @apply text-4xl font-bold dark:text-gray-50;
 }
 
 .subtitle {
@@ -91,4 +91,8 @@ p {
 
 li {
   @apply text-base dark:text-gray-200;
+}
+
+.back {
+  @apply flex items-center gap-2 text-base dark:text-gray-400 mb-16;
 }
