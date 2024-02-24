@@ -8,6 +8,12 @@
 <url>
   <loc>https://joelgabriel.com.au/</loc>
   <lastmod>2024-02-08T21:03:35+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://joelgabriel.com.au/projects/mapping</loc>
+  <lastmod>2024-02-24T01:41:29+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 </urlset>
