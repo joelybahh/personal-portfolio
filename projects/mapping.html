@@ -31,12 +31,34 @@
   <meta name="twitter:image" content="https://joelgabriel.com.au/assets/images/mapping-hero.webp">
 
   <link rel="canonical" href="https://www.joelybahh.github.io" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet"
+    id="light-theme" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet"
+    id="dark-theme" disabled />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css"
+    rel="stylesheet" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+
 
   <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const isDark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const lightTheme = document.getElementById('light-theme');
+    const darkTheme = document.getElementById('dark-theme');
+
+    if (isDark) {
       document.documentElement.classList.add('dark');
+
+      darkTheme.disabled = false;
+      lightTheme.disabled = true;
     } else {
       document.documentElement.classList.remove('dark');
+
+      darkTheme.disabled = true;
+      lightTheme.disabled = false;
     }
   </script>
 </head>
@@ -75,7 +97,7 @@
         </div>
       </div>
     </header>
-    <main class="flex-1 px-32 pt-16">
+    <main class="flex-1 md:px-32 sm:px-12 px-4 pt-16">
       <section>
         <div class="mb-8 pt-8 ">
           <a class="back" href="/#projects" rel="ugc">
@@ -87,34 +109,189 @@
             </svg>Back to Projects
           </a>
           <div class="flex items-center justify-between mt-4 dark:text-gray-400">
-            <span>Published on January 1, 2023</span>
+            <span>Published on January 23, 2024</span>
           </div>
           <h1 class="title">Inspace Mapping</h1>
           <!-- <p class="subtitle">Tell a more persuasive and engaging story of your assets and the market. Secure better
             leases and deals, by informing and inspiring every prospect.</p> -->
         </div>
-        <img alt="Project Cover" height="400" src="../assets/images/mapping-hero.webp" width="100%"
-          style="aspect-ratio: 1024 / 400; object-fit: cover;" />
+        <img alt="Project Cover" height="640" src="../assets/images/mapping-hero.webp" width="100%"
+          style="aspect-ratio: 1024 / 640; object-fit: fill;" />
         <div class="flex items-center justify-between mt-4 dark:text-gray-400">
           <span>by Joel Gabriel</span>
+          <!-- See it in action, link to map -->
+          <a class="dark:text-blue-500 text-blue-500 hover:underline" target="_blank"
+            href="https://map.inspacexr.com/inspace/webflow-demo?mode=insights" rel="ugc">See
+            it in action</a>
         </div>
 
         <article class="prose lg:prose-xl mt-8">
           <h1>Introduction</h1>
-          <p>This is the introduction to the project where I describe the main goal and the problem it solves.</p>
-          <h1>What I Worked On</h1>
+          <p class="mb-4">
+            In collaboration with my colleague, <strong><a class="dark:text-blue-500 text-blue-500 hover:underline"
+                href="https://github.com/zottiben">Ben Zotti</a></strong>, who led the initial
+            development, I had the opportunity to
+            contribute significantly to the evolution of an innovative web-based <strong>interactive mapping
+              platform</strong>.
+            Originally designed to enhance the presentation of commercial real estate portfolios, ETFs, and REITs, our
+            combined efforts have transformed it into a versatile tool that caters to a wide array of users, from real
+            estate professionals to landlords and agents. My involvement became particularly instrumental during the
+            platform's recent rewrite, which introduced a robust <strong>abstraction layer</strong> to its architecture,
+            elevating the
+            user experience and system flexibility.
+          </p>
+
+          <p class="mb-4">
+            This phase of the project was about enhancing and expanding the platform's capabilities, focusing on the
+            middle layer UI where I played a key role in refining the <strong>JSON schema</strong> that underpins our
+            user interface. The
+            introduction of this schema-driven approach not only streamlined the customization process but also made the
+            platform more adaptable, allowing users to interact with their data in more meaningful ways. By working
+            closely with <strong>Ben</strong> and leveraging our shared vision, we've been able to push the boundaries
+            of what
+            interactive mapping platforms can achieve, making complex data more accessible and actionable for our users.
+          </p>
+
+          <h1 class="mt-8">What I Worked On</h1>
+          <h2 class="mb-6">Schema Design</h2>
+          <p class="mb-4">
+            At the heart of our interactive mapping platform lies a meticulously crafted <strong>JSON schema</strong>, a
+            blueprint that defines the structure and interactivity of our user interface. This schema is more than just
+            a static configuration; it is <strong>contextually aware</strong>, adapting the UI to reflect the different
+            types of information users might need based on their current interaction mode.
+          </p>
+          <p class="mb-4">
+            One of the schema's core concepts is the <code>contextual</code> property. This property serves as a
+            decision-maker that tailors the user experience according to specific contexts. For example, when the URL
+            parameter <code>?mode=insights</code> is detected, the schema consults the <code>contextual</code> property
+            to determine which UI elements to display. This enables a dynamic shift in the layout and information
+            presented, creating a custom-tailored experience without the need for separate pages or manual intervention.
+          </p>
+          <p class="mb-4">
+            Under the <code>contextual</code> branch, we delve into <code>insights</code>, a mode-driven feature that
+            rearranges the platform's interface to highlight different data points and visualization cards pertinent to
+            the user's current focus. Whether it's an in-depth look at a single asset, a comparative view in a
+            multi-asset scenario, or a detailed examination of a specific space, the schema intelligently adjusts the UI
+            elements.
+          </p>
+          <p class="mb-4">
+            For instance, the <strong>asset</strong>, <strong>multi</strong>, and <strong>space</strong> keys within the
+            <code>contextual</code> object point to different data types and card layouts designed to emphasize
+            particular aspects of the assets or spaces in question. This allows for a seamless transition between
+            viewing modes, such as switching from a macro-level overview to a granular analysis of individual
+            properties, all governed by the schema's versatile structure.
+          </p>
+          <pre><code class="language-javascript">{
+  "contextual": {
+    "insights": {
+      "asset": {
+        "accordions": [
+          "building_details", 
+          "building_overview", 
+          "building_availability"
+        ], 
+      },
+      "multi": {
+        "accordions": [
+          "precinct_overview", 
+          "precinct_buildings"
+        ]
+      },
+      "space": {
+        "accordions": [
+          "listing_overview", 
+          "listing_details"
+        ],
+      }
+    }
+  }
+}
+</code></pre>
+          <p class="mb-4">
+            This schema-centric approach not only streamlines the UI customization process but also significantly
+            enhances the platform's adaptability, ensuring that users always have the most relevant and insightful data
+            at their fingertips.
+          </p>
+          <p class="mb-4">
+            The above is just a small sample of what's under the hood, those <code>accordions</code> strings, point to
+            another data structure that contains a <code>name</code>, and <code>items</code>.
+            Items is a simple array of strings, mapping to <code>cards</code>. Cards are a bit like UI modules or
+            building blocks, they are the smallest unit of UI that can be rendered.
+          </p>
+          <div class="md:inline-flex inline-block">
+
+            <!-- Tall Image of result -->
+            <img alt="Project Screenshot" class="md:w-1/3 sm:w-auto object-cover mt-4 mr-8" height="1024"
+              src="../assets/images/mapping-ui.webp" width="450" style="aspect-ratio: 450 / 1024; object-fit: fill;" />
+
+            <div class="flex-1">
+              <pre><code class="language-javascript">{
+  "ui": {
+    "accordions": [
+      {
+        "id": "building_details",
+        "title": "Property Details",
+        "items": ["building_details_grid"]
+      },
+      {
+        "id": "building_overview",
+        "title": "Overview",
+        "items": [
+          "building_overview_highlights", 
+          "building_overview_description"
+        ]
+      }
+      ...
+    ],
+    "cards": [
+      ...
+    ]
+  },
+}</code></pre>
+              <p class="mb-4">
+                The <code>cards</code> array is a collection of UI components that can be rendered. Each card has a
+                <code>type</code> and <code>items</code> array. The <code>type</code> is a string that maps to a UI
+                component, and the <code>items</code> array is a collection of data pointers that are passed to the UI
+                component.
+              </p>
+              <pre><code class="language-javascript">{
+  "id": "building_details_grid",
+  "data": {
+    "type": "grid",
+    "items": [
+      ...
+    ]
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <h2 class="mb-6 mt-8">UI Component Abstraction</h2>
+          <pre class="line-numbers tab-size[4]"><code class="language-javascript">const Card = ({ }) => {  
+  return (
+    &lt;div className="card"&gt;
+      &lt;h2&gt;Card Title&lt;/h2&gt;
+      &lt;p&gt;Card Description&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+          <h2 class="mb-6 mt-8">RESTful API Design</h2>
+          <pre class="line-numbers tab-size[4]"><code class="language-javascript">
+const express = require('express');
+          </code></pre>
           <p>Here I detail the specific parts of the project I was responsible for, including any challenges I faced
             and
             how
             I overcame them.</p>
-          <h1>Skills Used</h1>
+          <h1 class="mt-8">Skills Used</h1>
           <ul>
-            <li>JavaScript (ES6+)</li>
-            <li>React &amp; Redux</li>
-            <li>Node.js &amp; Express</li>
-            <li>MongoDB</li>
+            <li>JavaScript</li>
+            <li>NextJS &amp; pages router</li>
+            <li>React</li>
+            <li>Postgres SQL</li>
             <li>RESTful API Design</li>
-            <li>Unit Testing with Jest</li>
+            <li>Schema Design</li>
+            <li>CMS behind the scenes</li>
           </ul>
           <h1>Media</h3><img alt="Project Screenshot" class="w-full h-64 object-cover mt-4" height="256"
               src="/placeholder.svg" width="1024" style="aspect-ratio: 1024 / 256; object-fit: cover;" />
