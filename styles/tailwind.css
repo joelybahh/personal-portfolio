@@ -55,3 +55,58 @@
 .yellow-chip {
   @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-yellow-100 text-yellow-800;
 }
+
+/* Project Styles */
+.title {
+  @apply text-4xl font-bold dark:text-gray-50;
+}
+
+.subtitle {
+  @apply text-lg font-semibold mt-2 dark:text-gray-200;
+}
+
+h1 {
+  @apply text-4xl font-bold dark:text-gray-50 leading-tight mb-8 mt-4;
+}
+
+h2 {
+  @apply text-2xl font-bold dark:text-gray-50;
+}
+
+h3 {
+  @apply text-xl font-semibold dark:text-gray-200;
+}
+
+h4 {
+  @apply text-lg font-semibold dark:text-gray-200;
+}
+
+h5 {
+  @apply text-base font-semibold dark:text-gray-200;
+}
+
+p {
+  @apply text-base dark:text-gray-200;
+}
+
+li {
+  @apply text-base dark:text-gray-200;
+}
+
+.back {
+  @apply flex items-center gap-2 text-base dark:text-gray-400 mb-16;
+}
+
+/* Light theme styles (default) */
+pre[class*="language-"] {
+  background: #f5f5f5; /* Light background for code blocks */
+  color: #333; /* Dark text for code blocks */
+  /* other styles... */
+}
+
+/* Dark theme styles */
+.dark pre[class*="language-"] {
+  background: #0d0d0d; /* Dark background for code blocks */
+  color: #ccc; /* Light text for code blocks */
+  /* other styles... */
+}
