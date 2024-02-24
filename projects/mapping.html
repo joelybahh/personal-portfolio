@@ -267,38 +267,72 @@
           </div>
 
           <h2 class="mb-6 mt-8">UI Component Abstraction</h2>
-          <pre class="line-numbers tab-size[4]"><code class="language-javascript">const Card = ({ }) => {  
+          <p class="mb-4">
+            The <strong>abstraction layer</strong> I introduced to the platform's UI components has been instrumental
+            in
+            enhancing the user experience and system flexibility. By creating a <strong>context-aware</strong> UI
+            component
+            that can adapt to different data types and interaction modes. This base abstraction layer has allowed us
+            to build a more <strong>modular</strong> and <strong>scalable</strong> UI.
+          </p>
+          <p class="mb-4">
+            Below is a simplified example of how the abstraction layer works. The <code>SwitchRenderer</code> component
+            takes a <code>value</code> prop and renders the appropriate UI component based on the value. This allows us
+            to create a single component that can render different UI components based on the data it receives.
+          </p>
+
+          <pre class="line-numbers tab-size[4]"><code class="language-javascript">const ContextualCard = ({ card }) => {  
   return (
-    &lt;div className="card"&gt;
-      &lt;h2&gt;Card Title&lt;/h2&gt;
-      &lt;p&gt;Card Description&lt;/p&gt;
-    &lt;/div&gt;
+    &lt;SwitchRenderer value={card.type}&gt;
+      &lt;Case value={CardTypes.Grid}&gt;
+         &lt;Grid items={card.items}/&gt;
+      &lt;/Case&gt;
+      &lt;Case value={CardTypes.List}&gt;
+          &lt;List items={card.items}/&gt;
+      &lt;/Case&gt;
+      ...
+    &lt;/SwitchRenderer&gt;
   );
 }</code></pre>
-          <h2 class="mb-6 mt-8">RESTful API Design</h2>
-          <pre class="line-numbers tab-size[4]"><code class="language-javascript">
-const express = require('express');
-          </code></pre>
-          <p>Here I detail the specific parts of the project I was responsible for, including any challenges I faced
-            and
-            how
-            I overcame them.</p>
+          <h2 class="mb-6 mt-8">API / Database Design</h2>
+          <!-- 
+            - The api was built on Azure Functions 
+            - The database was built on Postgres SQL, schema defined by typeORM
+            - The database design had to be built around abstractions due to the dynamic nature of the platform
+            - This added complexity to the database design, but was essential for the flexibility of the platform
+            - The initial API was built for a quick to market, easy to use approach
+            - As the platform grew, we needed to refactor the API to be more modular and scalable, allowing micro requests and complex select and filter queries
+          -->
+          <p class="mb-4">
+            The API was built on <strong>Azure Functions</strong> and the database was built on <strong>Postgres
+              SQL</strong>,
+            with the schema defined by <strong>typeORM</strong>. The database design had to be built around abstractions
+            due to the dynamic nature of the platform. This added complexity to the database design, but was essential
+            for the flexibility of the platform.
+          </p>
+          <p class="mb-4">
+            The initial API was built for a quick to market, easy to use approach, but as the platform grew, we needed
+            to refactor the API to be more <strong>modular</strong> and <strong>scalable</strong>. This allowed us to
+            build a <strong>flexible</strong> and <strong>intuitive</strong> API that can be easily extended and adapted
+            to meet the needs of our users.
+          </p>
+          <p class="mb-4">
+            The refactoed API, however, was designed to allow for <strong>micro requests</strong> and <strong>complex
+              select and filter
+              queries</strong>, enabling users to interact with their data in more meaningful ways. This required a
+            careful balance between <strong>performance</strong> and <strong>flexibility</strong>, but the end result
+            was a powerful and <strong>intuitive</strong> API.
+          </p>
+
           <h1 class="mt-8">Skills Used</h1>
           <ul>
             <li>JavaScript</li>
             <li>NextJS &amp; pages router</li>
             <li>React</li>
             <li>Postgres SQL</li>
+            <li>TypeORM</li>
             <li>RESTful API Design</li>
-            <li>Schema Design</li>
-            <li>CMS behind the scenes</li>
           </ul>
-          <h1>Media</h3><img alt="Project Screenshot" class="w-full h-64 object-cover mt-4" height="256"
-              src="/placeholder.svg" width="1024" style="aspect-ratio: 1024 / 256; object-fit: cover;" />
-            <p class="mt-4">Above is a screenshot of the project in action. Below is a code snippet showcasing a
-              feature
-              I
-              implemented.</p>
         </article>
       </section>
     </main>
