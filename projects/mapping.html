@@ -30,7 +30,37 @@
     content="Tell a more persuasive and engaging story of your assets and the market. Secure better leases and deals, by informing and inspiring every prospect.">
   <meta name="twitter:image" content="https://joelgabriel.com.au/assets/images/mapping-hero.webp">
 
-  <link rel="canonical" href="https://www.joelybahh.github.io" />
+  <meta itemprop="datePublished" content="2024-01-24" />
+
+  <link rel="canonical" href="https://joelgabriel.com.au" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://joelgabriel.com.au/projects/mapping"
+      },
+      "headline": "Inspace Mapping Platform",
+      "author": {
+        "@type": "Person",
+        "name": "Joel Gabriel"
+      },
+      "datePublished": "2024-01-24",
+      "image": "https://joelgabriel.com.au/assets/images/mapping-hero.webp",
+      "articleBody": "The project explores the development of an innovative interactive mapping platform tailored for the real estate sector, focusing on schema design, UI component abstraction, and API/database enhancements. It showcases the platform's flexibility, user engagement capabilities, and the collaborative efforts behind its evolution, offering insights into tackling data visualization and interaction complexities."
+      "publisher": {
+        "@type": "Person",
+        "name": "Joel Gabriel",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://joelgabriel.com.au/assets/icons/favicon.svg"
+        }
+      }
+    }
+  </script>
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet"
     id="light-theme" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet"
@@ -41,9 +71,6 @@
     rel="stylesheet" />
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-
-
-
   <script>
     const isDark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
     const lightTheme = document.getElementById('light-theme');
@@ -72,8 +99,9 @@
           <div class="flex gap-4 items-center">
             <!-- Small Circle profile.webp -->
             <a href="#" rel="ugc">
-              <img class="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-gray-100"
-                src="../assets/images/profile.webp" alt="Joel Gabriel" />
+              <img itemprop="image" class="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-gray-100"
+                src="../assets/images/profile.webp"
+                alt="Black and white profile photo of Joel Gabriel, a man smiling and wearing a formal shirt and tie, suggesting a professional or celebratory occasion." />
             </a>
             <a class="flex flex-col gap-0.25" href="#" rel="ugc">
               <span class="text-lg font-semibold dark:text-gray-300">Joel Gabriel</span>
@@ -115,7 +143,9 @@
           <!-- <p class="subtitle">Tell a more persuasive and engaging story of your assets and the market. Secure better
             leases and deals, by informing and inspiring every prospect.</p> -->
         </div>
-        <img alt="Project Cover" height="640" src="../assets/images/mapping-hero.webp" width="100%"
+        <img itemprop="image"
+          alt="A web application displaying a property portfolio on a map of Australia with various properties marked, including Riverside Quay in Melbourne and others across the country."
+          height="640" src="../assets/images/mapping-hero.webp" width="100%"
           style="aspect-ratio: 1024 / 640; object-fit: fill;" />
         <div class="flex items-center justify-between mt-4 dark:text-gray-400">
           <span>by Joel Gabriel</span>
@@ -125,63 +155,84 @@
             it in action</a>
         </div>
 
-        <article class="prose lg:prose-xl my-8">
-          <h1>Introduction</h1>
-          <p class="mb-4">
-            In collaboration with my colleague, <strong><a class="dark:text-blue-500 text-blue-500 hover:underline"
-                href="https://github.com/zottiben">Ben Zotti</a></strong>, who led the initial
-            development, I had the opportunity to
-            contribute significantly to the evolution of an innovative web-based <strong>interactive mapping
-              platform</strong>.
-            Originally designed to enhance the presentation of commercial real estate portfolios, ETFs, and REITs, our
-            combined efforts have transformed it into a versatile tool that caters to a wide array of users, from real
-            estate professionals to landlords and agents. My involvement became particularly instrumental during the
-            platform's recent rewrite, which introduced a robust <strong>abstraction layer</strong> to its architecture,
-            elevating the
-            user experience and system flexibility.
-          </p>
+        <article class="prose lg:prose-xl my-8" itemscope itemtype="http://schema.org/Article">
+          <!-- Introduction Section -->
+          <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+            <h1 itemprop="headline">Introduction</h1>
+            <p class="mb-4">
+              In collaboration with my colleague, <strong><a class="dark:text-blue-500 text-blue-500 hover:underline"
+                  href="https://github.com/zottiben">Ben Zotti</a></strong>, who led the initial
+              development, I had the opportunity to
+              contribute significantly to the evolution of an innovative web-based <strong>interactive mapping
+                platform</strong>.
+              Originally designed to enhance the presentation of commercial real estate portfolios, ETFs, and REITs, our
+              combined efforts have transformed it into a versatile tool that caters to a wide array of users, from real
+              estate professionals to landlords and agents. My involvement became particularly instrumental during the
+              platform's recent rewrite, which introduced a robust <strong>abstraction layer</strong> to its
+              architecture,
+              elevating the
+              user experience and system flexibility.
+            </p>
 
-          <p class="mb-4">
-            This phase of the project was about enhancing and expanding the platform's capabilities, focusing on the
-            middle layer UI where I played a key role in refining the <strong>JSON schema</strong> that underpins our
-            user interface. The
-            introduction of this schema-driven approach not only streamlined the customization process but also made the
-            platform more adaptable, allowing users to interact with their data in more meaningful ways. By working
-            closely with <strong>Ben</strong> and leveraging our shared vision, we've been able to push the boundaries
-            of what
-            interactive mapping platforms can achieve, making complex data more accessible and actionable for our users.
-          </p>
-
-          <h1 class="mt-8">What I Worked On</h1>
-          <h2 class="mb-6">Schema Design</h2>
-          <p class="mb-4">
-            At the heart of our interactive mapping platform lies a meticulously crafted <strong>JSON schema</strong>, a
-            blueprint that defines the structure and interactivity of our user interface. This schema is more than just
-            a static configuration; it is <strong>contextually aware</strong>, adapting the UI to reflect the different
-            types of information users might need based on their current interaction mode.
-          </p>
-          <p class="mb-4">
-            One of the schema's core concepts is the <code>contextual</code> property. This property serves as a
-            decision-maker that tailors the user experience according to specific contexts. For example, when the URL
-            parameter <code>?mode=insights</code> is detected, the schema consults the <code>contextual</code> property
-            to determine which UI elements to display. This enables a dynamic shift in the layout and information
-            presented, creating a custom-tailored experience without the need for separate pages or manual intervention.
-          </p>
-          <p class="mb-4">
-            Under the <code>contextual</code> branch, we delve into <code>insights</code>, a mode-driven feature that
-            rearranges the platform's interface to highlight different data points and visualization cards pertinent to
-            the user's current focus. Whether it's an in-depth look at a single asset, a comparative view in a
-            multi-asset scenario, or a detailed examination of a specific space, the schema intelligently adjusts the UI
-            elements.
-          </p>
-          <p class="mb-4">
-            For instance, the <strong>asset</strong>, <strong>multi</strong>, and <strong>space</strong> keys within the
-            <code>contextual</code> object point to different data types and card layouts designed to emphasize
-            particular aspects of the assets or spaces in question. This allows for a seamless transition between
-            viewing modes, such as switching from a macro-level overview to a granular analysis of individual
-            properties, all governed by the schema's versatile structure.
-          </p>
-          <pre><code class="language-javascript">{
+            <p class="mb-4">
+              This phase of the project was about enhancing and expanding the platform's capabilities, focusing on the
+              middle layer UI where I played a key role in refining the <strong>JSON schema</strong> that underpins our
+              user interface. The
+              introduction of this schema-driven approach not only streamlined the customization process but also made
+              the
+              platform more adaptable, allowing users to interact with their data in more meaningful ways. By working
+              closely with <strong>Ben</strong> and leveraging our shared vision, we've been able to push the boundaries
+              of what
+              interactive mapping platforms can achieve, making complex data more accessible and actionable for our
+              users.
+            </p>
+          </section>
+          <!-- What I worked on -->
+          <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+            <h1 class="mt-8">What I Worked On</h1>
+            <!-- Schema Design -->
+            <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+              <h2 class="mb-6">Schema Design</h2>
+              <p class="mb-4">
+                At the heart of our interactive mapping platform lies a meticulously crafted <strong>JSON
+                  schema</strong>,
+                a
+                blueprint that defines the structure and interactivity of our user interface. This schema is more than
+                just
+                a static configuration; it is <strong>contextually aware</strong>, adapting the UI to reflect the
+                different
+                types of information users might need based on their current interaction mode.
+              </p>
+              <p class="mb-4">
+                One of the schema's core concepts is the <code>contextual</code> property. This property serves as a
+                decision-maker that tailors the user experience according to specific contexts. For example, when the
+                URL
+                parameter <code>?mode=insights</code> is detected, the schema consults the <code>contextual</code>
+                property
+                to determine which UI elements to display. This enables a dynamic shift in the layout and information
+                presented, creating a custom-tailored experience without the need for separate pages or manual
+                intervention.
+              </p>
+              <p class="mb-4">
+                Under the <code>contextual</code> branch, we delve into <code>insights</code>, a mode-driven feature
+                that
+                rearranges the platform's interface to highlight different data points and visualization cards pertinent
+                to
+                the user's current focus. Whether it's an in-depth look at a single asset, a comparative view in a
+                multi-asset scenario, or a detailed examination of a specific space, the schema intelligently adjusts
+                the
+                UI
+                elements.
+              </p>
+              <p class="mb-4">
+                For instance, the <strong>asset</strong>, <strong>multi</strong>, and <strong>space</strong> keys within
+                the
+                <code>contextual</code> object point to different data types and card layouts designed to emphasize
+                particular aspects of the assets or spaces in question. This allows for a seamless transition between
+                viewing modes, such as switching from a macro-level overview to a granular analysis of individual
+                properties, all governed by the schema's versatile structure.
+              </p>
+              <pre><code class="language-javascript">{
   "contextual": {
     "insights": {
       "asset": {
@@ -207,25 +258,29 @@
   }
 }
 </code></pre>
-          <p class="mb-4">
-            This schema-centric approach not only streamlines the UI customization process but also significantly
-            enhances the platform's adaptability, ensuring that users always have the most relevant and insightful data
-            at their fingertips.
-          </p>
-          <p class="mb-4">
-            The above is just a small sample of what's under the hood, those <code>accordions</code> strings, point to
-            another data structure that contains a <code>name</code>, and <code>items</code>.
-            Items is a simple array of strings, mapping to <code>cards</code>. Cards are a bit like UI modules or
-            building blocks, they are the smallest unit of UI that can be rendered.
-          </p>
-          <div class="md:inline-flex inline-block">
+              <p class="mb-4">
+                This schema-centric approach not only streamlines the UI customization process but also significantly
+                enhances the platform's adaptability, ensuring that users always have the most relevant and insightful
+                data
+                at their fingertips.
+              </p>
+              <p class="mb-4">
+                The above is just a small sample of what's under the hood, those <code>accordions</code> strings, point
+                to
+                another data structure that contains a <code>name</code>, and <code>items</code>.
+                Items is a simple array of strings, mapping to <code>cards</code>. Cards are a bit like UI modules or
+                building blocks, they are the smallest unit of UI that can be rendered.
+              </p>
+              <div class="md:inline-flex inline-block">
 
-            <!-- Tall Image of result -->
-            <img alt="Project Screenshot" class="md:w-1/3 sm:w-auto object-cover mt-4 mr-8" height="1024"
-              src="../assets/images/mapping-ui.webp" width="450" style="aspect-ratio: 450 / 1024; object-fit: fill;" />
+                <!-- Tall Image of result -->
+                <img itemprop="image"
+                  alt="A mobile app interface showing details of Riverside Quay, Melbourne, Australia, with a large photo of the building's exterior, followed by property details and an overview section."
+                  class="md:w-1/3 sm:w-auto object-cover mt-4 mr-8" height="1024" src="../assets/images/mapping-ui.webp"
+                  width="450" style="aspect-ratio: 450 / 1024; object-fit: fill;" />
 
-            <div class="flex-1">
-              <pre><code class="language-javascript">{
+                <div class="flex-1">
+                  <pre><code class="language-javascript">{
   "ui": {
     "accordions": [
       {
@@ -248,13 +303,14 @@
     ]
   },
 }</code></pre>
-              <p class="mb-4">
-                The <code>cards</code> array is a collection of UI components that can be rendered. Each card has a
-                <code>type</code> and <code>items</code> array. The <code>type</code> is a string that maps to a UI
-                component, and the <code>items</code> array is a collection of data pointers that are passed to the UI
-                component.
-              </p>
-              <pre><code class="language-javascript">{
+                  <p class="mb-4">
+                    The <code>cards</code> array is a collection of UI components that can be rendered. Each card has a
+                    <code>type</code> and <code>items</code> array. The <code>type</code> is a string that maps to a UI
+                    component, and the <code>items</code> array is a collection of data pointers that are passed to the
+                    UI
+                    component.
+                  </p>
+                  <pre><code class="language-javascript">{
   "id": "building_details_grid",
   "data": {
     "type": "grid",
@@ -263,25 +319,31 @@
     ]
   }
 }</code></pre>
-            </div>
-          </div>
+                </div>
+              </div>
+            </section>
 
-          <h2 class="mb-6 mt-8">UI Component Abstraction</h2>
-          <p class="mb-4">
-            The <strong>abstraction layer</strong> I introduced to the platform's UI components has been instrumental
-            in
-            enhancing the user experience and system flexibility. By creating a <strong>context-aware</strong> UI
-            component
-            that can adapt to different data types and interaction modes. This base abstraction layer has allowed us
-            to build a more <strong>modular</strong> and <strong>scalable</strong> UI.
-          </p>
-          <p class="mb-4">
-            Below is a simplified example of how the abstraction layer works. The <code>SwitchRenderer</code> component
-            takes a <code>value</code> prop and renders the appropriate UI component based on the value. This allows us
-            to create a single component that can render different UI components based on the data it receives.
-          </p>
+            <!-- UI Components & Abstraction -->
+            <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+              <h2 class="mb-6 mt-8">UI Component Abstraction</h2>
+              <p class="mb-4">
+                The <strong>abstraction layer</strong> I introduced to the platform's UI components has been
+                instrumental
+                in
+                enhancing the user experience and system flexibility. By creating a <strong>context-aware</strong> UI
+                component
+                that can adapt to different data types and interaction modes. This base abstraction layer has allowed us
+                to build a more <strong>modular</strong> and <strong>scalable</strong> UI.
+              </p>
+              <p class="mb-4">
+                Below is a simplified example of how the abstraction layer works. The <code>SwitchRenderer</code>
+                component
+                takes a <code>value</code> prop and renders the appropriate UI component based on the value. This allows
+                us
+                to create a single component that can render different UI components based on the data it receives.
+              </p>
 
-          <pre class="line-numbers tab-size[4]"><code class="language-javascript">const ContextualCard = ({ card }) => {  
+              <pre class="line-numbers tab-size[4]"><code class="language-javascript">const ContextualCard = ({ card }) => {  
   return (
     &lt;SwitchRenderer value={card.type}&gt;
       &lt;Case value={CardTypes.Grid}&gt;
@@ -294,78 +356,100 @@
     &lt;/SwitchRenderer&gt;
   );
 }</code></pre>
-          <h2 class="mb-6 mt-8">API / Database Design</h2>
-          <!-- 
-            - The api was built on Azure Functions 
-            - The database was built on Postgres SQL, schema defined by typeORM
-            - The database design had to be built around abstractions due to the dynamic nature of the platform
-            - This added complexity to the database design, but was essential for the flexibility of the platform
-            - The initial API was built for a quick to market, easy to use approach
-            - As the platform grew, we needed to refactor the API to be more modular and scalable, allowing micro requests and complex select and filter queries
-          -->
-          <p class="mb-4">
-            The API was built on <strong>Azure Functions</strong> and the database was built on <strong>Postgres
-              SQL</strong>,
-            with the schema defined by <strong>typeORM</strong>. The database design had to be built around abstractions
-            due to the dynamic nature of the platform. This added complexity to the database design, but was essential
-            for the flexibility of the platform.
-          </p>
-          <p class="mb-4">
-            The initial API was built for a quick to market, easy to use approach, but as the platform grew, we needed
-            to refactor the API to be more <strong>modular</strong> and <strong>scalable</strong>. This allowed us to
-            build a <strong>flexible</strong> and <strong>intuitive</strong> API that can be easily extended and adapted
-            to meet the needs of our users.
-          </p>
-          <p class="mb-4">
-            The refactoed API, however, was designed to allow for <strong>micro requests</strong> and <strong>complex
-              select and filter
-              queries</strong>, enabling users to interact with their data in more meaningful ways. This required a
-            careful balance between <strong>performance</strong> and <strong>flexibility</strong>, but the end result
-            was a powerful and <strong>intuitive</strong> API.
-          </p>
+            </section>
 
-          <h2 class="text-2xl font-bold text-gray-300 dark:text-gray-200 mb-6 mt-8">Skills Used</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">📐 Schema Design</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Developed a dynamic JSON schema, enabling context-aware
-                UI adaptations for diverse user interaction modes.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🎨 UI/UX Development</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Focused on the middle layer UI, refining UI components
-                and introducing an abstraction layer to enhance flexibility and user experience.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🗄️ API & Database Design</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Architected a scalable API using Azure Functions and
-                designed a dynamic database with Postgres SQL to accommodate complex queries.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🔩 Component Abstraction</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Implemented a base abstraction layer for UI components,
-                allowing for modular and scalable UI construction.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">👥 Collaborative Development</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Worked closely with colleagues, such as Ben Zotti, to
-                collectively push the boundaries of interactive mapping platforms.</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🚀 Performance Optimization</h3>
-              <p class="text-gray-600 dark:text-gray-400 mt-2">Balanced performance and flexibility in API design to
-                create an intuitive and powerful platform backend.</p>
-            </div>
-          </div>
+            <!-- API / Database Design -->
+            <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+              <h2 class="mb-6 mt-8">API / Database Design</h2>
+              <p class="mb-4">
+                The API was built on <strong>Azure Functions</strong> and the database was built on <strong>Postgres
+                  SQL</strong>,
+                with the schema defined by <strong>typeORM</strong>. The database design had to be built around
+                abstractions
+                due to the dynamic nature of the platform. This added complexity to the database design, but was
+                essential
+                for the flexibility of the platform.
+              </p>
+              <p class="mb-4">
+                The initial API was built for a quick to market, easy to use approach, but as the platform grew, we
+                needed
+                to refactor the API to be more <strong>modular</strong> and <strong>scalable</strong>. This allowed us
+                to
+                build a <strong>flexible</strong> and <strong>intuitive</strong> API that can be easily extended and
+                adapted
+                to meet the needs of our users.
+              </p>
+              <p class="mb-4">
+                The refactoed API, however, was designed to allow for <strong>micro requests</strong> and
+                <strong>complex
+                  select and filter
+                  queries</strong>, enabling users to interact with their data in more meaningful ways. This required a
+                careful balance between <strong>performance</strong> and <strong>flexibility</strong>, but the end
+                result
+                was a powerful and <strong>intuitive</strong> API.
+              </p>
+            </section>
 
+            <!-- Skills Used -->
+            <section itemprop="articleSection" itemscope itemtype="http://schema.org/ArticleSection">
+              <h2 class="text-2xl font-bold text-gray-300 dark:text-gray-200 mb-6 mt-8">Skills Used</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">📐 Schema Design</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Developed a dynamic JSON schema, enabling
+                    context-aware
+                    UI adaptations for diverse user interaction modes.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🎨 UI/UX Development</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Focused on the middle layer UI, refining UI
+                    components
+                    and introducing an abstraction layer to enhance flexibility and user experience.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🗄️ API & Database Design</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Architected a scalable API using Azure Functions and
+                    designed a dynamic database with Postgres SQL to accommodate complex queries.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🔩 Component Abstraction</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Implemented a base abstraction layer for UI
+                    components,
+                    allowing for modular and scalable UI construction.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">👥 Collaborative Development</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Worked closely with colleagues, such as Ben Zotti, to
+                    collectively push the boundaries of interactive mapping platforms.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow dark:shadow-md rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">🚀 Performance Optimization</h3>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Balanced performance and flexibility in API design to
+                    create an intuitive and powerful platform backend.</p>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- Footer for page crawlers -->
+          <footer>
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="name" content="Joel Gabriel">
+            </span>
+            <div itemprop="publisher" itemscope itemtype="http://schema.org/Person">
+              <meta itemprop="name" content="Joel Gabriel">
+            </div>
+            <meta itemprop="datePublished" content="2024-01-24">
+            <meta itemprop="dateModified" content="2024-02-26">
+          </footer>
         </article>
       </section>
     </main>
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
   </div>
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>

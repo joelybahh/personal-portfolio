@@ -3,6 +3,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "yarn clean && tailwindcss -i ./styles/tailwind.css -o ./dist/tailwind.css --minify && html-minifier --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-js --minify-css --remove-attribute-quotes && cp -R assets/ dist/assets && cp middleware.js dist/ && cp theme-toggle.js dist/ && cp animate-on-scroll.js dist/ && cp sitemap.xml dist/ ",
+    "bootstrap-project": "node scripts/bootstrap-project.js",
     "postbuild": "cp dist/tailwind.css tailwind.css"
   },
   "dependencies": {
