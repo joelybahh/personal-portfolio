@@ -1,20 +1,17 @@
 <!--
     {{Page Title}}
     {{Page Description}}
-    {{Social Media Title}}
-    {{Social Media Description}}
-    {{Social Media Image URL}}
+
+    {{Social Image URL}}
+
     {{Page URL}}
-    {{Twitter Title}}
-    {{Twitter Description}}
-    {{Twitter Image URL}}
+    
     {{Twitter Card Type}}
+
     {{Article Headline}}
     {{Article Image URL}}
-    {{Author Name}}
+
     {{Publication Date}}
-    {{Publisher Name}}
-    {{Publisher Logo URL}}
     {{Last Modified Date}}
 -->
 <!DOCTYPE html>
@@ -32,15 +29,15 @@
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="{{Social Media Title}}">
-    <meta property="og:description" content="{{Social Media Description}}">
-    <meta property="og:image" content="{{Social Media Image URL}}">
+    <meta property="og:title" content="{{Page Title}}">
+    <meta property="og:description" content="{{Page Description}}">
+    <meta property="og:image" content="{{Image URL}}">
     <meta property="og:url" content="{{Page URL}}">
 
     <!-- Twitter Meta Tags -->
-    <meta name="twitter:title" content="{{Twitter Title}}">
-    <meta name="twitter:description" content="{{Twitter Description}}">
-    <meta name="twitter:image" content="{{Twitter Image URL}}">
+    <meta name="twitter:title" content="{{Page Title}}">
+    <meta name="twitter:description" content="{{Page Description}}">
+    <meta name="twitter:image" content="{{Image URL}}">
     <meta name="twitter:card" content="{{Twitter Card Type}}">
 
     <!-- Schema.org JSON+LD -->
@@ -53,18 +50,18 @@
         "@id": "{{Page URL}}"
       },
       "headline": "{{Article Headline}}",
-      "image": "{{Article Image URL}}",
+      "image": "{{Image URL}}",
       "author": {
         "@type": "Person",
-        "name": "{{Author Name}}"
+        "name": "Joel Gabriel"
       },
       "datePublished": "{{Publication Date}}",
       "publisher": {
         "@type": "Person",
-        "name": "{{Publisher Name}}",
+        "name": "Joel Gabriel",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{Publisher Logo URL}}"
+          "url": "https://joelgabriel.com.au/assets/icons/favicon.svg"
         }
       }
     }
@@ -180,10 +177,10 @@
                     <!-- Footer for page crawlers -->
                     <footer>
                         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <meta itemprop="name" content="{{Author Name}}">
+                            <meta itemprop="name" content="Joel Gabriel">
                         </span>
                         <div itemprop="publisher" itemscope itemtype="http://schema.org/Person">
-                            <meta itemprop="name" content="{{Author Name}}">
+                            <meta itemprop="name" content="Joel Gabriel">
                         </div>
                         <meta itemprop="datePublished" content="{{Publication Date}}">
                         <meta itemprop="dateModified" content="{{Last Modified Date}}">

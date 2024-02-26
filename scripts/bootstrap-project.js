@@ -26,20 +26,11 @@ const templateContent = fs.readFileSync(templatePath, "utf8");
 const replaceKeys = {
   "{{Page Title}}": "Enter page title: ",
   "{{Page Description}}": "Enter page description: ",
-  "{{Social Media Title}}": "Enter social media title: ",
-  "{{Social Media Description}}": "Enter social media description: ",
-  "{{Social Media Image URL}}": "Enter social media image URL: ",
   "{{Page URL}}": "Enter page URL: ",
-  "{{Twitter Title}}": "Enter Twitter title: ",
-  "{{Twitter Description}}": "Enter Twitter description: ",
-  "{{Twitter Image URL}}": "Enter Twitter image URL: ",
   "{{Twitter Card Type}}": "Enter Twitter card type: ",
   "{{Article Headline}}": "Enter article headline: ",
   "{{Article Image URL}}": "Enter article image URL: ",
-  "{{Author Name}}": "Enter author name: ",
   "{{Publication Date}}": "Enter publication date: ",
-  "{{Publisher Name}}": "Enter publisher name: ",
-  "{{Publisher Logo URL}}": "Enter publisher logo URL: ",
   "{{Last Modified Date}}": "Enter last modified date: ",
 };
 
