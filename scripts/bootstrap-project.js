@@ -17,6 +17,8 @@ if (!fs.existsSync(outputDir)) {
   console.error(`Output directory not found: ${outputDir}`);
   process.exit(1);
 }
+// get slug, file-name minus extension and path
+const slug = path.basename(outputPath, path.extname(outputPath));
 
 // Read the template file
 const templatePath = path.join(__dirname, "..", "templates", "project.html");
@@ -26,10 +28,9 @@ const templateContent = fs.readFileSync(templatePath, "utf8");
 const replaceKeys = {
   "{{Page Title}}": "Enter page title: ",
   "{{Page Description}}": "Enter page description: ",
-  "{{Page URL}}": "Enter page URL: ",
-  "{{Twitter Card Type}}": "Enter Twitter card type: ",
+  "{{Page Slug}}": "Enter page slug: ",
   "{{Article Headline}}": "Enter article headline: ",
-  "{{Article Image URL}}": "Enter article image URL: ",
+  "{{Image Name}}": "Enter image name: ",
   "{{Publication Date}}": "Enter publication date: ",
   "{{Last Modified Date}}": "Enter last modified date: ",
 };
@@ -53,12 +54,17 @@ function promptUser(prompt) {
 async function performReplacements() {
   let replacedContent = templateContent;
 
-  // Prompt for each replacement key
+  // Prompt for each replacement key except {{Page Slug}}
   for (const [key, prompt] of Object.entries(replaceKeys)) {
-    const value = await promptUser(prompt);
-    const regex = new RegExp(key, "g");
-    replacedContent = replacedContent.replace(regex, value);
+    if (key !== "{{Page Slug}}") {
+      const value = await promptUser(prompt);
+      const regex = new RegExp(key, "g");
+      replacedContent = replacedContent.replace(regex, value);
+    }
   }
+
+  // Replace {{Page Slug}} with the extracted slug
+  replacedContent = replacedContent.replace("{{Page Slug}}", slug);
 
   // Write the replaced content to the output file
   fs.writeFileSync(outputPath, replacedContent);
