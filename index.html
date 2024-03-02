@@ -2,722 +2,782 @@
 <html lang="en" style='scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw;'>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="tailwind.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="tailwind.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 
-  <!-- HTML Meta Tags -->
-  <title>Joel Gabriel - Lead Full Stack Developer & Tech Educator</title>
-  <meta name="description"
-    content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
+    <!-- HTML Meta Tags -->
+    <title>Joel Gabriel - Lead Full Stack Developer & Tech Educator</title>
+    <meta name="description"
+        content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://joelgabriel.com.au/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Joel Gabriel - Lead Full Stack Developer & Tech Educator">
-  <meta property="og:description"
-    content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
-  <meta property="og:image" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://joelgabriel.com.au/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Joel Gabriel - Lead Full Stack Developer & Tech Educator">
+    <meta property="og:description"
+        content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
+    <meta property="og:image" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
-  <meta property="twitter:domain" content="personal-portfolio-xi-rose.vercel.app">
-  <meta property="twitter:url" content="https://joelgabriel.com.au/">
-  <meta name="twitter:title" content="Joel Gabriel - Lead Full Stack Developer & Tech Educator">
-  <meta name="twitter:description"
-    content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
-  <meta name="twitter:image" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
+    <meta property="twitter:domain" content="personal-portfolio-xi-rose.vercel.app">
+    <meta property="twitter:url" content="https://joelgabriel.com.au/">
+    <meta name="twitter:title" content="Joel Gabriel - Lead Full Stack Developer & Tech Educator">
+    <meta name="twitter:description"
+        content="Showcasing Joel Gabriel's leadership in full-stack development and his contributions to learning and technology advancement.">
+    <meta name="twitter:image" content="https://joelgabriel.com.au/assets/images/og-image.jpg">
 
-  <link rel="canonical" href="https://joelgabriel.com.au" />
+    <link rel="canonical" href="https://joelgabriel.com.au" />
 
-  <script src="animate-on-scroll.js"></script>
-  <script src="theme-toggle.js" defer></script>
-  <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
+    <script src="animate-on-scroll.js"></script>
+    <script src="theme-toggle.js" defer></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
 
 <body class="bg-white dark:bg-gray-900">
-  <div class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-20">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex gap-4 items-center">
-            <!-- Small Circle profile.webp -->
-            <a href="#" rel="ugc">
-              <img class="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-gray-100"
-                src="assets/images/profile.webp"
-                alt="Black and white profile photo of Joel Gabriel, a man smiling and wearing a formal shirt and tie, suggesting a professional or celebratory occasion." />
+    <div class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+        <!-- Header -->
+        <header class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-20">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex gap-4 items-center">
+                        <!-- Small Circle profile.webp -->
+                        <a href="#" rel="ugc">
+                            <img class="w-10 h-10 rounded-full border-2 border-gray-900 dark:border-gray-100"
+                                src="assets/images/profile.webp"
+                                alt="Black and white profile photo of Joel Gabriel, a man smiling and wearing a formal shirt and tie, suggesting a professional or celebratory occasion." />
+                        </a>
+                        <a class="flex flex-col gap-0.25" href="#" rel="ugc">
+                            <span class="text-lg font-semibold dark:text-gray-300">Joel Gabriel</span>
+                            <span class="text-sm dark:text-gray-300">Software Engineer Portfolio</span>
+                        </a>
+                    </div>
+                    <nav class="hidden md:flex gap-4"><a
+                            class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
+                            href="#about" rel="ugc">
+                            About
+                        </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
+                            href="#projects" rel="ugc">
+                            Projects
+                        </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
+                            href="#certifications" rel="ugc">
+                            Certifications
+                        </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
+                            href="#contact" rel="ugc">
+                            Contact
+                        </a></nav>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <section class="w-full py-24 md:py-24 lg:py-32">
+                <div class="w-full m-auto  container px-4 md:px-6">
+                    <div class="flex flex-col items-center space-y-4 text-center">
+                        <div class="space-y-2">
+                            <!-- A large circle proflie picture avatar-->
+                            <div
+                                class="w-64 h-64 m-auto rounded-full overflow-hidden border-4 border-gray-900 dark:border-gray-100">
+                                <img class="w-full h-full object-cover" src="assets/images/profile.webp"
+                                    alt="Black and white profile photo of Joel Gabriel, a man smiling and wearing a formal shirt and tie, suggesting a professional or celebratory occasion." />
+                            </div>
+                            <h1 class="text-3xl dark:text-gray-50 font-bold sm:text-4xl md:text-5xl lg:text-6xl/none">
+                                Joel Gabriel
+                            </h1>
+                            <p class="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                Full-stack developer, nearing a decade of combined game, software and web development
+                                experience.
+                            </p>
+                        </div>
+
+                        <!-- Social Media List -->
+                        <div class="flex items-center space-x-4">
+                            <!-- GitHub -->
+                            <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                                href="https://github.com/joelybahh" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <path
+                                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                    </path>
+                                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                </svg>
+                                <span class="sr-only">GitHub</span>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                                href="https://www.linkedin.com/in/joelgabriel/" target="_blank"
+                                rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                                <span class="sr-only">LinkedIn</span>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                                href="https://twitter.com/joelybahh" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 1200 1227"
+                                    fill="none" class="h-5 w-5" aria-hidden="true">
+                                    <path
+                                        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                            <!-- Instagram -->
+                            <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                                href="https://www.instagram.com/joelybahh/" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                </svg>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                        </div>
+
+                        <!-- Mode Toggle + Contact CTAs -->
+                        <div class="flex items-center space-x-4">
+                            <button id="theme-toggle" type="button"
+                                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 bg-gray-900 hover:bg-gray-900/90">
+
+                                <!-- Sun Icon for Light Mode -->
+                                <svg id="theme-toggle-light-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
+                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="black"></path>
+                                    <path
+                                        d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                        stroke="black"></path>
+                                </svg>
+                                <p id="theme-toggle-light-text" class="hidden dark:text-gray-800">Swap to Light Mode</p>
+                                <!-- Moon Icon for Dark Mode -->
+                                <svg id="theme-toggle-dark-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
+                                    <path
+                                        d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 01-2.72.718v2a7.47 7.47 0 003.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 019 9.5H7a7.5 7.5 0 007.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 007 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                        fill="white"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
+                                        fill="white"></path>
+                                </svg>
+                                <p id="theme-toggle-dark-text" class="hidden">Swap to Dark Mode</p>
+                            </button>
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-800 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-800/90 dark:focus-visible:ring-gray-300 bg-gray-100 hover:bg-gray-200/90">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
+                                    style="enable-background:new 0 0 24 24" xml:space="preserve"
+                                    class="mr-2 text-gray-1000">
+                                    <path
+                                        d="M15.2 22.001c-.249 0-.501-.016-.753-.048-2.697-.341-5.284-1.733-7.69-4.14-2.406-2.405-3.798-4.992-4.14-7.69-.284-2.247.724-4.434 2.633-5.706l3.049-2.032 4.822 4.822-3.154 3.154c.134.411.55 1.312 1.74 2.503 1.19 1.19 2.091 1.605 2.522 1.747l3.135-3.161 4.822 4.822-2.033 3.049c-1.129 1.695-2.979 2.68-4.953 2.68zM8.044 4.959 6.359 6.081c-1.253.836-1.943 2.324-1.757 3.791.284 2.247 1.485 4.443 3.569 6.527 2.085 2.085 4.281 3.286 6.527 3.569 1.473.188 2.956-.503 3.791-1.757l1.123-1.686-2.248-2.248-1.74 1.739a1.979 1.979 0 0 1-2.02.494c-.732-.241-1.902-.824-3.312-2.233-1.408-1.407-1.991-2.577-2.232-3.31a1.977 1.977 0 0 1 .494-2.02l1.74-1.74-2.25-2.248z"
+                                        fill="currentColor"></path>
+                                </svg>
+                                Contact me
+                            </a>
+                        </div>
+
+                    </div>
+            </section>
+            <!-- About Section -->
+            <section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+                <div class="mx-auto px-4 md:px-6">
+                    <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-1 lg:grid-cols-2">
+                        <div class="align-center text-center md:text-left">
+                            <div class="space-y-4 text-center md:text-left">
+                                <div
+                                    class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                    About
+                                </div>
+                                <h2
+                                    class="lg:leading-tighter dark:text-gray-300 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                                    Experienced Full-stack Developer
+                                </h2>
+                                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                    As a seasoned full-stack developer, I bring over six years of comprehensive
+                                    experience in web
+                                    technologies, with a focus on NextJS, React, and TypeScript. My passion lies in
+                                    crafting high-quality,
+                                    intuitive web applications.
+                                </p>
+                                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                                    Beginning my journey in game programming with C# and Unity, I transitioned through
+                                    software
+                                    development using C# and C++, culminating in a unique expertise in 3D rendering on
+                                    the web. This
+                                    evolution has equipped me with a niche, yet in-demand skill set that bridges
+                                    traditional web
+                                    development with the interactive capabilities of modern web applications, proving
+                                    invaluable in
+                                    today&apos;s web technology landscape.
+                                </p>
+                                <a class="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                                    href="#" rel="ugc">
+                                    Contact Me
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center space-y-4 md:items-start lg:m-auto">
+                            <!-- Specialized Skills Section -->
+                            <div
+                                class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                Specialized Skills
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <!-- Insert Specialized Skills here -->
+                                <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
+                                <span class="purple-chip">
+                                    3D Web Rendering
+                                </span>
+                                <span class="purple-chip">
+                                    BabylonJS
+                                </span>
+                                <span class="purple-chip">
+                                    Mapbox
+                                </span>
+                            </div>
+
+                            <!-- Languages & Frameworks Section -->
+                            <div
+                                class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                Languages & Frameworks
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <!-- Insert Language & Frameworks skills here -->
+                                <!-- Example: JavaScript, TypeScript, React, Node.js, Next.js -->
+                                <span class="blue-chip">
+                                    JavaScript
+                                </span>
+                                <span class="blue-chip">
+                                    TypeScript
+                                </span>
+                                <span class="blue-chip">
+                                    React
+                                </span>
+                                <span class="blue-chip">
+                                    Node.js
+                                </span>
+                                <span class="blue-chip">
+                                    Next.js
+                                </span>
+                            </div>
+
+                            <!-- Backend Technologies Section -->
+                            <div
+                                class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                Backend Technologies
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <!-- Insert Backend Technologies skills here -->
+                                <!-- Example: Azure Functions, Amazon SES, Amazon S3 -->
+                                <span class="orange-chip">
+                                    Azure Functions
+                                </span>
+                                <span class="orange-chip">
+                                    Azure Blob/CDN
+                                </span>
+                                <span class="orange-chip">
+                                    Amazon SES
+                                </span>
+                                <span class="orange-chip">
+                                    Amazon S3
+                                </span>
+                            </div>
+
+                            <!-- Development Concepts Section -->
+                            <div
+                                class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                Development Concepts
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+
+                                <!-- Insert Development Concepts skills here -->
+                                <!-- Example: Monorepos, Microfrontends, DevOps, CMS Systems, Azure Blob -->
+                                <span class="green-chip">
+                                    Monorepos
+                                </span>
+                                <span class="green-chip">
+                                    Microfrontends
+                                </span>
+                                <span class="green-chip">
+                                    CMS
+                                </span>
+                                <span class="green-chip">
+                                    DB Multi-tenancy
+                                </span>
+                                <span class="green-chip">
+                                    Serverless
+                                </span>
+                            </div>
+
+                            <!-- Soft Skills Section -->
+                            <div
+                                class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                Soft Skills
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <!-- Insert Specialized Skills here -->
+                                <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
+                                <span class="yellow-chip">
+                                    Leadership
+                                </span>
+                                <span class="yellow-chip">
+                                    Outgoing
+                                </span>
+                                <span class="yellow-chip">
+                                    Mentorship
+                                </span>
+                                <span class="yellow-chip">
+                                    Problem Solving
+                                </span>
+                                <span class="yellow-chip">
+                                    Communication
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section id="projects" class="w-full py-12 md:py-24 lg:py-32">
+                <div class="px-12 md:px-16 w-100">
+                    <div class="space-y-4">
+                        <h2
+                            class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                            Projects
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Mapping Platform Project Card -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/mapping-platform.webp"
+                                    alt="Screenshot showing a map view of a property portfolio with location pins marking various properties across a geographical region."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Mapping</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Tell a more persuasive and
+                                        engaging story of your
+                                        assets and the market. Secure better leases and deals, by informing and
+                                        inspiring every prospect.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            NextJS
+                                        </span>
+                                        <span class="green-chip">
+                                            Typescript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            Mapbox
+                                        </span>
+                                        <span class="purple-chip">
+                                            BabylonJS
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="/projects/mapping">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                            <!-- Report Platform Project Card -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/report-platform.webp"
+                                    alt="Cover slide for a monthly office report dated March 2023 featuring an interior view of a modern office space with circular overhead lighting."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Reporting
+                                    </h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">View & Share your online
+                                        interactive Reports to
+                                        prospective tenants,
+                                        for your Industrial & Office listings. Or present a monthly listing report. </p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            NextJS
+                                        </span>
+                                        <span class="green-chip">
+                                            Typescript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            React PDF
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="/projects/reports">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                            <!-- Inventory Platform Project Card -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/inventory-platform.webp"
+                                    alt="Web interface of an asset inventory management system displaying a list of properties with thumbnail images, addresses, and details for each."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Inventory -
+                                        CRE Data CMS</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Inventory is a centralized
+                                        platform for managing
+                                        commercial real-estate data, allowing users to store, sync, and manage property
+                                        & leasing
+                                        information and media in real-time</p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            NextJS
+                                        </span>
+                                        <span class="green-chip">
+                                            Typescript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            PgSQL
+                                        </span>
+                                        <span class="purple-chip">
+                                            Azure Func/Blob
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="#">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                            <!-- DXP Platform Project Card -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/dxp-platform.webp"
+                                    alt="Screenshot of a web-based digital experience platform's interface, listing various projects with options to edit, view, and manage them."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace DXP -
+                                        Experience Builder</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">The Digital Experiences Platform
+                                        (DXP) is a
+                                        centralized platform for creating beautiful online and offline presentations and
+                                        experiences from
+                                        your data.</p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            NextJS
+                                        </span>
+                                        <span class="green-chip">
+                                            Typescript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            PgSQL
+                                        </span>
+                                        <span class="purple-chip">
+                                            Azure Func/Blob
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="#">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                            <!-- Code Buddy -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/code-buddy.webp"
+                                    alt="Command line interface showing a log of git commands and responses, including commit messages related to updates and new project cards."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Code Buddy</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">CodeBuddy is an AI-powered
+                                        developer assistant for
+                                        automating commits, and more. Designed to streamline your development
+                                        process and make your life easier.</p>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            CLI
+                                        </span>
+                                        <span class="green-chip">
+                                            Typescript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            OpenAI
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="#">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                            <!-- Inspace Stack CMS - v1 -->
+                            <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
+                                <img src="assets/images/cms-v1-platform.webp"
+                                    alt="User interface of a content management system displaying a dashboard view with a list of properties and options to edit, view, and manage content."
+                                    width="200" height="200" loading="lazy" class="object-cover w-full h-60"
+                                    style="aspect-ratio: 200 / 200; object-fit: cover;" />
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Stack CMS
+                                    </h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">A CMS platform for editing and
+                                        personalising your
+                                        3D stacks. Features the ability to spin up personalised links to track detailed
+                                        analytics for the
+                                        use in embeds, proposals and more.
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="blue-chip">
+                                            React
+                                        </span>
+                                        <span class="green-chip">
+                                            JavaScript
+                                        </span>
+                                        <span class="yellow-chip">
+                                            Azure Cosmos DB (NoSQL)
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="absolute inset-0 z-10" href="#">
+                                    <span class="sr-only">See More</span>
+                                </a>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>See More</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Certifications Section -->
+            <section id="certifications" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+                <div class="px-4 md:px-6 lg:flex items-start">
+                    <div
+                        class="space-y-4 py-4 gap-10 sm:px-10 md:gap-16 mb-24 lg:sticky md:top-16 lg:w-1/2 w-100 z-10 bg-gray-100 dark:bg-gray-800">
+                        <div
+                            class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900 dark:text-gray-300">
+                            Courses
+                        </div>
+                        <h2
+                            class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                            Certifications, Honors & Awards
+                        </h2>
+                    </div>
+                    <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-1 lg:w-1/2">
+                        <div class="space-y-4">
+                            <div class="grid gap-4 w-100">
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">📚 Microfrontends with React: A
+                                        Complete Developer's
+                                        Guide (Udemy)</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        I mastered microfrontend architecture, enabling scalable app development and
+                                        teamwork. I learned to
+                                        split apps, manage data, implement CI/CD, deploy on AWS with CloudFront, and
+                                        apply CSS-scoping,
+                                        assessing microfrontends' project suitability.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">📚 Mastering React 16 - Coding With
+                                        Mosh</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        I gained proficiency in building fast, interactive React apps, mastering
+                                        reusable components,
+                                        advanced data handling with pagination, sorting, and searching, and form
+                                        validation. I learned
+                                        routing with React Router, making HTTP calls with Axios, and implementing robust
+                                        authentication.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🎓 Advanced Diploma of Professional
+                                        Games Development
+                                        -
+                                        Programming</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        Graduated with the top award out of all students in the course (Outstanding
+                                        Programmer Award)
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate III in Information,
+                                        Digital Media and
+                                        Technology</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        Completed a holiday course building a 3D game with C# and Unity.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate II in Information,
+                                        Digital Media and
+                                        Technology</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        Completed a holiday course learning the basics of digital media and technology,
+                                        by building a 2D
+                                        game with C# and MonoGame.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🏆 Outstanding Programmer Award
+                                    </h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        I was awarded the Outstanding Programmer Award for my work in the Advanced
+                                        Diploma of Professional
+                                        Games Development - Programming. This is the highest award given to a student in
+                                        the course.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🏅 Finalist - 2015 NSW Year 12
+                                        Industrial Technology
+                                        Competition</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        As a part of my year 12 major multi media project, I was a finalist in the 2015
+                                        NSW Year 12
+                                        Industrial Technology Competition. I built an Ice-Cream Tycoon in C# and
+                                        MonoGame that I deployed to
+                                        GameJolt and CD.
+                                    </p>
+                                </div>
+                                <div class="course-card course-list-item-not-visible course-list-item">
+                                    <h3 class="text-xl font-bold dark:text-gray-300">🧾 High School Certificate</h3>
+                                    <p class="text-gray-500 dark:text-gray-400">
+                                        Graduated Year-12 with an average ATAR, notably high in Computer Science, and
+                                        Digital Media.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Section -->
+            <section id="contact" class="w-full py-12 md:py-24 lg:py-32">
+                <div class="w-100 px-4 md:px-6">
+                    <div class="flex flex-col items-center space-y-4 text-center">
+                        <div class="space-y-2">
+                            <h2
+                                class="text-3xl dark:text-gray-300  font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                                Contact Me
+                            </h2>
+                            <p class="max-w-[700px] dark:text-gray-300  text-gray-500 md:text-xl dark:text-gray-400">
+                                Ready to start a project? Get in touch with me.
+                            </p>
+                        </div>
+                        <div class="space-x-4"><a
+                                class="inline-flex h-9 dark:text-gray-300   items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                                href="#" rel="ugc">
+                                Contact
+                            </a></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer
+            class="flex flex-col justify-between gap-2 sm:flex-row pt-6 w-full shrink-0 items-center px-4 md:px-6 bg-white dark:bg-gray-900">
+            <a class="mr-6 hidden lg:flex gap-6" href="#" rel="ugc">
+                <!-- Copyright Joel Gabriel, also mention partly generated via v0.dev -->
+                <span class="text-xs dark:text-gray-200">© 2024 Joel Gabriel. All rights reserved</span>
             </a>
-            <a class="flex flex-col gap-0.25" href="#" rel="ugc">
-              <span class="text-lg font-semibold dark:text-gray-300">Joel Gabriel</span>
-              <span class="text-sm dark:text-gray-300">Software Engineer Portfolio</span>
-            </a>
-          </div>
-          <nav class="hidden md:flex gap-4"><a
-              class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300" href="#about"
-              rel="ugc">
-              About
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
-              href="#projects" rel="ugc">
-              Projects
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300"
-              href="#certifications" rel="ugc">
-              Certifications
-            </a><a class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-300" href="#contact"
-              rel="ugc">
-              Contact
-            </a></nav>
-        </div>
-      </div>
-    </header>
-    <!-- Main Content -->
-    <main class="flex-1">
-      <!-- Hero Section -->
-      <section class="w-full py-24 md:py-24 lg:py-32">
-        <div class="w-full m-auto  container px-4 md:px-6">
-          <div class="flex flex-col items-center space-y-4 text-center">
-            <div class="space-y-2">
-              <!-- A large circle proflie picture avatar-->
-              <div class="w-64 h-64 m-auto rounded-full overflow-hidden border-4 border-gray-900 dark:border-gray-100">
-                <img class="w-full h-full object-cover" src="assets/images/profile.webp"
-                  alt="Black and white profile photo of Joel Gabriel, a man smiling and wearing a formal shirt and tie, suggesting a professional or celebratory occasion." />
-              </div>
-              <h1 class="text-3xl dark:text-gray-50 font-bold sm:text-4xl md:text-5xl lg:text-6xl/none">
-                Joel Gabriel
-              </h1>
-              <p class="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                Full-stack developer, nearing a decade of combined game, software and web development experience.
-              </p>
-            </div>
-
-            <!-- Social Media List -->
+            <nav class="flex gap-4 sm:gap-6"><a class="text-xs hover:underline underline-offset-4  dark:text-gray-200"
+                    href="#about" rel="ugc">
+                    About
+                </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #projects"
+                    rel="ugc">
+                    Projects
+                </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #certifications"
+                    rel="ugc">
+                    Certifications
+                </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #contact" rel="ugc">
+                    Contact
+                </a></nav>
             <div class="flex items-center space-x-4">
-              <!-- GitHub -->
-              <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-                href="https://github.com/joelybahh" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                  <path
-                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
-                  </path>
-                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                </svg>
-                <span class="sr-only">GitHub</span>
-              </a>
-              <!-- LinkedIn -->
-              <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-                href="https://www.linkedin.com/in/joelgabriel/" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect width="4" height="12" x="2" y="9"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <span class="sr-only">LinkedIn</span>
-              </a>
-              <!-- Twitter -->
-              <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-                href="https://twitter.com/joelybahh" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 1200 1227" fill="none"
-                  class="h-5 w-5" aria-hidden="true">
-                  <path
-                    d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
-                    fill="currentColor"></path>
-                </svg>
-                <span class="sr-only">Twitter</span>
-              </a>
-              <!-- Instagram -->
-              <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-                href="https://www.instagram.com/joelybahh/" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                </svg>
-                <span class="sr-only">Instagram</span>
-              </a>
-            </div>
-
-            <!-- Mode Toggle + Contact CTAs -->
-            <div class="flex items-center space-x-4">
-              <button id="theme-toggle" type="button"
-                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 bg-gray-900 hover:bg-gray-900/90">
-
-                <!-- Sun Icon for Light Mode -->
-                <svg id="theme-toggle-light-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
-                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="black"></path>
-                  <path
-                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-                    stroke="black"></path>
-                </svg>
-                <p id="theme-toggle-light-text" class="hidden dark:text-gray-800">Swap to Light Mode</p>
-                <!-- Moon Icon for Dark Mode -->
-                <svg id="theme-toggle-dark-icon" viewBox="0 0 24 24" width="24" height="24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2">
-                  <path
-                    d="m17.715 15.15.95.316a1 1 0 00-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 00-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 01-2.72.718v2a7.47 7.47 0 003.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 019 9.5H7a7.5 7.5 0 007.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 007 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
-                    fill="white"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M17 3a1 1 0 011 1 2 2 0 002 2 1 1 0 110 2 2 2 0 00-2 2 1 1 0 11-2 0 2 2 0 00-2-2 1 1 0 110-2 2 2 0 002-2 1 1 0 011-1z"
-                    fill="white"></path>
-                </svg>
-                <p id="theme-toggle-dark-text" class="hidden">Swap to Dark Mode</p>
-              </button>
-              <a href="#contact"
-                class="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-gray-800 shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-800/90 dark:focus-visible:ring-gray-300 bg-gray-100 hover:bg-gray-200/90">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
-                  style="enable-background:new 0 0 24 24" xml:space="preserve" class="mr-2 text-gray-1000">
-                  <path
-                    d="M15.2 22.001c-.249 0-.501-.016-.753-.048-2.697-.341-5.284-1.733-7.69-4.14-2.406-2.405-3.798-4.992-4.14-7.69-.284-2.247.724-4.434 2.633-5.706l3.049-2.032 4.822 4.822-3.154 3.154c.134.411.55 1.312 1.74 2.503 1.19 1.19 2.091 1.605 2.522 1.747l3.135-3.161 4.822 4.822-2.033 3.049c-1.129 1.695-2.979 2.68-4.953 2.68zM8.044 4.959 6.359 6.081c-1.253.836-1.943 2.324-1.757 3.791.284 2.247 1.485 4.443 3.569 6.527 2.085 2.085 4.281 3.286 6.527 3.569 1.473.188 2.956-.503 3.791-1.757l1.123-1.686-2.248-2.248-1.74 1.739a1.979 1.979 0 0 1-2.02.494c-.732-.241-1.902-.824-3.312-2.233-1.408-1.407-1.991-2.577-2.232-3.31a1.977 1.977 0 0 1 .494-2.02l1.74-1.74-2.25-2.248z"
-                    fill="currentColor"></path>
-                </svg>
-                Contact me
-              </a>
-            </div>
-
-          </div>
-      </section>
-      <!-- About Section -->
-      <section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div class="mx-auto px-4 md:px-6">
-          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-1 lg:grid-cols-2">
-            <div class="align-center text-center md:text-left">
-              <div class="space-y-4 text-center md:text-left">
-                <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  About
-                </div>
-                <h2
-                  class="lg:leading-tighter dark:text-gray-300 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-                  Experienced Full-stack Developer
-                </h2>
-                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  As a seasoned full-stack developer, I bring over six years of comprehensive experience in web
-                  technologies, with a focus on NextJS, React, and TypeScript. My passion lies in crafting high-quality,
-                  intuitive web applications.
-                </p>
-                <p class="lg:mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Beginning my journey in game programming with C# and Unity, I transitioned through software
-                  development using C# and C++, culminating in a unique expertise in 3D rendering on the web. This
-                  evolution has equipped me with a niche, yet in-demand skill set that bridges traditional web
-                  development with the interactive capabilities of modern web applications, proving invaluable in
-                  today&apos;s web technology landscape.
-                </p>
-                <a class="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                  href="#" rel="ugc">
-                  Contact Me
+                <!-- GitHub -->
+                <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                    href="https://github.com/joelybahh" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="h-6 w-6">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                        </path>
+                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg>
+                    <span class="sr-only">GitHub</span>
                 </a>
-              </div>
-            </div>
-            <div class="flex flex-col items-center space-y-4 md:items-start lg:m-auto">
-              <!-- Specialized Skills Section -->
-              <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Specialized Skills
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <!-- Insert Specialized Skills here -->
-                <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
-                <span class="purple-chip">
-                  3D Web Rendering
-                </span>
-                <span class="purple-chip">
-                  BabylonJS
-                </span>
-                <span class="purple-chip">
-                  Mapbox
-                </span>
-              </div>
-
-              <!-- Languages & Frameworks Section -->
-              <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Languages & Frameworks
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <!-- Insert Language & Frameworks skills here -->
-                <!-- Example: JavaScript, TypeScript, React, Node.js, Next.js -->
-                <span class="blue-chip">
-                  JavaScript
-                </span>
-                <span class="blue-chip">
-                  TypeScript
-                </span>
-                <span class="blue-chip">
-                  React
-                </span>
-                <span class="blue-chip">
-                  Node.js
-                </span>
-                <span class="blue-chip">
-                  Next.js
-                </span>
-              </div>
-
-              <!-- Backend Technologies Section -->
-              <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Backend Technologies
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <!-- Insert Backend Technologies skills here -->
-                <!-- Example: Azure Functions, Amazon SES, Amazon S3 -->
-                <span class="orange-chip">
-                  Azure Functions
-                </span>
-                <span class="orange-chip">
-                  Azure Blob/CDN
-                </span>
-                <span class="orange-chip">
-                  Amazon SES
-                </span>
-                <span class="orange-chip">
-                  Amazon S3
-                </span>
-              </div>
-
-              <!-- Development Concepts Section -->
-              <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Development Concepts
-              </div>
-              <div class="flex flex-wrap gap-2">
-
-                <!-- Insert Development Concepts skills here -->
-                <!-- Example: Monorepos, Microfrontends, DevOps, CMS Systems, Azure Blob -->
-                <span class="green-chip">
-                  Monorepos
-                </span>
-                <span class="green-chip">
-                  Microfrontends
-                </span>
-                <span class="green-chip">
-                  CMS
-                </span>
-                <span class="green-chip">
-                  DB Multi-tenancy
-                </span>
-                <span class="green-chip">
-                  Serverless
-                </span>
-              </div>
-
-              <!-- Soft Skills Section -->
-              <div class="inline-block dark:text-gray-300 rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Soft Skills
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <!-- Insert Specialized Skills here -->
-                <!-- Example: 3D Web Rendering, BabylonJS, Mapbox -->
-                <span class="yellow-chip">
-                  Leadership
-                </span>
-                <span class="yellow-chip">
-                  Outgoing
-                </span>
-                <span class="yellow-chip">
-                  Mentorship
-                </span>
-                <span class="yellow-chip">
-                  Problem Solving
-                </span>
-                <span class="yellow-chip">
-                  Communication
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Projects Section -->
-      <section id="projects" class="w-full py-12 md:py-24 lg:py-32">
-        <div class="px-12 md:px-16 w-100">
-          <div class="space-y-4">
-            <h2
-              class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-              Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Mapping Platform Project Card -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/mapping-platform.webp"
-                  alt="Screenshot showing a map view of a property portfolio with location pins marking various properties across a geographical region."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Mapping</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">Tell a more persuasive and engaging story of your
-                    assets and the market. Secure better leases and deals, by informing and inspiring every prospect.
-                  </p>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      NextJS
-                    </span>
-                    <span class="green-chip">
-                      Typescript
-                    </span>
-                    <span class="yellow-chip">
-                      Mapbox
-                    </span>
-                    <span class="purple-chip">
-                      BabylonJS
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="/projects/mapping">
-                  <span class="sr-only">See More</span>
+                <!-- LinkedIn -->
+                <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                    href="https://www.linkedin.com/in/joelgabriel/" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="h-6 w-6">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <span class="sr-only">LinkedIn</span>
                 </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
-              <!-- Report Platform Project Card -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/report-platform.webp"
-                  alt="Cover slide for a monthly office report dated March 2023 featuring an interior view of a modern office space with circular overhead lighting."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Reporting</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">View & Share your online interactive Reports to
-                    prospective tenants,
-                    for your Industrial & Office listings. Or present a monthly listing report. </p>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      NextJS
-                    </span>
-                    <span class="green-chip">
-                      Typescript
-                    </span>
-                    <span class="yellow-chip">
-                      React PDF
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="#">
-                  <span class="sr-only">See More</span>
+                <!-- Twitter -->
+                <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                    href="https://twitter.com/joelybahh" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 1200 1227" fill="none"
+                        class="h-5 w-5" aria-hidden="true">
+                        <path
+                            d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                            fill="currentColor"></path>
+                    </svg>
+                    <span class="sr-only">Twitter</span>
                 </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
-              <!-- Inventory Platform Project Card -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/inventory-platform.webp"
-                  alt="Web interface of an asset inventory management system displaying a list of properties with thumbnail images, addresses, and details for each."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Inventory - CRE Data CMS</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">Inventory is a centralized platform for managing
-                    commercial real-estate data, allowing users to store, sync, and manage property & leasing
-                    information and media in real-time</p>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      NextJS
-                    </span>
-                    <span class="green-chip">
-                      Typescript
-                    </span>
-                    <span class="yellow-chip">
-                      PgSQL
-                    </span>
-                    <span class="purple-chip">
-                      Azure Func/Blob
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="#">
-                  <span class="sr-only">See More</span>
+                <!-- Instagram -->
+                <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
+                    href="https://www.instagram.com/joelybahh/" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="h-6 w-6">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
                 </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
-              <!-- DXP Platform Project Card -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/dxp-platform.webp"
-                  alt="Screenshot of a web-based digital experience platform's interface, listing various projects with options to edit, view, and manage them."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace DXP - Experience Builder</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">The Digital Experiences Platform (DXP) is a
-                    centralized platform for creating beautiful online and offline presentations and experiences from
-                    your data.</p>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      NextJS
-                    </span>
-                    <span class="green-chip">
-                      Typescript
-                    </span>
-                    <span class="yellow-chip">
-                      PgSQL
-                    </span>
-                    <span class="purple-chip">
-                      Azure Func/Blob
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="#">
-                  <span class="sr-only">See More</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
-              <!-- Code Buddy -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/code-buddy.webp"
-                  alt="Command line interface showing a log of git commands and responses, including commit messages related to updates and new project cards."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Code Buddy</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">CodeBuddy is an AI-powered developer assistant for
-                    automating commits, and more. Designed to streamline your development
-                    process and make your life easier.</p>
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      CLI
-                    </span>
-                    <span class="green-chip">
-                      Typescript
-                    </span>
-                    <span class="yellow-chip">
-                      OpenAI
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="#">
-                  <span class="sr-only">See More</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
-              <!-- Inspace Stack CMS - v1 -->
-              <div class="group relative rounded-lg overflow-hidden shadow-lg dark:bg-gray-800">
-                <img src="assets/images/cms-v1-platform.webp"
-                  alt="User interface of a content management system displaying a dashboard view with a list of properties and options to edit, view, and manage content."
-                  width="200" height="200" loading="lazy" class="object-cover w-full h-60"
-                  style="aspect-ratio: 200 / 200; object-fit: cover;" />
-                <div class="p-4">
-                  <h3 class="font-semibold text-lg md:text-xl dark:text-gray-200">Inspace Stack CMS</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">A CMS platform for editing and personalising your
-                    3D stacks. Features the ability to spin up personalised links to track detailed analytics for the
-                    use in embeds, proposals and more.
-                  <div class="flex flex-wrap gap-2 mt-2">
-                    <span class="blue-chip">
-                      React
-                    </span>
-                    <span class="green-chip">
-                      JavaScript
-                    </span>
-                    <span class="yellow-chip">
-                      Azure Cosmos DB (NoSQL)
-                    </span>
-                  </div>
-                </div>
-                <a class="absolute inset-0 z-10" href="#">
-                  <span class="sr-only">See More</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-90 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span>See More</span>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Certifications Section -->
-      <section id="certifications" class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div class="px-4 md:px-6 lg:flex items-start">
-          <div
-            class="space-y-4 py-4 gap-10 sm:px-10 md:gap-16 mb-24 lg:sticky md:top-16 lg:w-1/2 w-100 z-10 bg-gray-100 dark:bg-gray-800">
-            <div class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-900 dark:text-gray-300">
-              Courses
-            </div>
-            <h2
-              class="lg:leading-tighter text-3xl dark:text-gray-300 font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-              Certifications, Honors & Awards
-            </h2>
-          </div>
-          <div class="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-1 lg:w-1/2">
-            <div class="space-y-4">
-              <div class="grid gap-4 w-100">
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">📚 Microfrontends with React: A Complete Developer's
-                    Guide (Udemy)</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    I mastered microfrontend architecture, enabling scalable app development and teamwork. I learned to
-                    split apps, manage data, implement CI/CD, deploy on AWS with CloudFront, and apply CSS-scoping,
-                    assessing microfrontends' project suitability.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">📚 Mastering React 16 - Coding With Mosh</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    I gained proficiency in building fast, interactive React apps, mastering reusable components,
-                    advanced data handling with pagination, sorting, and searching, and form validation. I learned
-                    routing with React Router, making HTTP calls with Axios, and implementing robust authentication.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🎓 Advanced Diploma of Professional Games Development
-                    -
-                    Programming</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Graduated with the top award out of all students in the course (Outstanding Programmer Award)
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate III in Information, Digital Media and
-                    Technology</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Completed a holiday course building a 3D game with C# and Unity.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 Certificate II in Information, Digital Media and
-                    Technology</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Completed a holiday course learning the basics of digital media and technology, by building a 2D
-                    game with C# and MonoGame.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🏆 Outstanding Programmer Award</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    I was awarded the Outstanding Programmer Award for my work in the Advanced Diploma of Professional
-                    Games Development - Programming. This is the highest award given to a student in the course.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🏅 Finalist - 2015 NSW Year 12 Industrial Technology
-                    Competition</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    As a part of my year 12 major multi media project, I was a finalist in the 2015 NSW Year 12
-                    Industrial Technology Competition. I built an Ice-Cream Tycoon in C# and MonoGame that I deployed to
-                    GameJolt and CD.
-                  </p>
-                </div>
-                <div class="course-card course-list-item-not-visible course-list-item">
-                  <h3 class="text-xl font-bold dark:text-gray-300">🧾 High School Certificate</h3>
-                  <p class="text-gray-500 dark:text-gray-400">
-                    Graduated Year-12 with an average ATAR, notably high in Computer Science, and Digital Media.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contact Section -->
-      <section id="contact" class="w-full py-12 md:py-24 lg:py-32">
-        <div class="w-100 px-4 md:px-6">
-          <div class="flex flex-col items-center space-y-4 text-center">
-            <div class="space-y-2">
-              <h2
-                class="text-3xl dark:text-gray-300  font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                Contact Me
-              </h2>
-              <p class="max-w-[700px] dark:text-gray-300  text-gray-500 md:text-xl dark:text-gray-400">
-                Ready to start a project? Get in touch with me.
-              </p>
-            </div>
-            <div class="space-x-4"><a
-                class="inline-flex h-9 dark:text-gray-300   items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="#" rel="ugc">
-                Contact
-              </a></div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer
-      class="flex flex-col justify-between gap-2 sm:flex-row pt-6 w-full shrink-0 items-center px-4 md:px-6 bg-white dark:bg-gray-900">
-      <a class="mr-6 hidden lg:flex gap-6" href="#" rel="ugc">
-        <!-- Copyright Joel Gabriel, also mention partly generated via v0.dev -->
-        <span class="text-xs dark:text-gray-200">© 2024 Joel Gabriel. All rights reserved</span>
-      </a>
-      <nav class="flex gap-4 sm:gap-6"><a class="text-xs hover:underline underline-offset-4  dark:text-gray-200"
-          href="#about" rel="ugc">
-          About
-        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #projects" rel="ugc">
-          Projects
-        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #certifications" rel="ugc">
-          Certifications
-        </a><a class="text-xs hover:underline underline-offset-4 dark:text-gray-200" href=" #contact" rel="ugc">
-          Contact
-        </a></nav>
-      <div class="flex items-center space-x-4">
-        <!-- GitHub -->
-        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-          href="https://github.com/joelybahh" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
-            </path>
-            <path d="M9 18c-4.51 2-5-2-7-2"></path>
-          </svg>
-          <span class="sr-only">GitHub</span>
-        </a>
-        <!-- LinkedIn -->
-        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-          href="https://www.linkedin.com/in/joelgabriel/" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect width="4" height="12" x="2" y="9"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          <span class="sr-only">LinkedIn</span>
-        </a>
-        <!-- Twitter -->
-        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-          href="https://twitter.com/joelybahh" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 1200 1227" fill="none"
-            class="h-5 w-5" aria-hidden="true">
-            <path
-              d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
-              fill="currentColor"></path>
-          </svg>
-          <span class="sr-only">Twitter</span>
-        </a>
-        <!-- Instagram -->
-        <a class="rounded-full p-2 -translate-y-0.5 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-50 text-gray:900"
-          href="https://www.instagram.com/joelybahh/" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-          </svg>
-          <span class="sr-only">Instagram</span>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+        </footer>
+    </div>
+    <script>
+        window.si = window.si || function () {(window.siq = window.siq || []).push(arguments);};
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
