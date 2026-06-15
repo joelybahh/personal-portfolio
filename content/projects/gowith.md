@@ -4,6 +4,7 @@ summary: "Be Human. GoWith. — a location-based social app for discovering and 
 tags: [React Native, Expo, TypeScript, Supabase, RevenueCat]
 role: Creator & Lead Engineer
 year: "2025 – 2026"
+coverImage: /assets/images/gowith.png
 liveUrl: https://www.gowith.au/
 featured: true
 publishedAt: "2025-08-08"

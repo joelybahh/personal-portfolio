@@ -4,6 +4,7 @@ summary: An open-source, offline-first desktop API client — a Postman-style wo
 tags: [Rust, Desktop App, Cryptography, Open Source]
 role: Creator
 year: "2026"
+coverImage: /assets/images/mailman.png
 featured: true
 publishedAt: "2026-02-01"
 sortOrder: 4
