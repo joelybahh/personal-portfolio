@@ -11,6 +11,10 @@
     --text-soft: #4a463e;
     --accent: #2f6bd6;
     --dot: rgba(33, 30, 26, 0.13);
+    /* Hard-offset "sketch" shadow — dark ink on the light paper */
+    --sketch-shadow: rgba(33, 30, 26, 0.85);
+    --sketch-shadow-sm: rgba(33, 30, 26, 0.8);
+    --sketch-shadow-lg: rgba(33, 30, 26, 0.9);
   }
 
   .dark {
@@ -21,6 +25,10 @@
     --text-soft: #b6b1a5;
     --accent: #7aa2ec;
     --dot: rgba(236, 233, 225, 0.1);
+    /* On the dark chalkboard the shadow reads as a soft light-gray offset */
+    --sketch-shadow: rgba(236, 233, 225, 0.55);
+    --sketch-shadow-sm: rgba(236, 233, 225, 0.5);
+    --sketch-shadow-lg: rgba(236, 233, 225, 0.6);
   }
 
   html {
@@ -58,7 +66,6 @@
   }
   .dark .sketch-card {
     @apply border-paper bg-chalk-soft;
-    box-shadow: 3px 4px 0 0 rgba(0, 0, 0, 0.55);
   }
   .sketch-card:nth-child(even) {
     @apply rounded-sketch-2;

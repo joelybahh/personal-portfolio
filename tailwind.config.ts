@@ -44,9 +44,9 @@ const config: Config = {
         "sketch-2": "15px 225px 15px 255px / 255px 15px 225px 15px",
       },
       boxShadow: {
-        sketch: "3px 4px 0 0 rgba(33,30,26,0.85)",
-        "sketch-sm": "2px 2px 0 0 rgba(33,30,26,0.8)",
-        "sketch-lg": "6px 7px 0 0 rgba(33,30,26,0.9)",
+        sketch: "3px 4px 0 0 var(--sketch-shadow)",
+        "sketch-sm": "2px 2px 0 0 var(--sketch-shadow-sm)",
+        "sketch-lg": "6px 7px 0 0 var(--sketch-shadow-lg)",
       },
       rotate: {
         "1.5": "1.5deg",

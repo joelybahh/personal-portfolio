@@ -26,7 +26,12 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Languages & Frameworks",
     accent: "marker",
-    skills: ["TypeScript", "React", "Next.js", "React Native", "Rust"],
+    skills: ["TypeScript", "React", "Next.js", "React Native", "Python"],
+  },
+  {
+    label: "A past life",
+    accent: "coral",
+    skills: ["Ruby", "PHP", "Rust", "C++", "C#", "Bash", "Inno Setup"],
   },
   {
     label: "Backend & Auth",
