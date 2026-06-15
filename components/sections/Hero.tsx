@@ -26,7 +26,7 @@ export function Hero() {
             <Scribble type="circle" color="coral" strokeWidth={2}>
               2017
             </Scribble>
-            . I build 3D web platforms, CMS systems and developer tooling — and lead the teams that ship them.
+            . I build web & mobile products, CMS systems and developer tooling — and lead the teams that ship them.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

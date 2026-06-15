@@ -7,7 +7,7 @@ year: "2021 – 2022"
 coverImage: /assets/images/cms-v1-platform.webp
 featured: false
 publishedAt: "2022-06-01"
-sortOrder: 6
+sortOrder: 10
 ---
 
 **Stack CMS** is a content management platform for editing and personalising 3D stacks. Its standout feature is the ability to spin up personalised links that track detailed analytics — perfect for embeds, proposals and anywhere you need to know how a prospect engaged.

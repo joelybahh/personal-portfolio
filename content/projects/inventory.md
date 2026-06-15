@@ -7,7 +7,7 @@ year: "2022 – 2025"
 coverImage: /assets/images/inventory-platform.webp
 featured: true
 publishedAt: "2024-02-15"
-sortOrder: 3
+sortOrder: 7
 ---
 
 **Inventory** is the data backbone of the Inspace suite — a centralised CMS for commercial real-estate data that lets users store, sync and manage property and leasing information and media in real time. Everything else (mapping, reporting, experiences) reads from here.

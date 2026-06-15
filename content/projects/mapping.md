@@ -10,7 +10,7 @@ liveUrl: https://map.inspacexr.com/inspace/webflow-demo?mode=insights
 featured: true
 publishedAt: "2024-01-24"
 updatedAt: "2024-02-26"
-sortOrder: 1
+sortOrder: 5
 ---
 
 In collaboration with my colleague [Ben Zotti](https://github.com/zottiben), who led the initial development, I had the opportunity to contribute significantly to the evolution of an innovative web-based **interactive mapping platform**. Originally designed to enhance the presentation of commercial real estate portfolios, ETFs and REITs, our combined efforts transformed it into a versatile tool for everyone from real estate professionals to landlords and agents. My involvement became particularly instrumental during the platform's rewrite, which introduced a robust **abstraction layer** that elevated the user experience and system flexibility.

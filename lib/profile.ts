@@ -2,12 +2,12 @@ export const about = {
   heading: "Engineer first, builder always.",
   paragraphs: [
     "I'm a lead full-stack engineer who's been shipping software since 2017 — nearly a decade across game, desktop and web development. These days I focus on NextJS, React and TypeScript, building high-quality, intuitive products and leading the teams that ship them.",
-    "I started out writing games in C# and Unity, moved through desktop software in C# and C++, and ended up with a genuinely niche specialty: real-time 3D rendering on the web. That blend of game-engine thinking and modern web architecture is what I bring to every product I work on.",
+    "I started out writing games in C# and Unity and moved through desktop software in C# and C++ before settling into modern full-stack product engineering. That game-engine grounding still sharpens how I think about performance and architecture, but these days the work is shipping polished web and mobile products end to end.",
   ],
   stats: [
     { value: "2017", label: "Writing software since" },
     { value: "9+ yrs", label: "Game · software · web" },
-    { value: "3D", label: "Real-time web rendering" },
+    { value: "Web + mobile", label: "Full-stack product focus" },
   ],
 };
 
@@ -21,7 +21,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Specialised",
     accent: "coral",
-    skills: ["Game & Software Dev", "Unity 3D", "3D Web Rendering", "BabylonJS", "Mapbox"],
+    skills: ["Game & Software Dev", "Unity 3D", "BabylonJS", "Mapbox"],
   },
   {
     label: "Languages & Frameworks",

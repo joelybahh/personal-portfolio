@@ -7,7 +7,7 @@ year: "2023 – 2025"
 coverImage: /assets/images/dxp-platform.webp
 featured: true
 publishedAt: "2024-03-10"
-sortOrder: 2
+sortOrder: 6
 ---
 
 The **Digital Experiences Platform (DXP)** is a centralised tool for creating beautiful online and offline presentations and experiences straight from your data. Rather than rebuilding a deck every time, teams compose reusable experiences once and let the platform keep them in sync with the underlying records.

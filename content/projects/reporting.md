@@ -7,7 +7,7 @@ year: "2023"
 coverImage: /assets/images/report-platform.webp
 featured: false
 publishedAt: "2023-11-20"
-sortOrder: 4
+sortOrder: 8
 ---
 
 **Reporting** lets agents view and share interactive online reports with prospective tenants for their industrial and office listings, or present a polished monthly listing report.

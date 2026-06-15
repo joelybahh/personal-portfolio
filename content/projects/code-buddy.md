@@ -8,7 +8,7 @@ coverImage: /assets/images/code-buddy.webp
 repoUrl: https://github.com/joelybahh
 featured: false
 publishedAt: "2023-09-05"
-sortOrder: 5
+sortOrder: 9
 ---
 
 **Code Buddy** is an AI-powered developer assistant built as a command-line tool. It automates commits and other repetitive chores, designed to streamline development and take the friction out of everyday Git work.
