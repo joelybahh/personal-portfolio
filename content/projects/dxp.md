@@ -2,6 +2,7 @@
 title: Inspace DXP — Experience Builder
 summary: A digital experiences platform for building beautiful online and offline presentations directly from your real-estate data.
 tags: [Next.js, TypeScript, PostgreSQL, Azure]
+category: work
 role: Lead Engineer
 year: "2023 – 2025"
 coverImage: /assets/images/dxp-platform.webp

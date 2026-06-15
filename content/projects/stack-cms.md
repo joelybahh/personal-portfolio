@@ -2,6 +2,7 @@
 title: Inspace Stack CMS
 summary: A CMS for editing and personalising 3D stacks, with shareable personalised links and detailed analytics for embeds and proposals.
 tags: [React, JavaScript, Azure Cosmos DB]
+category: work
 role: Engineer
 year: "2021 – 2022"
 coverImage: /assets/images/cms-v1-platform.webp

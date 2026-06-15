@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { getProjects } from "@/lib/projects";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { Star } from "@/components/sketch/Doodles";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Projects and platforms built by Joel Gabriel — 3D web, CMS systems and developer tooling.",
+  description:
+    "Projects built by Joel Gabriel — Inspace platforms at work, and personal products like Roll With It, GoWith and Mailman.",
   alternates: { canonical: "/projects" },
 };
 
@@ -21,13 +22,11 @@ export default async function ProjectsIndexPage() {
       </p>
       <h1 className="section-title text-balance">Everything I&apos;ve built</h1>
       <p className="mt-4 max-w-2xl font-sans text-lg leading-relaxed text-ink-soft dark:text-paper/70">
-        Commercial platforms, 3D web experiments and the odd developer tool. Click any card for the deeper story.
+        Commercial platforms from my day job, and personal products I ship on my own time. Filter by context, or click any card for the deeper story.
       </p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.slug} project={project} priority={i < 3} />
-        ))}
+      <div className="mt-10">
+        <ProjectGrid projects={projects} />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 title: Code Buddy
 summary: An AI-powered developer assistant CLI that automates commits and other day-to-day chores to streamline your workflow.
 tags: [CLI, TypeScript, OpenAI]
+category: personal
 role: Creator
 year: "2023"
 coverImage: /assets/images/code-buddy.webp

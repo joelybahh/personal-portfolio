@@ -2,6 +2,7 @@
 title: GoWith
 summary: "Be Human. GoWith. — a location-based social app for discovering and joining nearby activities, and my first real go at a B2C product."
 tags: [React Native, Expo, TypeScript, Supabase, RevenueCat]
+category: personal
 role: Creator & Lead Engineer
 year: "2025 – 2026"
 coverImage: /assets/images/gowith.png

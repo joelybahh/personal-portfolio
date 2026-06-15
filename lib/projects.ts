@@ -11,6 +11,7 @@ function fromRow(row: any): Project {
     summary: row.summary ?? "",
     content: row.content ?? "",
     tags: Array.isArray(row.tags) ? row.tags : [],
+    category: row.category === "personal" ? "personal" : "work",
     role: row.role ?? undefined,
     year: row.year ?? undefined,
     coverImage: row.cover_image ?? undefined,

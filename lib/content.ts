@@ -14,6 +14,7 @@ function toProject(slug: string, raw: string): Project {
     summary: data.summary ?? "",
     content: content.trim(),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    category: data.category === "personal" ? "personal" : "work",
     role: data.role ?? undefined,
     year: data.year ? String(data.year) : undefined,
     coverImage: data.coverImage ?? undefined,

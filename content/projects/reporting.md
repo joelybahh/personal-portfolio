@@ -2,6 +2,7 @@
 title: Inspace Reporting
 summary: Share interactive online reports with prospective tenants for industrial and office listings — or generate a polished monthly listing report.
 tags: [Next.js, TypeScript, React PDF]
+category: work
 role: Engineer
 year: "2023"
 coverImage: /assets/images/report-platform.webp

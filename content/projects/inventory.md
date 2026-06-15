@@ -2,6 +2,7 @@
 title: Inspace Inventory — CRE Data CMS
 summary: A centralised platform for managing commercial real-estate data — store, sync and manage property, leasing and media in real time.
 tags: [Next.js, TypeScript, PostgreSQL, Azure]
+category: work
 role: Lead Engineer
 year: "2022 – 2025"
 coverImage: /assets/images/inventory-platform.webp

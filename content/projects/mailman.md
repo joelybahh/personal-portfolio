@@ -2,6 +2,7 @@
 title: Mailman
 summary: An open-source, offline-first desktop API client — a Postman-style workflow in Rust with no account wall, no forced sync, and encrypted-at-rest environments.
 tags: [Rust, Desktop App, Cryptography, Open Source]
+category: personal
 role: Creator
 year: "2026"
 coverImage: /assets/images/mailman.png

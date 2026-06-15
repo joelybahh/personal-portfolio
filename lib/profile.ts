@@ -19,24 +19,24 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Specialised",
+    label: "Niche",
     accent: "coral",
-    skills: ["Game & Software Dev", "Unity 3D", "BabylonJS", "Mapbox"],
+    skills: ["Mapbox", "BabylonJS", "Unity 3D", "3D Web (legacy)"],
   },
   {
     label: "Languages & Frameworks",
     accent: "marker",
-    skills: ["TypeScript", "JavaScript", "React", "Next.js", "Node.js"],
+    skills: ["TypeScript", "React", "Next.js", "React Native", "Rust"],
   },
   {
-    label: "Backend & Cloud",
+    label: "Backend & Auth",
     accent: "leaf",
-    skills: ["Azure Functions", "Azure Blob / CDN", "PostgreSQL", "Amazon SES", "Amazon S3"],
+    skills: ["PostgreSQL", "Supabase", "Auth0", "Azure Functions", "Stripe"],
   },
   {
-    label: "Architecture",
+    label: "Platform & AI",
     accent: "ink",
-    skills: ["Monorepos", "Microfrontends", "CMS Systems", "DB Multi-tenancy", "Serverless"],
+    skills: ["Monorepos", "MCP", "TanStack", "Expo", "OpenAI"],
   },
   {
     label: "Leading",

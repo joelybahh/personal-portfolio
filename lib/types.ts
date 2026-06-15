@@ -1,3 +1,5 @@
+export type ProjectCategory = "personal" | "work";
+
 export type Project = {
   slug: string;
   title: string;
@@ -5,6 +7,7 @@ export type Project = {
   /** Markdown body */
   content: string;
   tags: string[];
+  category: ProjectCategory;
   role?: string;
   /** e.g. "2023 – 2025" */
   year?: string;

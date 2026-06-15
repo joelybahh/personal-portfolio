@@ -8,6 +8,7 @@ create table if not exists public.projects (
   summary      text not null default '',
   content      text not null default '',           -- markdown body
   tags         text[] not null default '{}',
+  category     text not null default 'work' check (category in ('personal', 'work')),
   role         text,
   year         text,
   cover_image  text,

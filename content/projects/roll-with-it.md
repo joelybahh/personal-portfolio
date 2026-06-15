@@ -1,7 +1,8 @@
 ---
 title: Roll With It
-summary: A personal-finance app that started life as a Next.js web app and grew into a cross-platform mobile product, complete with an AI "Pocket CFO".
+summary: A household budgeting app we built because nothing else fit — bill alerts in one place, mortgage paydown projections, and story-like month & year reviews for couples and families.
 tags: [Next.js, React Native, Expo, TypeScript, Stripe, OpenAI]
+category: personal
 role: Creator & Lead Engineer
 year: "2025 – present"
 coverImage: /assets/images/roll-with-it.png
@@ -12,21 +13,30 @@ updatedAt: "2026-06-15"
 sortOrder: 1
 ---
 
-**Roll With It** is a personal-finance app I've been building since May 2025 — and it's still very much ongoing. It began as a **Next.js** web app and has since grown into a true cross-platform product, with a dedicated **React Native (Expo)** app delivering a real native mobile experience alongside the web.
+**Roll With It** is a personal-finance app my partner Erica and I built because no budgeting tool actually worked for our setup. It started in May 2025 as a **Next.js** web app and has grown into a true cross-platform product — a dedicated **React Native (Expo)** mobile app alongside the web — and it's still very much ongoing.
+
+## Why we built it
+
+Every app we tried either assumed a single person, ignored how couples actually share money, or made bill tracking feel like a second job. We wanted something that worked **for us at the core**: enter a bill once, get **one notification**, and nothing catches us off guard. Mortgage **paydown projections** so we could see the long game, not just this month. And reviews that feel like **stories**, not spreadsheets — because I'm very data-oriented and Erica is more visual and wants the gist. The app bleeds those two modes together.
+
+At its heart it's built for **couples and families** — shared household view, rollover budgets that match real life, and month-in-review / year-in-review narratives worth actually watching.
 
 ## What it does
 
-The goal is to make money management feel less like a spreadsheet and more like a conversation. It tracks income and expenses, models **recurring bills and income**, and surfaces it all through a **"Pocket CFO"** — an AI assistant (built on the OpenAI Agents SDK) that can answer questions about your finances and help you plan ahead.
+- **Unified bill notifications** — recurring bills and income in one place; one alert, not five.
+- **Rollover budgeting** — unspent budget rolls into next month the way we actually manage money.
+- **Mortgage & net-worth tracking** — offset, mortgage, and account snapshots with paydown projections.
+- **Story-like reviews** — month-in-review and year-in-review experiences (not just charts).
+- **Pocket CFO** — an AI assistant (OpenAI Agents SDK) for questions and planning when you want a conversation, not a pivot table.
 
 ## Tech & architecture
 
-- **Monorepo** managed with pnpm workspaces + Turborepo (`apps/web`, `apps/mobile`, shared packages).
-- **Web**: Next.js 15, React 19, Tailwind and Radix UI primitives.
-- **Data**: Prisma over PostgreSQL, with Supabase in the mix.
-- **Payments**: Stripe for subscriptions and billing.
-- **AI**: OpenAI + the `@openai/agents` SDK powering the Pocket CFO.
-- **Mobile**: a native **React Native** app built with **Expo** (developed against Expo Go), sharing types and logic with the web through the monorepo's shared packages, with native push via Firebase.
+- **Monorepo** with pnpm workspaces + Turborepo (`apps/web`, `apps/mobile`, shared packages).
+- **Web**: Next.js 15, React 19, Tailwind and Radix UI.
+- **Mobile**: native **React Native** with **Expo** (Expo Go in dev), shared types/logic via packages, Firebase push.
+- **Data**: Prisma over PostgreSQL, Supabase in the mix.
+- **Payments**: Stripe subscriptions.
 
 ## Why it matters
 
-This is my flagship personal product — the place I get to own the whole stack end to end, from schema and payments to the AI layer and the native release pipeline. The monorepo architecture lets me ship the Next.js web app continuously while versioning the React Native mobile releases independently.
+This is my flagship personal product — the place I own the whole stack, from schema and payments to AI and the native release pipeline. The monorepo lets me ship the Next.js web app continuously while versioning React Native releases independently — and every feature is grounded in a real household that needed it, not a generic finance-app template.

@@ -51,6 +51,7 @@ function toRow(slug, raw) {
     summary: data.summary ?? "",
     content: content.trim(),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    category: data.category === "personal" ? "personal" : "work",
     role: data.role ?? null,
     year: data.year ? String(data.year) : null,
     cover_image: data.coverImage ?? null,

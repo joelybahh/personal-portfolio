@@ -2,6 +2,7 @@
 title: Inspace Mapping
 summary: A web-based interactive mapping platform for commercial real estate — schema-driven, context-aware UI on top of Mapbox and BabylonJS.
 tags: [Next.js, TypeScript, Mapbox, BabylonJS]
+category: work
 role: Lead Engineer
 year: "2023 – 2024"
 coverImage: /assets/images/mapping-platform.webp
