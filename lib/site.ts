@@ -7,7 +7,7 @@ export const site = {
   url: "https://joelgabriel.com.au",
   email: "hello@joelgabriel.com.au",
   locale: "en_AU",
-  profileImage: "/assets/images/profile.webp",
+  profileImage: "/assets/images/profile-1.png",
   ogImage: "/assets/images/og-image.jpg",
   nav: [
     { label: "About", href: "/#about" },

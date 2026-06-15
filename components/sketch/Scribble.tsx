@@ -41,7 +41,10 @@ export function Scribble({
   const { ref, inView } = useInView<HTMLSpanElement>();
 
   return (
-    <span ref={ref} className={className}>
+    <span
+      ref={ref}
+      className={[className, type === "highlight" && "text-ink"].filter(Boolean).join(" ")}
+    >
       <RoughNotation
         type={type}
         show={inView}
