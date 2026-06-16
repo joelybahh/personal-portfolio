@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { Scribble } from "@/components/sketch/Scribble";
+import { DoodleFace } from "@/components/sketch/DoodleFace";
 import { SocialLinks } from "@/components/site/SocialLinks";
 import { CurvedArrow, Star } from "@/components/sketch/Doodles";
 import { ArrowUpRightIcon, MailIcon } from "@/components/icons";
@@ -43,16 +43,7 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xs md:max-w-none">
-          <div className="relative mx-auto aspect-square w-56 rotate-2 overflow-hidden rounded-sketch border-2 border-ink shadow-sketch-lg dark:border-paper sm:w-64">
-            <Image
-              src={site.profileImage}
-              alt={`${site.name} portrait`}
-              fill
-              priority
-              sizes="256px"
-              className="object-cover grayscale"
-            />
-          </div>
+          <DoodleFace src={site.profileImage} alt={`${site.name} portrait`} />
           <p className="absolute -bottom-2 right-2 -rotate-6 font-hand text-xl text-coral sm:right-6">
             that&apos;s me 👋
           </p>

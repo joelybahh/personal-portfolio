@@ -64,7 +64,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${sans.variable} ${hand.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className={`${sans.variable} ${hand.variable} ${mono.variable}`}>
       <body className="font-sans antialiased">
         <ThemeProvider>
           <SketchFilters />

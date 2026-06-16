@@ -1,8 +1,10 @@
 export const about = {
-  heading: "Engineer first, builder always.",
+  heading: "Dad first, engineer always.",
   paragraphs: [
-    "I'm a lead full-stack engineer who's been shipping software since 2017 — nearly a decade across game, desktop and web development. These days I focus on NextJS, React and TypeScript, building high-quality, intuitive products and leading the teams that ship them.",
+    "I'm a tech lead who's been shipping software since 2017, nearing a decade across game, desktop and web development experience. These days I focus on NextJS, React and TypeScript, building high-quality, intuitive products and leading the teams that ship them.",
     "I started out writing games in C# and Unity and moved through desktop software in C# and C++ before settling into modern full-stack product engineering. That game-engine grounding still sharpens how I think about performance and architecture, but these days the work is shipping polished web and mobile products end to end.",
+    // something about homelabs, starting side projects,
+    "Outside of work I'm a dad of 3 boys, 3, 5 and 9, love to hit up the gym and do weights training, I also setup and run my own home lab to manage our family password vault, and photos",
   ],
   stats: [
     { value: "2017", label: "Writing software since" },
@@ -94,7 +96,8 @@ export const awards: Award[] = [
   {
     icon: "🧾",
     title: "Certificate III — Information, Digital Media & Technology",
-    description: "Built a 3D game with C# and Unity over an intensive holiday course.",
+    description:
+      "Built a 3D game with C# and Unity over an intensive holiday course.",
   },
   {
     icon: "🧾",
