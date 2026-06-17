@@ -19,7 +19,7 @@ But I am not convinced that raw code output was ever the main bottleneck in seri
 
 If AI increases code output without increasing confidence at the same rate, then software engineering is not solved. It is just moving faster with {{circle:less understanding}} attached.
 
-## The Claude Code {{flicker:Flicker}} Problem
+## The {{flicker:Flicker}} Problem
 
 Claude Code is one of the most capable coding agents available today. It is built by Anthropic, one of the leading AI companies in the world, and it sits near the centre of the current “AI is going to transform software engineering” story.
 
