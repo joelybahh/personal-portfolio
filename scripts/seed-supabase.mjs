@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Pushes every markdown file in content/projects into the Supabase `projects`
- * table. Run once to seed, and again any time you want the DB to match the
- * markdown (it upserts on `slug`).
+ * Pushes every markdown file in content/projects and content/blog into the
+ * Supabase `projects` and `posts` tables. Run once to seed, and again any time
+ * you want the DB to match the markdown (it upserts on `slug`).
  *
  * Usage:
  *   SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/seed-supabase.mjs
@@ -17,6 +17,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, "..", "content", "projects");
+const BLOG_DIR = path.join(__dirname, "..", "content", "blog");
 
 // Lightweight .env loader (no extra deps).
 for (const file of [".env.local", ".env"]) {
@@ -65,19 +66,51 @@ function toRow(slug, raw) {
   };
 }
 
-const files = fs
-  .readdirSync(CONTENT_DIR)
-  .filter((f) => f.endsWith(".md") || f.endsWith(".mdx"));
-
-const rows = files.map((file) =>
-  toRow(file.replace(/\.mdx?$/, ""), fs.readFileSync(path.join(CONTENT_DIR, file), "utf8"))
-);
-
-const { error } = await supabase.from("projects").upsert(rows, { onConflict: "slug" });
-
-if (error) {
-  console.error("Seed failed:", error.message);
-  process.exit(1);
+function estimateReadingTime(markdown) {
+  const words = markdown.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 220));
 }
 
-console.log(`Seeded ${rows.length} project(s): ${rows.map((r) => r.slug).join(", ")}`);
+function toPostRow(slug, raw) {
+  const { data, content } = matter(raw);
+  const body = content.trim();
+  return {
+    slug,
+    title: data.title ?? slug,
+    summary: data.summary ?? "",
+    content: body,
+    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    cover_image: data.coverImage ?? null,
+    hero_image: data.heroImage ?? data.coverImage ?? null,
+    reading_time: estimateReadingTime(body),
+    featured: Boolean(data.featured),
+    published: data.published === undefined ? true : Boolean(data.published),
+    sort_order: typeof data.sortOrder === "number" ? data.sortOrder : 999,
+    published_at: data.publishedAt ? new Date(data.publishedAt).toISOString() : null,
+  };
+}
+
+function readDir(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter((f) => f.endsWith(".md") || f.endsWith(".mdx"));
+}
+
+async function seed(table, dir, mapper) {
+  const files = readDir(dir);
+  if (files.length === 0) {
+    console.log(`No markdown in ${path.relative(process.cwd(), dir)} — skipping ${table}.`);
+    return;
+  }
+  const rows = files.map((file) =>
+    mapper(file.replace(/\.mdx?$/, ""), fs.readFileSync(path.join(dir, file), "utf8"))
+  );
+  const { error } = await supabase.from(table).upsert(rows, { onConflict: "slug" });
+  if (error) {
+    console.error(`Seed failed for ${table}:`, error.message);
+    process.exit(1);
+  }
+  console.log(`Seeded ${rows.length} ${table} row(s): ${rows.map((r) => r.slug).join(", ")}`);
+}
+
+await seed("projects", CONTENT_DIR, toRow);
+await seed("posts", BLOG_DIR, toPostRow);

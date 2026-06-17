@@ -228,6 +228,58 @@
   font-weight: 700;
 }
 
+/* ---- Inline text effects ({{effect:…}} markdown) ---- */
+/* A glitchy terminal distortion — mostly crisp, then blurs, skews and
+   splits into RGB fringes for a beat. Fittingly on-theme for the prose. */
+.md-flicker {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  animation: md-flicker 3.4s linear infinite;
+}
+@keyframes md-flicker {
+  0%, 30%, 61%, 100% {
+    filter: blur(0);
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow: none;
+  }
+  32% {
+    filter: blur(1.6px);
+    transform: translate(1px, -1px) skewX(-9deg);
+    text-shadow: 0.05em 0 rgba(232, 101, 75, 0.75), -0.05em 0 rgba(47, 107, 214, 0.75);
+  }
+  35% {
+    filter: blur(0.4px);
+    transform: translate(-1px, 1px) skewX(6deg);
+    text-shadow: -0.04em 0 rgba(232, 101, 75, 0.6), 0.04em 0 rgba(47, 107, 214, 0.6);
+  }
+  38% {
+    filter: blur(2px);
+    transform: translate(1px, 0) skewX(-4deg) scaleX(1.04);
+    text-shadow: 0.06em 0 rgba(232, 101, 75, 0.7), -0.06em 0 rgba(47, 107, 214, 0.7);
+  }
+  41% {
+    filter: blur(0);
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow: none;
+  }
+  63% {
+    filter: blur(1.8px);
+    transform: translate(-1px, 1px) skewX(8deg);
+    text-shadow: -0.06em 0 rgba(232, 101, 75, 0.7), 0.06em 0 rgba(47, 107, 214, 0.7);
+  }
+  66% {
+    filter: blur(0.5px);
+    transform: translate(1px, -1px) skewX(-5deg);
+    text-shadow: 0.04em 0 rgba(232, 101, 75, 0.6), -0.04em 0 rgba(47, 107, 214, 0.6);
+  }
+  69% {
+    filter: blur(2.2px);
+    transform: translate(0, 1px) skewX(4deg);
+    text-shadow: 0.05em 0 rgba(232, 101, 75, 0.7), -0.05em 0 rgba(47, 107, 214, 0.7);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

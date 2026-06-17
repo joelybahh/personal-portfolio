@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { site } from "@/lib/site";
 
 /**
@@ -17,7 +23,13 @@ import { site } from "@/lib/site";
  */
 
 type Pt = { x: number; y: number };
-type Stroke = { id: number; label: string; color: string; width: number; points: Pt[] };
+type Stroke = {
+  id: number;
+  label: string;
+  color: string;
+  width: number;
+  points: Pt[];
+};
 type View = { x: number; y: number; w: number; h: number };
 
 const PALETTE = [
@@ -30,10 +42,13 @@ const PALETTE = [
 
 const MIN_ZOOM_W = 8; // smallest viewBox width => ~12.5x zoom
 const round = (n: number) => Math.round(n * 10) / 10;
-const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
+const clamp = (n: number, lo: number, hi: number) =>
+  Math.max(lo, Math.min(hi, n));
 
 function linePath(pts: Pt[]) {
-  return pts.map((p, i) => `${i ? "L" : "M"} ${round(p.x)} ${round(p.y)}`).join(" ");
+  return pts
+    .map((p, i) => `${i ? "L" : "M"} ${round(p.x)} ${round(p.y)}`)
+    .join(" ");
 }
 
 // Catmull-Rom → cubic bézier, for smooth hand-drawn-looking strokes.
@@ -83,7 +98,10 @@ export function DoodleStudio() {
   const [cursor, setCursor] = useState<Pt | null>(null);
   const [copied, setCopied] = useState(false);
   const [dbg, setDbg] = useState<string[]>([]);
-  const logDbg = useCallback((m: string) => setDbg((d) => [m, ...d].slice(0, 6)), []);
+  const logDbg = useCallback(
+    (m: string) => setDbg((d) => [m, ...d].slice(0, 6)),
+    [],
+  );
 
   // viewBox state mirrored into a ref so the (non-passive) wheel handler can
   // read the current view without re-subscribing.
@@ -94,31 +112,37 @@ export function DoodleStudio() {
     setViewState(v);
   }, []);
 
-  const toViewBox = useCallback((clientX: number, clientY: number): Pt | null => {
-    const svg = svgRef.current;
-    if (!svg) return null;
-    const pt = svg.createSVGPoint();
-    pt.x = clientX;
-    pt.y = clientY;
-    const ctm = svg.getScreenCTM();
-    if (!ctm) return null;
-    const p = pt.matrixTransform(ctm.inverse());
-    return { x: p.x, y: p.y };
-  }, []);
+  const toViewBox = useCallback(
+    (clientX: number, clientY: number): Pt | null => {
+      const svg = svgRef.current;
+      if (!svg) return null;
+      const pt = svg.createSVGPoint();
+      pt.x = clientX;
+      pt.y = clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return null;
+      const p = pt.matrixTransform(ctm.inverse());
+      return { x: p.x, y: p.y };
+    },
+    [],
+  );
 
   // --- zoom helpers ---
-  const zoomAround = useCallback((factor: number, clientX: number, clientY: number) => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    const rect = svg.getBoundingClientRect();
-    const v = viewRef.current;
-    const px = (clientX - rect.left) / rect.width;
-    const py = (clientY - rect.top) / rect.height;
-    const anchorX = v.x + px * v.w;
-    const anchorY = v.y + py * v.h;
-    const w = clamp(v.w * factor, MIN_ZOOM_W, 100);
-    setView(clampView({ x: anchorX - px * w, y: anchorY - py * w, w, h: w }));
-  }, [setView]);
+  const zoomAround = useCallback(
+    (factor: number, clientX: number, clientY: number) => {
+      const svg = svgRef.current;
+      if (!svg) return;
+      const rect = svg.getBoundingClientRect();
+      const v = viewRef.current;
+      const px = (clientX - rect.left) / rect.width;
+      const py = (clientY - rect.top) / rect.height;
+      const anchorX = v.x + px * v.w;
+      const anchorY = v.y + py * v.h;
+      const w = clamp(v.w * factor, MIN_ZOOM_W, 100);
+      setView(clampView({ x: anchorX - px * w, y: anchorY - py * w, w, h: w }));
+    },
+    [setView],
+  );
 
   // Wheel: ctrl/⌘+wheel (trackpad pinch) zooms at cursor; plain wheel pans.
   useEffect(() => {
@@ -131,7 +155,13 @@ export function DoodleStudio() {
       } else {
         const rect = svg.getBoundingClientRect();
         const v = viewRef.current;
-        setView(clampView({ ...v, x: v.x + (e.deltaX / rect.width) * v.w, y: v.y + (e.deltaY / rect.height) * v.h }));
+        setView(
+          clampView({
+            ...v,
+            x: v.x + (e.deltaX / rect.width) * v.w,
+            y: v.y + (e.deltaY / rect.height) * v.h,
+          }),
+        );
       }
     };
     svg.addEventListener("wheel", onWheel, { passive: false });
@@ -187,14 +217,18 @@ export function DoodleStudio() {
       const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
       pinch.current = {
         dist: Math.hypot(a.x - b.x, a.y - b.y),
-        anchor: toViewBox(mid.x, mid.y) ?? { x: viewRef.current.x, y: viewRef.current.y },
+        anchor: toViewBox(mid.x, mid.y) ?? {
+          x: viewRef.current.x,
+          y: viewRef.current.y,
+        },
         v0: viewRef.current,
       };
     }
   };
 
   const onMove = (e: ReactPointerEvent<SVGSVGElement>) => {
-    if (pointers.current.has(e.pointerId)) pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.current.has(e.pointerId))
+      pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     moveCount.current += 1;
     const vb = toViewBox(e.clientX, e.clientY);
     if (vb) setCursor(vb);
@@ -205,10 +239,21 @@ export function DoodleStudio() {
       const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
       const svg = svgRef.current!;
       const rect = svg.getBoundingClientRect();
-      const w = clamp(pinch.current.v0.w * (pinch.current.dist / dist), MIN_ZOOM_W, 100);
+      const w = clamp(
+        pinch.current.v0.w * (pinch.current.dist / dist),
+        MIN_ZOOM_W,
+        100,
+      );
       const px = (mid.x - rect.left) / rect.width;
       const py = (mid.y - rect.top) / rect.height;
-      setView(clampView({ x: pinch.current.anchor.x - px * w, y: pinch.current.anchor.y - py * w, w, h: w }));
+      setView(
+        clampView({
+          x: pinch.current.anchor.x - px * w,
+          y: pinch.current.anchor.y - py * w,
+          w,
+          h: w,
+        }),
+      );
       return;
     }
 
@@ -222,7 +267,9 @@ export function DoodleStudio() {
   };
 
   const onUp = (e: ReactPointerEvent<SVGSVGElement>) => {
-    logDbg(`${e.type === "pointercancel" ? "CANCEL" : "up"} ${e.pointerType} moves=${moveCount.current}`);
+    logDbg(
+      `${e.type === "pointercancel" ? "CANCEL" : "up"} ${e.pointerType} moves=${moveCount.current}`,
+    );
     pointers.current.delete(e.pointerId);
     try {
       e.currentTarget.releasePointerCapture(e.pointerId);
@@ -234,14 +281,26 @@ export function DoodleStudio() {
       drawing.current = false;
       const pts = draftRef.current;
       if (pts.length > 1) {
-        setStrokes((s) => [...s, { id: s.length ? s[s.length - 1].id + 1 : 0, label, color, width, points: pts }]);
+        setStrokes((s) => [
+          ...s,
+          {
+            id: s.length ? s[s.length - 1].id + 1 : 0,
+            label,
+            color,
+            width,
+            points: pts,
+          },
+        ]);
       }
       draftRef.current = [];
       setDraft([]);
     }
   };
 
-  const pathFor = useCallback((pts: Pt[]) => (smooth ? smoothPath(pts) : linePath(pts)), [smooth]);
+  const pathFor = useCallback(
+    (pts: Pt[]) => (smooth ? smoothPath(pts) : linePath(pts)),
+    [smooth],
+  );
   const undo = () => setStrokes((s) => s.slice(0, -1));
   const clear = () => setStrokes([]);
   const resetView = () => setView({ x: 0, y: 0, w: 100, h: 100 });
@@ -264,9 +323,14 @@ export function DoodleStudio() {
   };
 
   const output = JSON.stringify(
-    strokes.map((s) => ({ label: s.label, color: PALETTE.find((p) => p.value === s.color)?.name ?? s.color, width: s.width, d: pathFor(s.points) })),
+    strokes.map((s) => ({
+      label: s.label,
+      color: PALETTE.find((p) => p.value === s.color)?.name ?? s.color,
+      width: s.width,
+      d: pathFor(s.points),
+    })),
     null,
-    2
+    2,
   );
 
   const copy = async () => {
@@ -285,7 +349,9 @@ export function DoodleStudio() {
     <div className="mx-auto max-w-5xl select-none px-4 py-10">
       <h1 className="font-sans text-3xl font-black">Doodle Studio</h1>
       <p className="mt-1 font-sans text-sm text-ink-soft dark:text-paper/70">
-        Draw on the portrait (mouse or one finger). Pinch or ⌘/Ctrl-scroll to zoom, two-finger / plain scroll to pan. Same crop &amp; 0–100 viewBox as the hero, so paths transfer 1:1.
+        Draw on the portrait (mouse or one finger). Pinch or ⌘/Ctrl-scroll to
+        zoom, two-finger / plain scroll to pan. Same crop &amp; 0–100 viewBox as
+        the hero, so paths transfer 1:1.
       </p>
 
       <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,1fr)_320px]">
@@ -313,7 +379,14 @@ export function DoodleStudio() {
           >
             {/* transparent hit target — guarantees taps/touches register across
                 the whole canvas, even over pointer-events:none children. */}
-            <rect x={-50} y={-50} width={200} height={200} fill="transparent" style={{ pointerEvents: "all" }} />
+            <rect
+              x={-50}
+              y={-50}
+              width={200}
+              height={200}
+              fill="transparent"
+              style={{ pointerEvents: "all" }}
+            />
 
             {showPhoto && (
               <image
@@ -331,8 +404,22 @@ export function DoodleStudio() {
               <g opacity={0.3} style={{ pointerEvents: "none" }}>
                 {Array.from({ length: 9 }, (_, i) => (i + 1) * 10).map((v) => (
                   <g key={v}>
-                    <line x1={v} y1={0} x2={v} y2={100} stroke={v === 50 ? "#ff3b3b" : "#19e6c2"} strokeWidth={(v === 50 ? 0.4 : 0.2) * (view.w / 100)} />
-                    <line x1={0} y1={v} x2={100} y2={v} stroke="#19e6c2" strokeWidth={0.2 * (view.w / 100)} />
+                    <line
+                      x1={v}
+                      y1={0}
+                      x2={v}
+                      y2={100}
+                      stroke={v === 50 ? "#ff3b3b" : "#19e6c2"}
+                      strokeWidth={(v === 50 ? 0.4 : 0.2) * (view.w / 100)}
+                    />
+                    <line
+                      x1={0}
+                      y1={v}
+                      x2={100}
+                      y2={v}
+                      stroke="#19e6c2"
+                      strokeWidth={0.2 * (view.w / 100)}
+                    />
                   </g>
                 ))}
               </g>
@@ -350,13 +437,23 @@ export function DoodleStudio() {
                   pointerEvents: "none",
                   strokeDasharray: "1 2",
                   strokeDashoffset: phase === "reset" ? 1.1 : 0,
-                  transition: phase === "draw" ? `stroke-dashoffset 500ms ease-out ${i * 160}ms` : "none",
+                  transition:
+                    phase === "draw"
+                      ? `stroke-dashoffset 500ms ease-out ${i * 160}ms`
+                      : "none",
                 }}
               />
             ))}
 
             {/* in-progress stroke */}
-            {draft.length > 0 && <path d={pathFor(draft)} stroke={color} strokeWidth={width} style={{ pointerEvents: "none" }} />}
+            {draft.length > 0 && (
+              <path
+                d={pathFor(draft)}
+                stroke={color}
+                strokeWidth={width}
+                style={{ pointerEvents: "none" }}
+              />
+            )}
           </svg>
 
           {cursor && (
@@ -367,7 +464,11 @@ export function DoodleStudio() {
 
           {/* DEBUG readout — tells us what events actually fire on a real device */}
           <div className="pointer-events-none absolute left-1 top-1 max-w-[60%] rounded bg-ink/75 px-1.5 py-1 font-mono text-[10px] leading-tight text-paper">
-            {dbg.length ? dbg.map((m, i) => <div key={i}>{m}</div>) : <div>touch the canvas…</div>}
+            {dbg.length ? (
+              dbg.map((m, i) => <div key={i}>{m}</div>)
+            ) : (
+              <div>touch the canvas…</div>
+            )}
           </div>
         </div>
 
@@ -377,7 +478,11 @@ export function DoodleStudio() {
             <p className="mb-1 font-semibold">Layer</p>
             <div className="flex flex-wrap items-center gap-1.5">
               {labels.map((l) => (
-                <button key={l} onClick={() => setLabel(l)} className={`rounded-md border-2 px-2.5 py-1 ${label === l ? "border-ink bg-ink text-paper dark:border-paper" : "border-ink/30 dark:border-paper/30"}`}>
+                <button
+                  key={l}
+                  onClick={() => setLabel(l)}
+                  className={`rounded-md border-2 px-2.5 py-1 ${label === l ? "border-ink bg-ink text-paper dark:border-paper" : "border-ink/30 dark:border-paper/30"}`}
+                >
                   {l}
                 </button>
               ))}
@@ -390,7 +495,12 @@ export function DoodleStudio() {
                 placeholder="new layer name…"
                 className="min-w-0 flex-1 rounded-md border-2 border-ink/30 bg-transparent px-2 py-1 dark:border-paper/30"
               />
-              <button onClick={addLabel} className="btn-ghost-sketch !px-3 !py-1.5">Add</button>
+              <button
+                onClick={addLabel}
+                className="btn-ghost-sketch !px-3 !py-1.5"
+              >
+                Add
+              </button>
             </div>
           </div>
 
@@ -398,43 +508,110 @@ export function DoodleStudio() {
             <p className="mb-1 font-semibold">Colour</p>
             <div className="flex gap-2">
               {PALETTE.map((p) => (
-                <button key={p.name} title={p.name} onClick={() => setColor(p.value)} className={`h-7 w-7 rounded-full border-2 ${color === p.value ? "border-ink ring-2 ring-ink dark:border-paper dark:ring-paper" : "border-black/20"}`} style={{ background: p.value }} />
+                <button
+                  key={p.name}
+                  title={p.name}
+                  onClick={() => setColor(p.value)}
+                  className={`h-7 w-7 rounded-full border-2 ${color === p.value ? "border-ink ring-2 ring-ink dark:border-paper dark:ring-paper" : "border-black/20"}`}
+                  style={{ background: p.value }}
+                />
               ))}
             </div>
           </div>
 
           <div>
-            <label className="mb-1 block font-semibold">Stroke width — {width}</label>
-            <input type="range" min={0.5} max={5} step={0.1} value={width} onChange={(e) => setWidth(Number(e.target.value))} className="w-full" />
+            <label className="mb-1 block font-semibold">
+              Stroke width — {width}
+            </label>
+            <input
+              type="range"
+              min={0.5}
+              max={5}
+              step={0.1}
+              value={width}
+              onChange={(e) => setWidth(Number(e.target.value))}
+              className="w-full"
+            />
           </div>
 
           <div>
             <p className="mb-1 font-semibold">Zoom — {zoomPct}%</p>
             <div className="flex gap-2">
-              <button onClick={() => zoomCenter(1 / 1.4)} className="btn-ghost-sketch !px-3 !py-1.5">＋</button>
-              <button onClick={() => zoomCenter(1.4)} className="btn-ghost-sketch !px-3 !py-1.5">－</button>
-              <button onClick={resetView} className="btn-ghost-sketch !px-3 !py-1.5">Reset</button>
+              <button
+                onClick={() => zoomCenter(1 / 1.4)}
+                className="btn-ghost-sketch !px-3 !py-1.5"
+              >
+                ＋
+              </button>
+              <button
+                onClick={() => zoomCenter(1.4)}
+                className="btn-ghost-sketch !px-3 !py-1.5"
+              >
+                －
+              </button>
+              <button
+                onClick={resetView}
+                className="btn-ghost-sketch !px-3 !py-1.5"
+              >
+                Reset
+              </button>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-x-4 gap-y-1">
-            <label className="flex items-center gap-1.5"><input type="checkbox" checked={smooth} onChange={(e) => setSmooth(e.target.checked)} /> smooth</label>
-            <label className="flex items-center gap-1.5"><input type="checkbox" checked={showPhoto} onChange={(e) => setShowPhoto(e.target.checked)} /> photo</label>
-            <label className="flex items-center gap-1.5"><input type="checkbox" checked={showGrid} onChange={(e) => setShowGrid(e.target.checked)} /> grid</label>
+            <label className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                checked={smooth}
+                onChange={(e) => setSmooth(e.target.checked)}
+              />{" "}
+              smooth
+            </label>
+            <label className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                checked={showPhoto}
+                onChange={(e) => setShowPhoto(e.target.checked)}
+              />{" "}
+              photo
+            </label>
+            <label className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                checked={showGrid}
+                onChange={(e) => setShowGrid(e.target.checked)}
+              />{" "}
+              grid
+            </label>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <button onClick={undo} className="btn-ghost-sketch !px-3 !py-1.5">Undo</button>
-            <button onClick={clear} className="btn-ghost-sketch !px-3 !py-1.5">Clear</button>
-            <button onClick={playPreview} className="btn-ghost-sketch !px-3 !py-1.5">▶ Preview draw</button>
+            <button onClick={undo} className="btn-ghost-sketch !px-3 !py-1.5">
+              Undo
+            </button>
+            <button onClick={clear} className="btn-ghost-sketch !px-3 !py-1.5">
+              Clear
+            </button>
+            <button
+              onClick={playPreview}
+              className="btn-ghost-sketch !px-3 !py-1.5"
+            >
+              ▶ Preview draw
+            </button>
           </div>
 
           <div>
             <div className="mb-1 flex items-center justify-between">
               <p className="font-semibold">Output ({strokes.length} strokes)</p>
-              <button onClick={copy} className="btn-sketch !px-3 !py-1.5">{copied ? "Copied!" : "Copy JSON"}</button>
+              <button onClick={copy} className="btn-sketch !px-3 !py-1.5">
+                {copied ? "Copied!" : "Copy JSON"}
+              </button>
             </div>
-            <textarea readOnly value={output} className="h-56 w-full resize-y select-text rounded-md border-2 border-ink/30 bg-paper/50 p-2 font-mono text-[11px] dark:border-paper/30 dark:bg-ink/40" />
+            <textarea
+              readOnly
+              value={output}
+              className="h-56 w-full resize-y select-text rounded-md border-2 border-ink/30 bg-paper/50 p-2 font-mono text-[11px] dark:border-paper/30 dark:bg-ink/40"
+            />
           </div>
         </div>
       </div>

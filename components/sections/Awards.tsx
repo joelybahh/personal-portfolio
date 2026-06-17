@@ -5,25 +5,21 @@ export function Awards() {
   return (
     <section id="awards" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeading eyebrow="the receipts" title="Awards, honours & certifications" />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="space-y-3">
         {awards.map((award, i) => (
-          <div key={award.title} className={`sketch-card p-5 ${i % 2 === 0 ? "-rotate-1" : "rotate-1"}`}>
-            <div className="flex items-start gap-4">
-              <span className="select-none text-3xl leading-none" aria-hidden>
-                {award.icon}
-              </span>
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="font-sans text-base font-extrabold tracking-tight">{award.title}</h3>
-                  {award.year && (
-                    <span className="font-hand text-base text-marker">{award.year}</span>
-                  )}
-                </div>
-                <p className="mt-1.5 font-sans text-sm leading-relaxed text-ink-soft dark:text-paper/70">
-                  {award.description}
-                </p>
-              </div>
-            </div>
+          <div
+            key={award.title}
+            className={`sketch-card flex items-center gap-4 px-5 py-3 ${i % 2 === 0 ? "-rotate-[0.4deg]" : "rotate-[0.4deg]"}`}
+          >
+            <span className="select-none text-2xl leading-none" aria-hidden>
+              {award.icon}
+            </span>
+            <h3 className="flex-1 font-sans text-sm font-extrabold tracking-tight sm:text-base">
+              {award.title}
+            </h3>
+            {award.year && (
+              <span className="shrink-0 font-hand text-base text-marker">{award.year}</span>
+            )}
           </div>
         ))}
       </div>

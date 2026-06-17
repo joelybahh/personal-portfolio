@@ -54,6 +54,7 @@ export function DoodleFace({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         fill
+        loading="eager"
         priority
         sizes="256px"
         className="object-cover grayscale"

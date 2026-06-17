@@ -46,3 +46,41 @@ drop policy if exists "Public can read published projects" on public.projects;
 create policy "Public can read published projects"
   on public.projects for select
   using (published = true);
+
+-- ---------------------------------------------------------------------------
+-- Inspace portfolio: blog posts table
+-- Mirrors the projects table; the site reads it first and falls back to the
+-- markdown files in /content/blog when Supabase is unavailable.
+-- ---------------------------------------------------------------------------
+
+create table if not exists public.posts (
+  id           uuid primary key default gen_random_uuid(),
+  slug         text unique not null,
+  title        text not null,
+  summary      text not null default '',
+  content      text not null default '',           -- markdown body
+  tags         text[] not null default '{}',
+  cover_image  text,
+  hero_image   text,
+  reading_time integer,                            -- minutes; computed if null
+  featured     boolean not null default false,
+  published    boolean not null default true,
+  sort_order   integer not null default 999,
+  published_at timestamptz,
+  updated_at   timestamptz not null default now()
+);
+
+create index if not exists posts_published_idx on public.posts (published, sort_order);
+
+-- Reuse the shared set_updated_at() trigger function defined above.
+drop trigger if exists posts_set_updated_at on public.posts;
+create trigger posts_set_updated_at
+  before update on public.posts
+  for each row execute function public.set_updated_at();
+
+alter table public.posts enable row level security;
+
+drop policy if exists "Public can read published posts" on public.posts;
+create policy "Public can read published posts"
+  on public.posts for select
+  using (published = true);

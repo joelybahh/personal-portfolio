@@ -1,0 +1,38 @@
+import type { ReactNode } from "react";
+import { Scribble } from "./Scribble";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+const SCRIBBLE_TYPES = [
+  "underline",
+  "box",
+  "circle",
+  "highlight",
+  "strike-through",
+  "crossed-off",
+  "bracket",
+] as const;
+
+/**
+ * Renders the inner text of a `{{effect:…}}` markdown span (see
+ * {@link "@/lib/markdown-effects"}). `flicker` is a CSS animation; the
+ * remaining names map to the hand-drawn {@link Scribble} annotations.
+ */
+export function TextEffect({ effect, children }: { effect: string; children: ReactNode }) {
+  if (effect === "flicker") {
+    return <span className="md-flicker">{children}</span>;
+  }
+
+  if ((SCRIBBLE_TYPES as readonly string[]).includes(effect)) {
+    return (
+      <Scribble
+        type={effect as any}
+        color={effect === "highlight" ? "highlight" : "marker"}
+      >
+        {children}
+      </Scribble>
+    );
+  }
+
+  return <>{children}</>;
+}
