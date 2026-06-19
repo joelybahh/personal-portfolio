@@ -18,7 +18,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="sketch-card group flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-sketch-lg"
+      className="sketch-card group flex flex-col overflow-hidden hover:shadow-sketch-lg"
     >
       {post.coverImage && (
         <div className="relative aspect-[16/9] w-full overflow-hidden border-b-2 border-ink dark:border-paper/80">

@@ -62,7 +62,7 @@
 @layer components {
   /* The core hand-drawn surface: irregular border-radius + offset ink shadow */
   .sketch-card {
-    @apply rounded-sketch border-2 border-ink bg-paper shadow-sketch transition-all duration-200;
+    @apply rounded-sketch border-2 border-ink bg-paper shadow-sketch transition-[transform,box-shadow,border-color,background-color] duration-200;
   }
   .dark .sketch-card {
     @apply border-paper bg-chalk-soft;

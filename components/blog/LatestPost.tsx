@@ -17,7 +17,7 @@ export function LatestPost({ post }: { post: BlogPostMeta }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="sketch-card group block p-6 hover:-translate-y-1 hover:shadow-sketch-lg sm:p-8"
+      className="sketch-card group block p-6 hover:shadow-sketch-lg sm:p-8"
     >
       <div className="flex items-center gap-2 font-mono text-xs text-ink-faint">
         <span className="font-hand text-base text-marker">Latest</span>
