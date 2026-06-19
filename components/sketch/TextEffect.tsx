@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { PointArrows } from "./PointArrows";
 import { Scribble } from "./Scribble";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -15,12 +16,17 @@ const SCRIBBLE_TYPES = [
 
 /**
  * Renders the inner text of a `{{effect:…}}` markdown span (see
- * {@link "@/lib/markdown-effects"}). `flicker` is a CSS animation; the
- * remaining names map to the hand-drawn {@link Scribble} annotations.
+ * {@link "@/lib/markdown-effects"}). `flicker` is a CSS animation;
+ * `arrow` draws corner arrows via {@link PointArrows}; the remaining names
+ * map to the hand-drawn {@link Scribble} annotations.
  */
 export function TextEffect({ effect, children }: { effect: string; children: ReactNode }) {
   if (effect === "flicker") {
     return <span className="md-flicker">{children}</span>;
+  }
+
+  if (effect === "arrow") {
+    return <PointArrows>{children}</PointArrows>;
   }
 
   if ((SCRIBBLE_TYPES as readonly string[]).includes(effect)) {

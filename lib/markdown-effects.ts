@@ -9,7 +9,7 @@ const EFFECT_RE = /\{\{([\w-]+):([^{}]+)\}\}/g;
  * (see {@link "@/components/sketch/TextEffect"}). `code`/`pre` subtrees are
  * skipped so snippets are never rewritten.
  *
- * Example: `## The Claude Code {{flicker:Flicker}} Problem`
+ * Examples: `## The {{arrow:Accountability}} Problem`, `{{flicker:Flicker}}`
  */
 export function rehypeTextEffects() {
   return (tree: any) => visit(tree);
