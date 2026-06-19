@@ -23,3 +23,23 @@ export type Project = {
 };
 
 export type ProjectMeta = Omit<Project, "content">;
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  summary: string;
+  /** Markdown body */
+  content: string;
+  tags: string[];
+  coverImage?: string;
+  heroImage?: string;
+  /** Estimated read time in minutes, derived from the body. */
+  readingTime: number;
+  featured: boolean;
+  publishedAt?: string;
+  updatedAt?: string;
+  /** Lower sorts first */
+  sortOrder: number;
+};
+
+export type BlogPostMeta = Omit<BlogPost, "content">;

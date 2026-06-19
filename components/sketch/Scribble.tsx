@@ -28,6 +28,7 @@ export function Scribble({
   strokeWidth = 2.5,
   delay = 0,
   multiline = true,
+  brackets = ["left", "right"],
   className,
 }: {
   children: ReactNode;
@@ -36,6 +37,8 @@ export function Scribble({
   strokeWidth?: number;
   delay?: number;
   multiline?: boolean;
+  /** Which sides to draw for `type="bracket"`. */
+  brackets?: ("left" | "right" | "top" | "bottom")[];
   className?: string;
 }) {
   const { ref, inView } = useInView<HTMLSpanElement>();
@@ -52,7 +55,10 @@ export function Scribble({
         strokeWidth={strokeWidth}
         animationDuration={700}
         animationDelay={delay}
-        padding={type === "highlight" ? 2 : type === "box" || type === "circle" ? 6 : 1}
+        padding={
+          type === "highlight" ? 2 : type === "box" || type === "circle" || type === "bracket" ? 6 : 1
+        }
+        brackets={brackets}
         iterations={2}
         multiline={multiline}
       >

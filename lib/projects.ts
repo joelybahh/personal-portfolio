@@ -47,7 +47,10 @@ export async function getProjects(): Promise<Project[]> {
       .select("*")
       .eq("published", true);
     if (error) {
-      console.error("[projects] Supabase error, using local fallback:", error.message);
+      console.error(
+        "[projects] Supabase error, using local fallback:",
+        error.message,
+      );
       return sortProjects(readLocalProjects());
     }
     if (data && data.length > 0) return sortProjects(data.map(fromRow));

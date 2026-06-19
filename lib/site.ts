@@ -7,11 +7,12 @@ export const site = {
   url: "https://joelgabriel.com.au",
   email: "joelybahh@gmail.com",
   locale: "en_AU",
-  profileImage: "/assets/images/profile-1.png",
+  profileImage: "/assets/images/profile-1.webp",
   ogImage: "/assets/images/og-image.jpg",
   nav: [
     { label: "About", href: "/#about" },
     { label: "Work", href: "/#work" },
+    { label: "Writing", href: "/blog" },
     { label: "Awards", href: "/#awards" },
     { label: "Contact", href: "/#contact" },
   ],
