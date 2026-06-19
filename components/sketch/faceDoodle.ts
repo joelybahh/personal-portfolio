@@ -12,6 +12,9 @@ export const DOODLE_COLORS: Record<string, string> = {
   marker: "#2F6BD6",
   coral: "#E8654B",
   leaf: "#3F9E6E",
+  mustard: "#E0A93B",
+  plum: "#8C5BA6",
+  berry: "#CF5C86",
   ink: "#211E1A",
   white: "#FBF9F4",
 };

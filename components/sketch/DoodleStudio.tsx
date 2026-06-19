@@ -24,6 +24,9 @@ const PALETTE = [
   { name: "marker", value: "#2F6BD6" },
   { name: "coral", value: "#E8654B" },
   { name: "leaf", value: "#3F9E6E" },
+  { name: "mustard", value: "#E0A93B" },
+  { name: "plum", value: "#8C5BA6" },
+  { name: "berry", value: "#CF5C86" },
   { name: "ink", value: "#211E1A" },
   { name: "white", value: "#FBF9F4" },
 ];
