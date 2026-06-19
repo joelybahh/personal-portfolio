@@ -7,7 +7,9 @@ import { site } from "@/lib/site";
 import { stripTitleMarkup } from "@/lib/format";
 import { Markdown } from "@/components/Markdown";
 import { HighlightedTitle } from "@/components/sketch/HighlightedTitle";
+import { PostReactions } from "@/components/blog/PostReactions";
 import { ArrowLeftIcon } from "@/components/icons";
+import { getPostPulse } from "@/lib/reactions";
 
 export const revalidate = 3600;
 export const dynamicParams = true;
@@ -70,6 +72,7 @@ export default async function BlogPostPage({
   const published = formatDate(post.publishedAt);
   const image = post.heroImage ?? post.coverImage;
   const plainTitle = stripTitleMarkup(post.title);
+  const pulse = await getPostPulse(slug);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -143,6 +146,8 @@ export default async function BlogPostPage({
       <div className={image ? undefined : "mt-8"}>
         <Markdown>{post.content}</Markdown>
       </div>
+
+      <PostReactions postSlug={slug} initial={pulse} />
 
       <div className="mt-12 border-t-2 border-dashed border-ink/25 pt-6 dark:border-paper/20">
         <Link

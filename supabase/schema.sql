@@ -84,3 +84,5 @@ drop policy if exists "Public can read published posts" on public.posts;
 create policy "Public can read published posts"
   on public.posts for select
   using (published = true);
+
+-- Blog reactions: see supabase/reactions.sql (run separately).

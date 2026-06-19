@@ -32,6 +32,7 @@ const config: Config = {
         },
         highlight: "#FFE08A",
         coral: "#E8654B",
+        orange: "#F59A23",
         leaf: "#3F9E6E",
       },
       fontFamily: {

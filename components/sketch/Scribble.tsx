@@ -18,6 +18,7 @@ const palette = {
   coral: "#E8654B",
   leaf: "#3F9E6E",
   highlight: "#FFE08A",
+  orange: "#F59A23",
   ink: "#211E1A",
 };
 
@@ -30,6 +31,7 @@ export function Scribble({
   multiline = true,
   brackets = ["left", "right"],
   className,
+  show: showProp,
 }: {
   children: ReactNode;
   type?: ScribbleType;
@@ -40,8 +42,11 @@ export function Scribble({
   /** Which sides to draw for `type="bracket"`. */
   brackets?: ("left" | "right" | "top" | "bottom")[];
   className?: string;
+  /** When set, overrides scroll-into-view triggering (e.g. selected reaction chips). */
+  show?: boolean;
 }) {
   const { ref, inView } = useInView<HTMLSpanElement>();
+  const show = showProp ?? inView;
 
   return (
     <span
@@ -50,7 +55,7 @@ export function Scribble({
     >
       <RoughNotation
         type={type}
-        show={inView}
+        show={show}
         color={palette[color]}
         strokeWidth={strokeWidth}
         animationDuration={700}
