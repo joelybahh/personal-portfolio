@@ -47,14 +47,36 @@ If your bottleneck is review, AI can flood review. If your bottleneck is testing
 
 That is not {{crossed-off:solved}} engineering. That is faster uncertainty.
 
-## The Industry Keeps Acting Like The Bottleneck Was Typing
+## The {{arrow:Accountability}} Problem Is Coming
 
-A lot of AI coding hype sounds like it came from people who think software engineering is mostly typing. The pitch is simple: developers spend time writing code, AI writes code faster, therefore software becomes faster.
+The part that worries me most is not that AI will write more code.
 
-There is some truth in that, but it is incomplete. In most healthy engineering teams, the expensive part is not pressing keys. It is {{underline:deciding what should change}} and making sure the change is safe.
+It is that companies will start measuring AI adoption in the {{highlight:dumbest possible way}}.
 
-A senior engineer can often write the code quickly. What takes time is understanding the blast radius. What does this touch? What assumptions does it rely on? What happens when this API returns null? What happens when this job runs twice? What happens when a customer has old data? What happens when the feature flag is half rolled out? What happens when the migration succeeds for 99% of rows and silently corrupts the remaining 1%?
+How many tokens did the team use?
+How many prompts were sent?
+How many pull requests had AI involved?
+How much code was generated?
 
-And maybe most importantly: what happens when the person who generated the code does not actually understand the code?
+We already learned this lesson with {{underline:lines of code}}. Measuring engineers by output volume was always a terrible idea, because more code does not mean more value. Sometimes the best engineering work is deleting code. Sometimes it is choosing not to build something. Sometimes it is spending a day understanding the risk properly so the actual change is tiny.
 
-That question is going to matter more and more, because AI does not remove accountability. It just makes accountability easier to blur.
+Token usage has the same problem. It looks modern, but it is just a new version of the {{highlight:same bad metric}}.
+
+If the goal becomes “use more AI”, then engineers will use more AI. They will throw it at every problem. They will generate more code, more tests, more abstractions, more churn, and more review burden. Not because it is the right tool for the job, but because the metric rewards usage.
+
+That is not engineering progress. That is {{box:KPI cosplay}}.
+
+A healthier metric would be closer to {{highlight:token efficiency}}. Not “who used the most AI”, but who used it effectively. Did it reduce risk? Did it improve delivery? Did it help the engineer understand the system better? Did it make the final change safer, smaller, clearer, or easier to maintain?
+
+Because that is where accountability starts to matter.
+
+If an engineer ships AI-generated code they do not understand, who owns the outcome? The engineer? The reviewer? The tech lead? The manager who pushed AI usage targets? The executive who wanted adoption numbers? The AI vendor? The AI that generated it?
+
+The answer, in practice, will still land on the engineering team. Production does not care that the code was generated. Customers do not care that the model was impressive. Incidents do not care that the demo looked good.
+
+Someone still has to understand the system. Someone still has to review the blast radius. Someone still has to know what happens when the job runs twice, the API returns null, the feature flag is half rolled out, or the migration silently corrupts 1% of the data.
+
+And if the answer to “who reviews the AI-written code?” is “another AI”, then we are not {{crossed-off:solving accountability}}. We are {{underline:laundering it}}.
+
+That is the part I think the industry is underestimating. AI can absolutely make good engineers faster. But if companies treat usage as the goal, instead of {{highlight:understanding, judgement and ownership}}, they are going to create a lot of software that nobody fully understands, nobody properly reviewed, and everybody is somehow responsible for.
+
