@@ -64,11 +64,7 @@ Token usage has the same problem. It looks modern, but it is just a new version 
 
 If the goal becomes “use more AI”, then engineers will use more AI. They will throw it at every problem. They will generate more code, more tests, more abstractions, more churn, and more review burden. Not because it is the right tool for the job, but because the metric rewards usage.
 
-That is not engineering progress. That is {{box:KPI cosplay}}.
-
 A healthier metric would be closer to {{highlight:token efficiency}}. Not “who used the most AI”, but who used it effectively. Did it reduce risk? Did it improve delivery? Did it help the engineer understand the system better? Did it make the final change safer, smaller, clearer, or easier to maintain?
-
-Because that is where accountability starts to matter.
 
 If an engineer ships AI-generated code they do not understand, who owns the outcome? The engineer? The reviewer? The tech lead? The manager who pushed AI usage targets? The executive who wanted adoption numbers? The AI vendor? The AI that generated it?
 
