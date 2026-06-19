@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import { getPosts } from "@/lib/blog";
+import { site } from "@/lib/site";
 import { BlogList } from "@/components/blog/BlogList";
 import { Star } from "@/components/sketch/Doodles";
 
 export const revalidate = 3600;
 
+const description =
+  "Essays and notes by Joel Gabriel on software engineering, AI, and building products.";
+
 export const metadata: Metadata = {
-  title: "Writing",
-  description:
-    "Essays and notes by Joel Gabriel on software engineering, AI, and building products.",
+  title: "Blog",
+  description,
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog",
+    description,
+    url: `${site.url}/blog`,
+  },
 };
 
 export default async function BlogIndexPage() {

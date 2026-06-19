@@ -48,7 +48,7 @@ create policy "Public can read published projects"
   using (published = true);
 
 -- ---------------------------------------------------------------------------
--- Inspace portfolio: blog posts table
+-- blog posts table
 -- Mirrors the projects table; the site reads it first and falls back to the
 -- markdown files in /content/blog when Supabase is unavailable.
 -- ---------------------------------------------------------------------------

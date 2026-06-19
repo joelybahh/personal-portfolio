@@ -34,7 +34,7 @@ export async function generateMetadata({
   if (!post) return { title: "Post not found" };
 
   const title = stripTitleMarkup(post.title);
-  const image = post.heroImage ?? post.coverImage ?? site.ogImage;
+  const ogImage = `/blog/${post.slug}/opengraph-image`;
   return {
     title,
     description: post.summary,
@@ -44,7 +44,7 @@ export async function generateMetadata({
       title,
       description: post.summary,
       url: `${site.url}/blog/${post.slug}`,
-      images: [{ url: image, alt: title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [site.url],
@@ -53,7 +53,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description: post.summary,
-      images: [image],
+      images: [ogImage],
     },
   };
 }
@@ -76,7 +76,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: stripTitleMarkup(post.title),
     description: post.summary,
-    image: image ? `${site.url}${image}` : undefined,
+    image: `${site.url}/blog/${post.slug}/opengraph-image`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     author: { "@type": "Person", name: site.name, url: site.url },
