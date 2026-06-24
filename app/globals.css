@@ -237,6 +237,163 @@
   font-weight: 700;
   animation: md-flicker 3.4s linear infinite;
 }
+
+.md-blur {
+  display: inline-block;
+  color: var(--text);
+  font-weight: 700;
+  text-shadow: 0 0 0.02em currentColor, 0 0 0.12em rgba(33, 30, 26, 0.22);
+  animation: md-blur 4.6s ease-in-out infinite;
+}
+
+.dark .md-blur {
+  text-shadow: 0 0 0.02em currentColor, 0 0 0.18em rgba(236, 233, 225, 0.18);
+}
+
+.md-magic {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.md-magic-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-weight: 800;
+  background-image: linear-gradient(
+    115deg,
+    #8e3426 0%,
+    #c1492f 18%,
+    #de6d2b 38%,
+    #2f6bd6 62%,
+    #5a59d6 82%,
+    #8e3426 100%
+  );
+  background-size: 180% 100%;
+  background-position: 68% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 0.08em rgba(193, 73, 47, 0.18))
+    drop-shadow(0 0 0.26em rgba(47, 107, 214, 0.1));
+}
+
+.md-magic-sparks {
+  position: absolute;
+  inset: -0.35em -0.15em;
+  pointer-events: none;
+}
+
+.md-magic-spark {
+  position: absolute;
+  top: var(--magic-top);
+  left: var(--magic-left);
+  width: var(--magic-size);
+  height: var(--magic-size);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--magic-rotate)) scale(0.18);
+  animation: md-magic-sparkle var(--magic-duration) ease-out 1 both;
+}
+
+.md-magic-spark::before,
+.md-magic-spark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.md-magic-spark::before {
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0 18%, transparent 19%),
+    linear-gradient(transparent 44%, currentColor 44% 56%, transparent 56%),
+    linear-gradient(90deg, transparent 44%, currentColor 44% 56%, transparent 56%);
+}
+
+.md-magic-spark::after {
+  inset: -35%;
+  background: radial-gradient(circle at center, currentColor 0, transparent 68%);
+  opacity: 0.28;
+}
+
+.md-magic-spark--warm {
+  color: #de6d2b;
+}
+
+.md-magic-spark--cool {
+  color: #4b7de0;
+}
+
+.dark .md-magic-text {
+  background-image: linear-gradient(
+    115deg,
+    #b55a2d 0%,
+    #e59e42 18%,
+    #f7de8a 34%,
+    #fdf5ce 46%,
+    #78aef0 62%,
+    #7f79f2 80%,
+    #c56d48 100%
+  );
+  background-size: 220% 100%;
+  background-position: 72% 50%;
+  filter: drop-shadow(0 0 0.24em rgba(247, 222, 138, 0.45))
+    drop-shadow(0 0 0.6em rgba(122, 162, 236, 0.3));
+}
+
+@keyframes md-magic-sparkle {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--magic-rotate)) scale(0.18);
+  }
+  16% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 0.92;
+    transform: translate(
+        calc(-50% + var(--magic-dx)),
+        calc(-50% + var(--magic-dy))
+      )
+      rotate(var(--magic-rotate)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+        calc(-50% + var(--magic-dx)),
+        calc(-50% + var(--magic-dy))
+      )
+      rotate(var(--magic-rotate)) scale(0.62);
+  }
+}
+
+@keyframes md-blur {
+  0%,
+  100% {
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  38% {
+    filter: blur(0.045em);
+    transform: translateY(0.01em) scale(0.995);
+    opacity: 0.94;
+  }
+  52% {
+    filter: blur(0.09em);
+    transform: translateY(0.015em) scale(0.99);
+    opacity: 0.88;
+  }
+  68% {
+    filter: blur(0.03em);
+    transform: translateY(0.005em) scale(0.998);
+    opacity: 0.96;
+  }
+}
+
 @keyframes md-flicker {
   0%, 30%, 61%, 100% {
     filter: blur(0);

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { MagicText } from "./MagicText";
 import { PointArrows } from "./PointArrows";
 import { Scribble } from "./Scribble";
 
@@ -23,6 +24,14 @@ const SCRIBBLE_TYPES = [
 export function TextEffect({ effect, children }: { effect: string; children: ReactNode }) {
   if (effect === "flicker") {
     return <span className="md-flicker">{children}</span>;
+  }
+
+  if (effect === "blur") {
+    return <span className="md-blur">{children}</span>;
+  }
+
+  if (effect === "magic") {
+    return <MagicText>{children}</MagicText>;
   }
 
   if (effect === "arrow") {
