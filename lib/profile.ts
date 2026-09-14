@@ -7,9 +7,9 @@ export const about = {
     "Outside work I'm a dad of three boys, 3, 5 and 9, I lift weights, and I run a home lab that keeps evolving: our family password vault, photos, and whatever I'm curious about next.",
   ],
   stats: [
-    { value: "2017", label: "Shipping software since" },
-    { value: "SOC 2 Type I", label: "Secured · ISO 27001 stage one" },
-    { value: "Infra to UI", label: "APIs · databases · frontends · tooling" },
+    { value: "2017", label: "Writing software since" },
+    { value: "9+ yrs", label: "Game · software · web" },
+    { value: "Web + mobile", label: "Full-stack product focus" },
   ],
 };
 
