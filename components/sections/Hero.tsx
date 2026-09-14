@@ -20,13 +20,13 @@ export function Hero() {
           <p className="mt-5 max-w-xl font-sans text-xl leading-relaxed text-ink-soft dark:text-paper/75">
             A{" "}
             <Scribble type="underline" color="marker">
-              lead full-stack engineer
+              hands-on tech lead
             </Scribble>{" "}
             who&apos;s been shipping software since{" "}
             <Scribble type="circle" color="coral" strokeWidth={2}>
               2017
             </Scribble>
-            . I build web & mobile products, CMS systems and developer tooling — and lead the teams that ship them.
+            . I lead a team, shape the technical strategy, and still spend most weeks on the tools: APIs, databases, infrastructure, frontends and the tooling in between.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

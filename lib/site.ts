@@ -1,9 +1,9 @@
 export const site = {
   name: "Joel Gabriel",
-  role: "Lead Full-Stack Engineer",
-  shortTagline: "Full-stack engineer & tech educator",
+  role: "Tech Lead & Full-Stack Engineer",
+  shortTagline: "Hands-on tech lead & full-stack engineer",
   description:
-    "Joel Gabriel is a lead full-stack engineer with nearly a decade of experience across game, software and web development — building web and mobile products, CMS systems and developer tooling.",
+    "Joel Gabriel is a hands-on tech lead who manages engineers, shapes technical strategy and roadmaps, and still builds the APIs, databases, infrastructure and tooling behind web and mobile products.",
   url: "https://joelgabriel.com.au",
   email: "joelybahh@gmail.com",
   locale: "en_AU",

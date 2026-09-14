@@ -1,15 +1,15 @@
 export const about = {
   heading: "Dad first, engineer always.",
   paragraphs: [
-    "I'm a tech lead who's been shipping software since 2017, nearing a decade across game, desktop and web development experience. These days I focus on NextJS, React and TypeScript, building high-quality, intuitive products and leading the teams that ship them.",
-    "I started out writing games in C# and Unity and moved through desktop software in C# and C++ before settling into modern full-stack product engineering. That game-engine grounding still sharpens how I think about performance and architecture, but these days the work is shipping polished web and mobile products end to end.",
-    // something about homelabs, starting side projects,
-    "Outside of work I'm a dad of 3 boys, 3, 5 and 9, love to hit up the gym and do weights training, I also setup and run my own home lab to manage our family password vault, and photos",
+    "I'm a tech lead who's been shipping software since 2017. Day to day I lead the engineers at Inspace: technical strategy, roadmaps and planning, customer calls for implementations and custom integrations, and the comms that keep a team moving. The role still demands building, so most weeks I'm on the tools too, designing APIs, writing SQL functions, tuning and provisioning databases, and cutting architecture cost.",
+    "I started out writing games in C# and Unity, moved through desktop software in C# and C++, built package installers for VR software and wrote plugins in Ruby, then settled into full-stack product engineering in TypeScript, React and Next.js, now AI-enabled and AI-accelerated. That game-engine grounding still sharpens how I think about performance and architecture, but the breadth is the point: every layer taught me something the next one needed.",
+    "I'm cautiously optimistic about AI. I championed Inspace's AI efficiency rollout, working out how we lean on AI capability without a cost blowout, and I'm glad I built my skill set before the tools could do the thinking for me. On the leadership side I took the engineering seat in our compliance push, securing SOC 2 Type I and the first stage of ISO 27001 before cost reductions pushed the next stages off the roadmap.",
+    "Outside work I'm a dad of three boys, 3, 5 and 9, I lift weights, and I run a home lab that keeps evolving: our family password vault, photos, and whatever I'm curious about next.",
   ],
   stats: [
-    { value: "2017", label: "Writing software since" },
-    { value: "9+ yrs", label: "Game · software · web" },
-    { value: "Web + mobile", label: "Full-stack product focus" },
+    { value: "2017", label: "Shipping software since" },
+    { value: "SOC 2 Type I", label: "Secured · ISO 27001 stage one" },
+    { value: "Infra to UI", label: "APIs · databases · frontends · tooling" },
   ],
 };
 
@@ -21,34 +21,51 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "Niche",
-    accent: "coral",
-    skills: ["Mapbox", "BabylonJS", "Unity 3D", "3D Web (legacy)"],
-  },
-  {
-    label: "Languages & Frameworks",
+    label: "Day to day",
     accent: "marker",
-    skills: ["TypeScript", "React", "Next.js", "React Native", "Python"],
+    skills: [
+      "Team leadership",
+      "Technical strategy",
+      "Roadmaps & planning",
+      "Customer integrations",
+      "Cost reduction",
+    ],
   },
   {
-    label: "A past life",
-    accent: "coral",
-    skills: ["Ruby", "PHP", "Rust", "C++", "C#", "Bash", "Inno Setup"],
-  },
-  {
-    label: "Backend & Auth",
+    label: "Backend & data",
     accent: "leaf",
-    skills: ["PostgreSQL", "Supabase", "Auth0", "Azure Functions", "Stripe"],
+    skills: ["PostgreSQL", "SQL functions", "Supabase", "Azure Functions", "Python", "Auth0", "Stripe"],
+  },
+  {
+    label: "Frontend & mobile",
+    accent: "marker",
+    skills: ["TypeScript", "React", "Next.js", "React Native", "Expo", "TanStack"],
   },
   {
     label: "Platform & AI",
     accent: "ink",
-    skills: ["Monorepos", "MCP", "TanStack", "Expo", "OpenAI"],
+    skills: ["Monorepos", "Developer tooling", "MCP", "OpenAI", "AI cost controls"],
   },
   {
-    label: "Leading",
-    accent: "marker",
-    skills: ["Leadership", "Mentorship", "Problem Solving", "Communication"],
+    label: "Security & compliance",
+    accent: "coral",
+    skills: ["SOC 2 Type I", "ISO 27001 stage one", "ISMS policies", "Audit readiness"],
+  },
+  {
+    label: "Past lives & side quests",
+    accent: "coral",
+    skills: [
+      "Ruby plugins",
+      "Inno Setup installers",
+      "C#",
+      "C++",
+      "Rust",
+      "PHP",
+      "Bash",
+      "Unity 3D",
+      "Mapbox",
+      "BabylonJS",
+    ],
   },
 ];
 
@@ -60,6 +77,20 @@ export type Award = {
 };
 
 export const awards: Award[] = [
+  {
+    icon: "🔐",
+    year: "Inspace",
+    title: "SOC 2 Type I — secured",
+    description:
+      "Led the engineering side of the compliance push: controls, policy set, evidence and auditor walkthroughs. Type II was pushed off the roadmap by cost reductions.",
+  },
+  {
+    icon: "📋",
+    year: "Inspace",
+    title: "ISO 27001 — Stage 1 audit completed",
+    description:
+      "Took the ISMS through its first-stage audit, from documentation to business shape-up; the second stage was deprioritised alongside SOC 2 Type II.",
+  },
   {
     icon: "🏆",
     year: "Diploma",
