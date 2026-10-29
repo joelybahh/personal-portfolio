@@ -1,0 +1,118 @@
+/* My Roadmap: a scroll-scrubbed, hand-drawn timeline. Colours come from the site's CSS variables so light and dark both work. */
+
+.root {
+  --rm-ink: var(--text);
+  --rm-paper: var(--bg);
+  --rm-soft: var(--text-soft);
+  --rm-line: var(--line);
+  --rm-eng: #2f6bd6;
+  --rm-work: #0e8aa8;
+  --rm-lead: #8b5cf6;
+  --rm-prod: #3f9e6e;
+  --rm-life: #e8654b;
+  --rm-add: #1a7f37;
+  --rm-del: #cf222e;
+  --rm-add-fill: #2da44e;
+  --rm-del-fill: #e5534b;
+  --rm-smudge: #9a9488;
+  --rm-eraser: #f2a7b5;
+  --rm-eraser-band: #4b6fb5;
+}
+:global(.dark) .root {
+  --rm-eng: #7aa2ec;
+  --rm-work: #4fc3dc;
+  --rm-lead: #b39dfb;
+  --rm-prod: #6cc795;
+  --rm-life: #f28b73;
+  --rm-add: #57c76a;
+  --rm-del: #ff7b72;
+  --rm-smudge: #6b6760;
+}
+
+.track { position: relative; height: 640vh; }
+.trackStatic { height: auto; }
+.stage { position: sticky; top: 0; height: 100vh; overflow: hidden; padding-top: 24px; }
+.trackStatic .stage { position: relative; height: auto; }
+
+.progress { height: 4px; background: var(--rm-line); border-radius: 2px; position: relative; max-width: 64rem; margin: 0 auto 10px; }
+.progress i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--rm-ink); border-radius: 2px; }
+
+.viewport { width: 100%; height: calc(100vh - 150px); overflow: hidden; position: relative; }
+.trackStatic .viewport { height: auto; overflow-x: auto; }
+.viewport.free { cursor: grab; }
+.viewport.free:active { cursor: grabbing; }
+.board { position: relative; will-change: transform; transform-origin: 0 0; }
+.svg { display: block; overflow: visible; }
+
+.laneName { font-family: var(--font-hand), cursive; font-size: 26px; fill: var(--rm-ink); }
+.year { font-family: var(--font-sans), sans-serif; font-size: 12px; font-weight: 700; fill: var(--rm-soft); }
+.yearLine { stroke: var(--rm-line); stroke-dasharray: 3 5; }
+.rail { stroke-width: 3; opacity: 0.25; fill: none; }
+.bar { fill: none; stroke-width: 14; stroke-linecap: round; opacity: 0.9; }
+.barNow { stroke-linecap: butt; }
+.dot { fill: var(--rm-paper); stroke-width: 3; }
+.lbl { font-family: var(--font-sans), sans-serif; font-size: 12px; font-weight: 700; fill: var(--rm-ink); opacity: 0; transition: opacity 0.4s; }
+.lblInside { fill: #fff; }
+.lblGoal { font-style: italic; fill: var(--rm-soft); }
+.on.lbl { opacity: 1; }
+
+.draw { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); transition: stroke-dashoffset 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.draw.on { stroke-dashoffset: 0; }
+
+.today { stroke: var(--rm-ink); stroke-width: 3; stroke-dasharray: 3000; stroke-dashoffset: 3000; transition: stroke-dashoffset 1.2s ease; }
+.today.on { stroke-dashoffset: 0; }
+.hand { font-family: var(--font-hand), cursive; font-size: 22px; fill: var(--rm-ink); opacity: 0; transition: opacity 0.6s; }
+.hand.on { opacity: 1; }
+.covidLine { font-size: 21px; fill: var(--rm-soft); }
+.covid404 { font-family: var(--font-mono), monospace; font-size: 15px; font-weight: 700; fill: var(--rm-ink); letter-spacing: 0.02em; }
+.wipe { fill: var(--rm-paper); }
+.smudge { fill: none; stroke: var(--rm-smudge); stroke-linecap: round; opacity: 0.13; stroke-dasharray: 3 9; }
+.crumb { fill: var(--rm-eraser); opacity: 0.8; }
+.eraserBody { fill: var(--rm-eraser); stroke: var(--rm-ink); stroke-width: 2.5; }
+.eraserBand { fill: var(--rm-eraser-band); stroke: var(--rm-ink); stroke-width: 2.5; }
+
+.future { opacity: 0; transform: scale(0.2); transform-box: fill-box; transform-origin: center; transition: opacity 0.5s, transform 0.7s cubic-bezier(0.3, 1.6, 0.4, 1); transition-delay: var(--delay); }
+.future.on { opacity: 1; transform: scale(1); }
+.future.on .wob { animation: wob 3.2s ease-in-out infinite; animation-delay: var(--delay); transform-box: fill-box; transform-origin: center; }
+@keyframes wob { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-4px) rotate(2deg); } }
+.goal { fill: var(--rm-paper); stroke-width: 2.5; stroke-dasharray: 5 4; }
+.q { font-family: var(--font-hand), cursive; font-size: 20px; font-weight: 700; }
+.plan { fill: none; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 6 8; opacity: 0.8; }
+.planLbl { font-family: var(--font-sans), sans-serif; font-size: 12px; font-weight: 700; fill: var(--rm-ink); }
+.whoKnows { font-family: var(--font-hand), cursive; font-size: 46px; fill: var(--rm-ink); opacity: 0; transition: opacity 0.8s 1s; }
+.whoKnows.on { opacity: 0.35; }
+.hatch { stroke: var(--rm-ink); stroke-width: 1; opacity: 0.07; }
+
+.hit { cursor: pointer; }
+.static { cursor: default; }
+.viewport:not(.free):not(.static) .hit { pointer-events: none; }
+
+.card { position: absolute; right: 24px; bottom: 16px; width: 340px; max-width: calc(100% - 48px); padding: 12px 16px; opacity: 0; transform: translateY(8px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; z-index: 2; }
+.card.on { opacity: 1; transform: none; }
+.hint { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); font-family: var(--font-hand), cursive; font-size: 22px; color: var(--rm-soft); opacity: 0; transition: opacity 0.5s; white-space: nowrap; }
+.hint.on { opacity: 1; }
+
+/* The diffstat that accumulates with the playhead */
+.diff { position: absolute; top: 14px; right: 24px; width: 300px; max-width: calc(100% - 48px); padding: 12px 14px 10px; z-index: 3; font-family: var(--font-mono), monospace; }
+.diffNums { display: flex; gap: 14px; font-size: 19px; font-weight: 700; letter-spacing: -0.02em; }
+.diffAdd { color: var(--rm-add); }
+.diffDel { color: var(--rm-del); }
+.blocks { display: flex; gap: 3px; margin: 8px 0; }
+.blocks i { width: 14px; height: 14px; border: 1.5px solid var(--rm-ink); border-radius: 3px; background: var(--rm-paper); }
+.blocks i.a { background: var(--rm-add-fill); }
+.blocks i.d { background: var(--rm-del-fill); }
+.diffMeta { font-family: var(--font-sans), sans-serif; font-size: 12px; color: var(--rm-soft); display: flex; gap: 14px; }
+.diffMeta b { color: var(--rm-ink); font-size: 14px; }
+.diffCap { font-family: var(--font-hand), cursive; font-size: 17px; color: var(--rm-soft); margin-top: 6px; opacity: 0; transition: opacity 0.6s; }
+.diffCap.on { opacity: 1; }
+
+@media (max-width: 640px) {
+  .diff { width: 220px; padding: 8px 10px 6px; }
+  .diffNums { font-size: 15px; gap: 10px; }
+  .card { width: 260px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw, .today, .lbl, .card, .future, .hand, .whoKnows, .diffCap { transition: none; }
+  .future.on .wob { animation: none; }
+}
