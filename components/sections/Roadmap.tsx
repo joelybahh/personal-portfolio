@@ -124,9 +124,15 @@ export function Roadmap() {
     const eraser = el("g", { opacity: 0 }, g);
     el("rect", { x: -26, y: -16, width: 52, height: 32, rx: 6, class: s.eraserBody, transform: "rotate(-12)" }, eraser);
     el("rect", { x: -26, y: -16, width: 18, height: 32, rx: 6, class: s.eraserBand, transform: "rotate(-12)" }, eraser);
-    const covid1 = el("text", { x: (cx0 + cx1) / 2, y: cy1 + 18, class: `${s.hand} ${s.covid404}`, "text-anchor": "middle" }, g);
-    covid1.textContent = erasedSpan.line1;
-    const covid2 = el("text", { x: (cx0 + cx1) / 2, y: cy1 + 42, class: `${s.hand} ${s.covidLine}`, "text-anchor": "middle", transform: `rotate(-3 ${(cx0 + cx1) / 2} ${cy1 + 42})` }, g);
+    // captions sit in the Side projects lane, which is empty across the erased stretch
+    const prodLane = lanes.find((l) => l.id === "prod")!;
+    const capX = (cx0 + cx1) / 2, capY = prodLane.top + prodLane.height / 2;
+    const glitch = el("g", { class: s.glitch }, g);
+    const covidA = el("text", { x: capX, y: capY, class: `${s.covid404} ${s.glitchA}`, "text-anchor": "middle" }, glitch);
+    const covidB = el("text", { x: capX, y: capY, class: `${s.covid404} ${s.glitchB}`, "text-anchor": "middle" }, glitch);
+    const covid1 = el("text", { x: capX, y: capY, class: `${s.hand} ${s.covid404}`, "text-anchor": "middle" }, glitch);
+    covidA.textContent = covidB.textContent = covid1.textContent = erasedSpan.line1;
+    const covid2 = el("text", { x: capX, y: capY + 26, class: `${s.hand} ${s.covidLine}`, "text-anchor": "middle", transform: `rotate(-3 ${capX} ${capY + 26})` }, g);
     covid2.textContent = erasedSpan.line2;
     const PERIOD = 46, SPEED = 2.6, U_MAX = (cx1 - cx0) * SPEED;
     const eraserPoint = (u: number): [number, number] => {
@@ -249,7 +255,7 @@ export function Roadmap() {
       if (reduced) {
         rails.forEach((r) => r.classList.add(s.on));
         nodes.forEach((n) => { n.draw.classList.add(s.on); n.lbl.classList.add(s.on); });
-        erase(cx1 + 1000); covid1.classList.add(s.on); covid2.classList.add(s.on);
+        erase(cx1 + 1000); covid1.classList.add(s.on); glitch.classList.add(s.on); covid2.classList.add(s.on);
         todayLine.classList.add(s.on); todayLbl.classList.add(s.on); whoKnows.classList.add(s.on);
         futureGround.setAttribute("opacity", "1"); futures.forEach((f) => f.classList.add(s.on));
         paintDiff(0, true); viewport.classList.add(s.static);
@@ -270,7 +276,7 @@ export function Roadmap() {
       rails.forEach((rl) => rl.classList.toggle(s.on, p > 0.02));
       nodes.forEach((n) => { const on = head >= n.revealAt; n.draw.classList.toggle(s.on, on); n.lbl.classList.toggle(s.on, on); });
       const erased = erase(head);
-      covid1.classList.toggle(s.on, erased && head >= cx1 + 30);
+      covid1.classList.toggle(s.on, erased && head >= cx1 + 30); glitch.classList.toggle(s.on, erased && head >= cx1 + 30);
       covid2.classList.toggle(s.on, erased && head >= cx1 + 80);
       const done = p >= DONE_P;
       paintDiff(head, done);
