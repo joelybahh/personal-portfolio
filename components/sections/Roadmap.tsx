@@ -17,6 +17,8 @@ import s from "./Roadmap.module.css";
 const NS = "http://www.w3.org/2000/svg";
 const W = 4200, TOP = 36, LEFT = 170, ROW = 27, LANE_PAD = 46;
 const DONE_P = 0.7, PAN_P = 0.84;
+/** Height of the sticky site header (h-16 plus its 2px border); the stage pins beneath it. */
+const HEADER = 66;
 
 const accentVar: Record<RoadmapLane["accent"], string> = {
   marker: "var(--rm-eng)",
@@ -42,6 +44,7 @@ const fmt = (n: number) => Math.round(n).toLocaleString("en-AU");
  */
 export function Roadmap() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const boardRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -51,9 +54,9 @@ export function Roadmap() {
   const diffRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const svg = svgRef.current, board = boardRef.current, viewport = viewportRef.current, track = trackRef.current;
+    const svg = svgRef.current, board = boardRef.current, viewport = viewportRef.current, track = trackRef.current, stage = stageRef.current;
     const card = cardRef.current, hint = hintRef.current, bar = barRef.current, diff = diffRef.current;
-    if (!svg || !board || !viewport || !track || !card || !hint || !bar || !diff) return;
+    if (!svg || !board || !viewport || !track || !stage || !card || !hint || !bar || !diff) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     track.classList.toggle(s.trackStatic, reduced);
     const now = decimalYearNow();
@@ -235,10 +238,12 @@ export function Roadmap() {
     // scroll scrub: scrub to today, pan across the future, hold and roam
     let freed = false, freeOffset = 0, scale = 1, maxShift = 0;
     const fit = () => {
-      const avail = reduced ? H : viewport.clientHeight;
-      scale = Math.min(1, avail / H);
+      const room = stage.getBoundingClientRect().bottom - viewport.getBoundingClientRect().top - 12;
+      const avail = reduced ? H : Math.max(240, room);
+      scale = Math.min(1, avail / H, viewport.clientWidth / 1200);
+      viewport.style.height = `${reduced ? H * scale : avail}px`;
       maxShift = Math.max(0, W - viewport.clientWidth / scale);
-      if (reduced) { board.style.transform = `scale(${scale})`; viewport.style.height = `${H * scale}px`; }
+      if (reduced) board.style.transform = `scale(${scale})`;
     };
     const tick = () => {
       if (reduced) {
@@ -250,8 +255,8 @@ export function Roadmap() {
         paintDiff(0, true); viewport.classList.add(s.static);
         return;
       }
-      const r = track.getBoundingClientRect(), vh = window.innerHeight;
-      const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
+      const r = track.getBoundingClientRect(), stageH = stage.clientHeight;
+      const p = Math.min(1, Math.max(0, -(r.top - HEADER) / (r.height - stageH)));
       bar.style.width = `${p * 100}%`;
       const vw = viewport.clientWidth / scale;
       const endX = x(now) + 140, head = LEFT + Math.min(1, p / DONE_P) * (endX - LEFT);
@@ -299,8 +304,8 @@ export function Roadmap() {
   return (
     <section id="roadmap" className={`${s.root} scroll-mt-20 border-t-2 border-dashed border-ink/25 dark:border-paper/15`}>
       <div ref={trackRef} className={s.track}>
-        <div className={s.stage}>
-          <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div ref={stageRef} className={s.stage}>
+          <div className={`mx-auto max-w-5xl px-4 sm:px-6 ${s.heading}`}>
             <SectionHeading eyebrow="the long version" title="My roadmap">
               Keep scrolling. It draws itself from year 10 to today, then you can roam.
             </SectionHeading>

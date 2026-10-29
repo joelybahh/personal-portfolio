@@ -31,13 +31,16 @@
 
 .track { position: relative; height: 640vh; }
 .trackStatic { height: auto; }
-.stage { position: sticky; top: 0; height: 100vh; overflow: hidden; padding-top: 24px; }
+.stage { position: sticky; top: 66px; height: calc(100vh - 66px); overflow: hidden; padding-top: 16px; }
 .trackStatic .stage { position: relative; height: auto; }
 
-.progress { height: 4px; background: var(--rm-line); border-radius: 2px; position: relative; max-width: 64rem; margin: 0 auto 10px; }
+.progress { height: 4px; background: var(--rm-line); border-radius: 2px; position: relative; max-width: 64rem; margin: 0 auto 8px; }
+.heading > :global(div) { margin-bottom: 0.5rem; }
+.heading :global(h2) { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.heading :global(p) { margin-top: 0.25rem; font-size: 1rem; }
 .progress i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--rm-ink); border-radius: 2px; }
 
-.viewport { width: 100%; height: calc(100vh - 150px); overflow: hidden; position: relative; }
+.viewport { width: 100%; overflow: hidden; position: relative; }
 .trackStatic .viewport { height: auto; overflow-x: auto; }
 .viewport.free { cursor: grab; }
 .viewport.free:active { cursor: grabbing; }
@@ -67,6 +70,7 @@
 .covid404 { font-family: var(--font-mono), monospace; font-size: 15px; font-weight: 700; fill: var(--rm-ink); letter-spacing: 0.02em; }
 .wipe { fill: var(--rm-paper); }
 .smudge { fill: none; stroke: var(--rm-smudge); stroke-linecap: round; opacity: 0.13; stroke-dasharray: 3 9; }
+:global(.dark) .smudge { opacity: 0.08; }
 .crumb { fill: var(--rm-eraser); opacity: 0.8; }
 .eraserBody { fill: var(--rm-eraser); stroke: var(--rm-ink); stroke-width: 2.5; }
 .eraserBand { fill: var(--rm-eraser-band); stroke: var(--rm-ink); stroke-width: 2.5; }
