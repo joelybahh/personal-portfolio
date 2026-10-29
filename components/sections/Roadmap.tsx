@@ -251,7 +251,7 @@ export function Roadmap() {
     const fit = () => {
       const room = stage.getBoundingClientRect().bottom - viewport.getBoundingClientRect().top - 12;
       const avail = reduced ? H : Math.max(240, room);
-      scale = Math.min(1, avail / H, viewport.clientWidth / 1200);
+      scale = Math.min(1, avail / H);
       viewport.style.height = `${reduced ? H * scale : avail}px`;
       maxShift = Math.max(0, W - viewport.clientWidth / scale);
       if (reduced) board.style.transform = `scale(${scale})`;
@@ -322,11 +322,6 @@ export function Roadmap() {
             </SectionHeading>
           </div>
           <div className={s.progress}><i ref={barRef} /></div>
-          <div ref={viewportRef} className={s.viewport}>
-            <div ref={boardRef} className={s.board}>
-              <svg ref={svgRef} className={s.svg} xmlns={NS} aria-label="A timeline of Joel's engineering, work, people, side projects and life from 2013 to today, with goals beyond it" role="img" />
-            </div>
-          </div>
           <div ref={diffRef} className={`${s.diff} sketch-card`} aria-live="off">
             <div className={s.diffNums}><span className={s.diffAdd} data-add>+0</span><span className={s.diffDel} data-del>−0</span></div>
             <div className={s.blocks} data-blocks><i /><i /><i /><i /><i /></div>
@@ -336,6 +331,11 @@ export function Roadmap() {
               <span><b data-year>{START}</b></span>
             </div>
             <div className={s.diffCap} data-cap>since 14 January 2014, source files only</div>
+          </div>
+          <div ref={viewportRef} className={s.viewport}>
+            <div ref={boardRef} className={s.board}>
+              <svg ref={svgRef} className={s.svg} xmlns={NS} aria-label="A timeline of Joel's engineering, work, people, side projects and life from 2013 to today, with goals beyond it" role="img" />
+            </div>
           </div>
           <div ref={cardRef} className={`${s.card} sketch-card`} />
           <div ref={hintRef} className={s.hint}>you&apos;re free now: hover, drag sideways, keep scrolling to move on</div>

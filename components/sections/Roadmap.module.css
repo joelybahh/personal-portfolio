@@ -120,9 +120,17 @@
 .diffCap.on { opacity: 1; }
 
 @media (max-width: 640px) {
-  .diff { width: 220px; padding: 8px 10px 6px; }
-  .diffNums { font-size: 15px; gap: 10px; }
-  .card { width: 260px; }
+  .stage { padding-top: 10px; }
+  .diff { position: static; width: auto; max-width: none; margin: 0 16px 8px; padding: 8px 12px 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+  .diffNums { font-size: 16px; gap: 10px; }
+  .blocks { margin: 0; }
+  .diffMeta { gap: 10px; font-size: 11px; }
+  .diffMeta b { font-size: 13px; }
+  .diffCap { display: none; }
+  .card { width: 260px; right: 12px; bottom: 12px; }
+  .hint { font-size: 18px; bottom: 10px; }
+  .heading :global(h2) { font-size: 1.5rem; }
+  .heading :global(p) { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
