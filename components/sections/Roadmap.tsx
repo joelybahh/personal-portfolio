@@ -305,7 +305,7 @@ export function Roadmap() {
     <section id="roadmap" className={`${s.root} scroll-mt-20 border-t-2 border-dashed border-ink/25 dark:border-paper/15`}>
       <div ref={trackRef} className={s.track}>
         <div ref={stageRef} className={s.stage}>
-          <div className={`mx-auto max-w-5xl px-4 sm:px-6 ${s.heading}`}>
+          <div className={`mx-auto max-w-6xl px-4 sm:px-6 ${s.heading}`}>
             <SectionHeading eyebrow="the long version" title="My roadmap">
               Keep scrolling. It draws itself from year 10 to today, then you can roam.
             </SectionHeading>

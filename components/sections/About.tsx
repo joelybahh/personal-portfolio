@@ -5,7 +5,7 @@ import { Scribble } from "@/components/sketch/Scribble";
 export function About() {
   return (
     <section id="about" className="scroll-mt-20 border-y-2 border-dashed border-ink/25 bg-paper-soft py-16 dark:border-paper/15 dark:bg-chalk-soft sm:py-20">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow="a bit about me" title={about.heading} />
         <div className="grid gap-10 md:grid-cols-[1.6fr_1fr]">
           <div className="space-y-5">

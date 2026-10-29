@@ -34,7 +34,7 @@
 .stage { position: sticky; top: 66px; height: calc(100vh - 66px); overflow: hidden; padding-top: 16px; }
 .trackStatic .stage { position: relative; height: auto; }
 
-.progress { height: 4px; background: var(--rm-line); border-radius: 2px; position: relative; max-width: 64rem; margin: 0 auto 8px; }
+.progress { height: 4px; background: var(--rm-line); border-radius: 2px; position: relative; max-width: 72rem; margin: 0 auto 8px; }
 .heading > :global(div) { margin-bottom: 0.5rem; }
 .heading :global(h2) { font-size: clamp(1.6rem, 3vw, 2.4rem); }
 .heading :global(p) { margin-top: 0.25rem; font-size: 1rem; }
