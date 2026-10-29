@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
 import { Work } from "@/components/sections/Work";
+import { Roadmap } from "@/components/sections/Roadmap";
 import { Awards } from "@/components/sections/Awards";
 import { Contact } from "@/components/sections/Contact";
 import { site } from "@/lib/site";
@@ -28,6 +29,7 @@ export default function HomePage() {
       />
       <Hero />
       <About />
+      <Roadmap />
       <Skills />
       <Work />
       <Awards />

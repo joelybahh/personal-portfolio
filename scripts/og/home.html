@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  Source for public/assets/images/og-home.png (1200x630).
+  Re-render now and again when the numbers move: open this file in a browser at 1200px wide
+  and screenshot the .og element, or run a headless browser screenshot at 1200x630.
+  Numbers come from lib/stats-data.ts; lane bars are approximate spans from lib/roadmap-data.ts.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  .og { width: 1200px; height: 630px; position: relative; overflow: hidden; background: #15171c; color: #ece9e1; font-family: 'Nunito', sans-serif; }
+  .grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(236,233,225,.1) 1.5px, transparent 1.5px); background-size: 22px 22px; }
+  .hand { font-family: 'Caveat', cursive; }
+  .me { border-radius: 50%; border: 4px solid #ece9e1; object-fit: cover; box-shadow: 5px 6px 0 0 rgba(236,233,225,.55); }
+  .add { color: #57c76a; } .del { color: #ff7b72; }
+  .wrap { position: absolute; inset: 50px 70px; display: flex; gap: 36px; }
+  .left { width: 480px; display: flex; flex-direction: column; }
+  .name { font-size: 62px; font-weight: 900; letter-spacing: -.03em; line-height: 1; margin-top: 16px; }
+  .role { font-size: 32px; color: #7aa2ec; margin-top: 6px; }
+  .strip { margin-top: auto; display: flex; gap: 26px; }
+  .strip b { display: block; font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 700; }
+  .strip span { font-size: 15px; color: #b6b1a5; }
+  .lanes { flex: 1; position: relative; align-self: center; padding-right: 80px; }
+  .lane { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+  .lane i { font-family: 'Caveat', cursive; font-style: normal; font-size: 24px; width: 120px; color: #b6b1a5; text-align: right; }
+  .lane b { height: 14px; border-radius: 8px 2px 2px 8px; display: block; }
+  .lane b.done { border-radius: 8px; }
+  .today { position: absolute; right: 78px; top: -10px; bottom: -10px; border-left: 3px solid #ece9e1; }
+  .today span { position: absolute; left: 8px; bottom: -6px; font-family: 'Caveat', cursive; font-size: 24px; }
+  .q { position: absolute; right: 20px; top: 40%; font-family: 'Caveat', cursive; font-size: 54px; color: #b6b1a5; opacity: .6; }
+  .site { position: absolute; right: 70px; bottom: 44px; font-family: 'Caveat', cursive; font-size: 26px; color: #b6b1a5; }
+</style>
+</head>
+<body>
+<div class="og"><div class="grid"></div><div class="wrap">
+  <div class="left">
+    <img class="me" src="../../public/assets/images/profile-1.webp" width="120" height="120" alt="">
+    <div class="name">Joel Gabriel</div>
+    <div class="hand role">Tech lead, still on the tools</div>
+    <div class="strip"><div><b>10,516</b><span>commits</span></div><div><b class="add">+2.27M</b><span>lines</span></div><div><b class="del">−1.09M</b><span>removed</span></div><div><b>109</b><span>repos</span></div></div>
+  </div>
+  <div class="lanes">
+    <div class="lane"><i>Engineering</i><b style="background:#7aa2ec;width:400px"></b></div>
+    <div class="lane"><i>Inspace</i><b style="background:#4fc3dc;width:300px;margin-left:100px"></b></div>
+    <div class="lane"><i>People</i><b class="done" style="background:#b39dfb;width:140px;margin-left:150px"></b></div>
+    <div class="lane"><i>Side projects</i><b style="background:#6cc795;width:150px;margin-left:250px"></b></div>
+    <div class="lane"><i>Life</i><b style="background:#f28b73;width:400px"></b></div>
+    <div class="today"><span>today</span></div>
+    <div class="q">?</div>
+  </div>
+</div><div class="site">joelgabriel.com.au</div></div>
+</body>
+</html>
