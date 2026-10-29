@@ -8,7 +8,7 @@ export const site = {
   email: "joelybahh@gmail.com",
   locale: "en_AU",
   profileImage: "/assets/images/profile-1.webp",
-  ogImage: "/assets/images/og-image.jpg",
+  ogImage: "/assets/images/og-home.png",
   nav: [
     { label: "About", href: "/#about" },
     { label: "Work", href: "/#work" },
