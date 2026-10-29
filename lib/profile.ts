@@ -1,10 +1,10 @@
 export const about = {
-  heading: "Dad first, engineer always.",
+  heading: "Dad by day. Engineer, also by day.",
   paragraphs: [
-    "I'm a tech lead who's been shipping software since 2017. Day to day I lead the engineers at Inspace: technical strategy, roadmaps and planning, customer calls for implementations and custom integrations, and the comms that keep a team moving. The role still demands building, so most weeks I'm on the tools too, designing APIs, writing SQL functions, tuning and provisioning databases, and cutting architecture cost.",
-    "I started out writing games in C# and Unity, moved through desktop software in C# and C++, built package installers for VR software and wrote plugins in Ruby, then settled into full-stack product engineering in TypeScript, React and Next.js, now AI-enabled and AI-accelerated. That game-engine grounding still sharpens how I think about performance and architecture, but the breadth is the point: every layer taught me something the next one needed.",
-    "I'm cautiously optimistic about AI. I championed Inspace's AI efficiency rollout, working out how we lean on AI capability without a cost blowout, and I'm glad I built my skill set before the tools could do the thinking for me. On the leadership side I took the engineering seat in our compliance push, securing SOC 2 Type I and the first stage of ISO 27001 before cost reductions pushed the next stages off the roadmap.",
-    "Outside work I'm a dad of three boys, 3, 5 and 9, I lift weights, and I run a home lab that keeps evolving: our family password vault, photos, and whatever I'm curious about next.",
+    "I'm a tech lead who's been shipping software since 2017. Day to day I lead the engineers at Inspace: technical strategy, roadmaps, customer calls for integrations, and the comms that keep a team moving. Most weeks I'm still on the tools, designing APIs, writing SQL functions, tuning databases and cutting architecture cost.",
+    "I started in games with C# and Unity, moved through desktop software in C# and C++, built installers for VR software and wrote Ruby plugins, then settled into full-stack product work in TypeScript, React and Next.js, now AI-assisted. Every layer taught me something the next one needed.",
+    "I'm cautiously optimistic about AI. I championed Inspace's AI efficiency rollout, working out how we lean on AI capability without a cost blowout, and I'm glad I built my skills before the tools could do the thinking for me. I also took the engineering seat in our compliance push, securing SOC 2 Type I and completing ISO 27001 stage one before cost reductions pushed the next stages off the roadmap.",
+    "Outside work: three boys, 8, 5 and 3, a barbell, and a home lab that keeps growing.",
   ],
   stats: [
     { value: "2017", label: "Writing software since" },
