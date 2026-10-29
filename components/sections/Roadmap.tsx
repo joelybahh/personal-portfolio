@@ -11,7 +11,7 @@ import {
   type RoadmapItem,
   type RoadmapLane,
 } from "@/lib/roadmap-data";
-import { statsByYear, statsTotals } from "@/lib/stats-data";
+import { statsByYear, statsGeneratedAt, statsTotals } from "@/lib/stats-data";
 import s from "./Roadmap.module.css";
 
 const NS = "http://www.w3.org/2000/svg";
@@ -221,10 +221,15 @@ export function Roadmap() {
     const dCommits = diff.querySelector<HTMLElement>("[data-commits]")!, dRepos = diff.querySelector<HTMLElement>("[data-repos]")!;
     const dYear = diff.querySelector<HTMLElement>("[data-year]")!, dCap = diff.querySelector<HTMLElement>("[data-cap]")!;
     const blocks = Array.from(diff.querySelectorAll<HTMLElement>("[data-blocks] i"));
+    // The last year's row only holds commits up to the counter's cutoff, so it fills against that date, not December.
+    const cutoff = new Date(statsGeneratedAt);
+    const cutoffFrac = Math.max(0.05, (cutoff.getMonth() + (cutoff.getDate() - 1) / 31) / 12);
+    const lastYear = statsByYear[statsByYear.length - 1]?.year;
     const diffAt = (yearPos: number) => {
       let c = 0, a = 0, d = 0, repos = 0;
       for (const y of statsByYear) {
-        const f = Math.max(0, Math.min(1, yearPos - y.year));
+        const span = y.year === lastYear ? cutoffFrac : 1;
+        const f = Math.max(0, Math.min(1, (yearPos - y.year) / span));
         c += y.commits * f; a += y.added * f; d += y.removed * f;
         if (f > 0) repos = y.reposSoFar;
       }
@@ -232,7 +237,7 @@ export function Roadmap() {
     };
     const paintDiff = (head: number, done: boolean) => {
       const yearPos = done ? END : START + ((head - LEFT) / (W - LEFT - 40)) * (END - START);
-      const v = diffAt(Math.min(yearPos, now));
+      const v = done ? { c: statsTotals.commits, a: statsTotals.added, d: statsTotals.removed, repos: statsTotals.repos } : diffAt(Math.min(yearPos, now));
       dAdd.textContent = `+${fmt(v.a)}`; dDel.textContent = `−${fmt(v.d)}`;
       dCommits.textContent = fmt(v.c); dRepos.textContent = fmt(v.repos);
       dYear.textContent = done ? "today" : String(Math.floor(Math.min(yearPos, now)));
