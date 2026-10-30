@@ -31,7 +31,7 @@ export async function generateMetadata({
   const project = await getProject(slug);
   if (!project) return { title: "Project not found" };
 
-  const image = project.heroImage ?? project.coverImage ?? site.ogImage;
+  const image = project.ogImage ?? project.heroImage ?? project.coverImage ?? site.ogImage;
   return {
     title: project.title,
     description: project.summary,
@@ -41,7 +41,7 @@ export async function generateMetadata({
       title: project.title,
       description: project.summary,
       url: `${site.url}/projects/${project.slug}`,
-      images: [{ url: image, alt: project.title }],
+      images: [{ url: image, width: 1200, height: 630, alt: project.title }],
       publishedTime: project.publishedAt,
       modifiedTime: project.updatedAt,
       authors: [site.url],

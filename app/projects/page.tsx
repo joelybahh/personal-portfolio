@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   description:
     "Projects built by Joel Gabriel — Inspace platforms at work, and personal products like Roll With It, GoWith and Mailman.",
   alternates: { canonical: "/projects" },
+  openGraph: {
+    type: "website",
+    title: "Work",
+    description:
+      "Projects built by Joel Gabriel — Inspace platforms at work, and personal products like Roll With It, GoWith and Mailman.",
+    url: "https://joelgabriel.com.au/projects",
+  },
 };
 
 export default async function ProjectsIndexPage() {

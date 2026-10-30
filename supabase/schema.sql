@@ -13,6 +13,7 @@ create table if not exists public.projects (
   year         text,
   cover_image  text,
   hero_image   text,
+  og_image     text,                               -- 1200x630 share card
   live_url     text,
   repo_url     text,
   featured     boolean not null default false,
@@ -21,6 +22,9 @@ create table if not exists public.projects (
   published_at timestamptz,
   updated_at   timestamptz not null default now()
 );
+
+-- Added October 2026 for the per-project share cards; safe to re-run.
+alter table public.projects add column if not exists og_image text;
 
 create index if not exists projects_published_idx on public.projects (published, sort_order);
 

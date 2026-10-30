@@ -13,6 +13,8 @@ export type Project = {
   year?: string;
   coverImage?: string;
   heroImage?: string;
+  /** 1200x630 share card; falls back to heroImage/coverImage when unset */
+  ogImage?: string;
   liveUrl?: string;
   repoUrl?: string;
   featured: boolean;
