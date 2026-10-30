@@ -358,7 +358,7 @@
     "eyebrow": "Work · Labs · July to December 2025",
     "title": "Inspace Intelligence",
     "summary": "A chat agent over Inspace's own property data, with tools for inventory, maps, leads and reports. The groundwork for Insights.",
-    "cover": null,
+    "cover": "/assets/images/inspace-intelligence.webp",
     "stats": [
       {
         "value": "81",
