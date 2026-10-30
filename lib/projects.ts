@@ -16,6 +16,7 @@ function fromRow(row: any): Project {
     year: row.year ?? undefined,
     coverImage: row.cover_image ?? undefined,
     heroImage: row.hero_image ?? row.cover_image ?? undefined,
+    ogImage: row.og_image ?? undefined,
     liveUrl: row.live_url ?? undefined,
     repoUrl: row.repo_url ?? undefined,
     featured: Boolean(row.featured),

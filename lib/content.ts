@@ -26,6 +26,7 @@ function toProject(slug: string, raw: string): Project {
     year: data.year ? String(data.year) : undefined,
     coverImage: data.coverImage ?? undefined,
     heroImage: data.heroImage ?? data.coverImage ?? undefined,
+    ogImage: data.ogImage ?? undefined,
     liveUrl: data.liveUrl ?? undefined,
     repoUrl: data.repoUrl ?? undefined,
     featured: Boolean(data.featured),

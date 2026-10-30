@@ -6,6 +6,7 @@
  *
  * Usage:
  *   SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/seed-supabase.mjs
+ *   node scripts/seed-supabase.mjs --only projects   (or --only posts)
  *
  * (A .env / .env.local with those vars is also picked up automatically.)
  */
@@ -57,6 +58,7 @@ function toRow(slug, raw) {
     year: data.year ? String(data.year) : null,
     cover_image: data.coverImage ?? null,
     hero_image: data.heroImage ?? data.coverImage ?? null,
+    og_image: data.ogImage ?? null,
     live_url: data.liveUrl ?? null,
     repo_url: data.repoUrl ?? null,
     featured: Boolean(data.featured),
@@ -112,5 +114,7 @@ async function seed(table, dir, mapper) {
   console.log(`Seeded ${rows.length} ${table} row(s): ${rows.map((r) => r.slug).join(", ")}`);
 }
 
-await seed("projects", CONTENT_DIR, toRow);
-await seed("posts", BLOG_DIR, toPostRow);
+const onlyIdx = process.argv.indexOf("--only");
+const only = onlyIdx === -1 ? null : process.argv[onlyIdx + 1];
+if (!only || only === "projects") await seed("projects", CONTENT_DIR, toRow);
+if (!only || only === "posts") await seed("posts", BLOG_DIR, toPostRow);

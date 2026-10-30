@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  Template for the project share cards in public/assets/images/og/<slug>.png (1200x630).
+  Data lives in scripts/og/projects.json; render with: node scripts/og/render-projects.mjs [slug ...]
+  Placeholders: {{eyebrow}} {{title}} {{titleSize}} {{summary}} {{stats}} {{cover}} {{coverClass}}
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  .og { width: 1200px; height: 630px; position: relative; overflow: hidden; background: #15171c; color: #ece9e1; font-family: 'Nunito', sans-serif; }
+  .grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(236,233,225,.1) 1.5px, transparent 1.5px); background-size: 22px 22px; }
+  .hand { font-family: 'Caveat', cursive; }
+  .wrap { position: absolute; inset: 56px 70px 52px 70px; display: flex; flex-direction: column; }
+  .eyebrow { font-family: 'Caveat', cursive; font-size: 34px; color: #7aa2ec; line-height: 1; }
+  .title { font-size: {{titleSize}}px; font-weight: 900; letter-spacing: -.035em; line-height: .98; margin-top: 14px; max-width: 700px; }
+  .summary { font-size: 26px; line-height: 1.35; color: #b6b1a5; margin-top: 22px; max-width: 700px; }
+  .summary b { color: #ece9e1; font-weight: 800; }
+  .strip { margin-top: auto; display: flex; gap: 38px; align-items: flex-end; }
+  .strip div { display: flex; flex-direction: column; gap: 6px; }
+  .strip b { font-family: 'JetBrains Mono', monospace; font-size: 38px; font-weight: 700; line-height: 1; white-space: nowrap; }
+  .strip span { font-size: 17px; color: #b6b1a5; white-space: nowrap; }
+  .add { color: #57c76a; } .del { color: #ff7b72; }
+  .cover { position: absolute; right: -40px; top: 112px; width: 420px; transform: rotate(-5deg); border: 5px solid #ece9e1; border-radius: 10px; box-shadow: 10px 12px 0 0 rgba(236,233,225,.55); background: #ece9e1; display: block; }
+  .cover.none { display: none; }
+  .site { position: absolute; right: 70px; bottom: 40px; font-family: 'Caveat', cursive; font-size: 26px; color: #b6b1a5; }
+  .nostats .wrap { top: 150px; }
+  .nostats .summary { font-size: 32px; max-width: 900px; margin-top: 28px; }
+  .nostats .eyebrow { font-size: 38px; }
+</style>
+</head>
+<body>
+<div class="og {{coverClass}}"><div class="grid"></div>
+  <img class="cover {{coverClass}}" src="{{cover}}" alt="">
+  <div class="wrap">
+    <div class="eyebrow">{{eyebrow}}</div>
+    <div class="title">{{title}}</div>
+    <div class="summary">{{summary}}</div>
+    <div class="strip">{{stats}}</div>
+  </div>
+  <div class="site">joelgabriel.com.au</div>
+</div>
+</body>
+</html>
