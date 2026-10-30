@@ -162,20 +162,22 @@
     "cover": "/assets/images/inspace-stack.webp",
     "stats": [
       {
-        "value": "118",
-        "label": "commits since Nov 2025"
+        "value": "82",
+        "label": "my commits since Nov 2025"
+      },
+      {
+        "value": "+18,810",
+        "label": "lines added",
+        "tone": "add"
+      },
+      {
+        "value": "-3,734",
+        "label": "removed",
+        "tone": "del"
       },
       {
         "value": "4",
         "label": "releases, v2.0.0 to v3.1.1"
-      },
-      {
-        "value": "175",
-        "label": "tests on staging"
-      },
-      {
-        "value": "2020",
-        "label": "first commit"
       }
     ]
   },
